@@ -1,9 +1,10 @@
 import "./App.css";
+import Header from "./components/Header";
 
 function App() {
     return (
         <>
-            <div>This is the start of my Plant Thyme final project for LaunchCode!</div>
+            <Header />
         </>
     );
 }

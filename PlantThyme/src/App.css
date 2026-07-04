@@ -1,0 +1,31 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+:root {
+    --dark-green: #374b2d;
+    --medium-green: #6f7d42;
+    --light-green: #afb888;
+    --dark-brown: #d18a59;
+    --light-brown: #f2dec6;
+}
+
+/* Brand Images */
+.mini-logo {
+    width: 40px;
+}
+
+/* Header */
+header {
+    background-color: var(--light-green);
+    padding: 5px;
+}
