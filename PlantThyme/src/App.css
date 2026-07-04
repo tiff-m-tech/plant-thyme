@@ -11,6 +11,16 @@ body {
     min-height: 100vh;
 }
 
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
 :root {
     --dark-green: #374b2d;
     --medium-green: #6f7d42;
@@ -33,4 +43,11 @@ header {
     font-size: 2em;
     background-color: var(--light-green);
     padding: 5px;
+}
+
+/* Footer -------------------------------------------------------------------------------------------- */
+footer {
+    text-align: center;
+    background-color: var(--light-green);
+    padding: 1em;
 }
