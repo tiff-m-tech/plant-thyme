@@ -1,0 +1,172 @@
+[
+    {
+        "id": 1,
+        "name": "Angel Wing Begonia",
+        "image": "angel-wing-begonia.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Batik Syngonium",
+        "image": "batik-syngonium.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Brasil Philodendron",
+        "image": "brasil-philodendron.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Caperata Peperomia",
+        "image": "caperata-peperomia.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Gold Dust Croton",
+        "image": "gold-dust-croton.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Golden Ivy",
+        "image": "golden-ivy.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Golden Pothos",
+        "image": "golden-pothos.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Green Ripple Peperomia",
+        "image": "green-ripple-peperomia.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Heartleaf Philodendron",
+        "image": "heartleaf-philodendron.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Manjula Pothos",
+        "image": "manjula-pothos.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Marble Queen Pothos",
+        "image": "marble-queen-pothos.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Micans Philodendron",
+        "image": "micans-philodendron.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Money Tree",
+        "image": "money-tree.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Neon Pothos",
+        "image": "neon-pothos.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Neon Queen Pothos",
+        "image": "neon-queen-pothos.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Non Variegated Monstera",
+        "image": "non-variegated-monstera.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Peace Lily",
+        "image": "peace-lily.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Pearls and Jade Pothos",
+        "image": "pearls-and-jade-pothos.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Petra Croton",
+        "image": "petra-croton.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Piccolo Banda Peperomia",
+        "image": "piccolo-banda-peperomia.jpg"
+    },
+    {
+        "id": 21,
+        "name": "Pink Syngonium",
+        "image": "pink-syngonium.jpg"
+    },
+    {
+        "id": 22,
+        "name": "Pittsburgh Ivy",
+        "image": "pittsburgh-ivy.jpg"
+    },
+    {
+        "id": 23,
+        "name": "Purple African Violet",
+        "image": "purple-african-violet.jpg"
+    },
+    {
+        "id": 24,
+        "name": "Red Kiss Rex Begonia",
+        "image": "red-kiss-rex-begonia.jpg"
+    },
+    {
+        "id": 25,
+        "name": "Ring of Fire Philodendron",
+        "image": "ring-of-fire-philodendron.jpg"
+    },
+    {
+        "id": 26,
+        "name": "Rosso Peperomia",
+        "image": "rosso-peperomia.jpg"
+    },
+    {
+        "id": 27,
+        "name": "Snake Plant",
+        "image": "snake-plant.jpg"
+    },
+    {
+        "id": 28,
+        "name": "Spider Plant",
+        "image": "spider-plant.jpg"
+    },
+    {
+        "id": 29,
+        "name": "String of Hearts",
+        "image": "string-of-hearts.jpg"
+    },
+    {
+        "id": 30,
+        "name": "String of Pearls",
+        "image": "string-of-pearls.jpg"
+    },
+    {
+        "id": 31,
+        "name": "Thai Constellation Monstera",
+        "image": "thai-constellation-monstera.jpg"
+    },
+    {
+        "id": 32,
+        "name": "Variegated Syngonium",
+        "image": "variegated-syngonium.jpg"
+    },
+    {
+        "id": 33,
+        "name": "Watermelon Peperomia",
+        "image": "watermelon-peperomia.jpg"
+    },
+    {
+        "id": 34,
+        "name": "White Butterfly Syngonium",
+        "image": "white-butterfly-syngonium.jpg"
+    }
+]
