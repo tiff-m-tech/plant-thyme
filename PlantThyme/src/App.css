@@ -27,6 +27,7 @@ main {
     --light-green: #afb888;
     --dark-brown: #d18a59;
     --light-brown: #f2dec6;
+    --brand-font: "Lobster Two", sans-serif;
 }
 
 /* Brand Images ------------------------------------------------------------------------------------- */
@@ -35,12 +36,20 @@ main {
     margin: 5px;
 }
 
+.large-logo {
+    width: 500px;
+}
+
+.end-deco-image {
+    width: 20px;
+}
+
 /* Header -------------------------------------------------------------------------------------------- */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: "Lobster Two", sans-serif;
+    font-family: var(--brand-font);
     font-weight: 400;
     font-style: normal;
     background-color: var(--light-green);
@@ -83,4 +92,27 @@ footer {
     text-align: center;
     background-color: var(--light-green);
     padding: 1em;
+}
+
+/* Home Page -------------------------------------------------------------------------------------------- */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    gap: 1.25rem;
+}
+
+.home-title {
+    font-family: var(--brand-font);
+}
+
+.welcome-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
