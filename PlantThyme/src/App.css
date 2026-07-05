@@ -91,19 +91,19 @@ header {
 }
 
 .header-brand-name {
-    font-size: 2.5em;
+    font-size: 2.5rem;
 }
 /* Navbar -------------------------------------------------------------------------------------------- */
 nav {
     display: flex;
     align-items: right;
-    gap: 1.5em;
+    gap: 1.5rem;
     margin-right: 5px;
 }
 
 nav a {
     color: black;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     text-decoration: none;
 }
 
@@ -120,7 +120,7 @@ nav a:active {
 footer {
     text-align: center;
     background-color: var(--light-green);
-    padding: 1em;
+    padding: 1rem;
 }
 
 /* Pages Common ------------------------------------------------------------------------------------------------ */
