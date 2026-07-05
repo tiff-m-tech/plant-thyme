@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { altFromFileName } from "../../utils/altFromFileName";
 import { userName, leftDecoImagePath, rightDecoImagePath } from "../../data/constants";
+import Button from "../layout/Button";
 
 export default function Contact() {
     const contactImagePath = "/images/brand/contact.png";
@@ -24,7 +25,7 @@ export default function Contact() {
 
     function handleSubmit(event) {
         event.preventDefault(); // stops browser from reloading the page
-        console.log("Submitting", values); // later change this to send values to backend
+        console.log("Submitting", formData); // later change this to send values to backend
     }
 
     return (
@@ -68,6 +69,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                 />
+                <Button innerText="Submit" onClick={handleSubmit} />
             </form>
         </main>
     );
