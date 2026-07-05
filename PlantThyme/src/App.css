@@ -22,12 +22,20 @@ main {
 }
 
 :root {
-    --dark-green: #374b2d;
+    --dark-green: #243d17;
     --medium-green: #6f7d42;
     --light-green: #afb888;
     --dark-brown: #d18a59;
     --light-brown: #f2dec6;
     --brand-font: "Lobster Two", sans-serif;
+}
+
+/* Common --------------------------------------------------------------------------------------------- */
+.page-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 /* Brand Images ------------------------------------------------------------------------------------- */
@@ -36,7 +44,7 @@ main {
     margin: 5px;
 }
 
-.large-logo {
+.large-page-image {
     width: 500px;
 }
 
@@ -94,8 +102,9 @@ footer {
     padding: 1em;
 }
 
-/* Home Page -------------------------------------------------------------------------------------------- */
-.home {
+/* Pages Common ------------------------------------------------------------------------------------------------ */
+#home,
+#contact {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,13 +115,10 @@ footer {
     gap: 1.25rem;
 }
 
-.home-title {
+.title {
     font-family: var(--brand-font);
 }
 
-.welcome-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
+/* Home Page -------------------------------------------------------------------------------------------- */
+
+/* Contact Page -------------------------------------------------------------------------------------------- */
