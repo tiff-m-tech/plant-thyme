@@ -5,6 +5,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
 import Contact from "./components/pages/Contact";
 import CurrentCollection from "./components/pages/CurrentCollection";
+import AddPlant from "./components/pages/AddPlant";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/currentCollection" element={<CurrentCollection />} />
+                <Route path="/currentCollection/add" element={<AddPlant />} />
             </Routes>
             <Footer />
         </>
