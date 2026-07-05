@@ -9,6 +9,7 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
+    font-family: var(--regular-font);
 }
 
 #root {
@@ -22,12 +23,13 @@ main {
 }
 
 :root {
-    --dark-green: #243d17;
+    --dark-green: #51742e;
     --medium-green: #6f7d42;
     --light-green: #afb888;
     --dark-brown: #d18a59;
     --light-brown: #f2dec6;
-    --brand-font: "Lobster Two", sans-serif;
+    --brand-font: "Lobster Two", cursive;
+    --regular-font: "Nunito Sans", sans-serif;
 }
 
 /* Common --------------------------------------------------------------------------------------------- */
@@ -57,6 +59,11 @@ button:hover {
 button:active {
     transform: scale(0.95);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: var(--dark-green);
+    font-size: 3rem;
 }
 
 /* Brand Images ------------------------------------------------------------------------------------- */
@@ -105,6 +112,7 @@ nav a {
     color: black;
     font-size: 1.5rem;
     text-decoration: none;
+    font-family: var(--regular-font);
 }
 
 nav a:hover {
