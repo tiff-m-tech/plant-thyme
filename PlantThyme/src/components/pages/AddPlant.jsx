@@ -9,13 +9,22 @@ export default function AddPlant() {
         setSearchValue(event.target.value);
     }
 
-    const filteredPlants = plantDatabase.filter((plant) => plant.name.toLowerCase().trim().includes(searchValue));
+    const filteredPlants = plantDatabase.filter((plant) =>
+        plant.name.toLowerCase().trim().includes(searchValue),
+    );
 
     console.log("Filtered Plant List", filteredPlants);
 
     return (
         <main id="addPlant">
-            <input type="search" name="search" placeholder="Type a plant name here..." value={searchValue} onChange={handleChange} required />
+            <input
+                type="search"
+                name="search"
+                placeholder="Type a plant name here..."
+                value={searchValue}
+                onChange={handleChange}
+                required
+            />
             <Button innerText="Search" />
         </main>
     );

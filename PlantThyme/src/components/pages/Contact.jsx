@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { altFromFileName } from "../../utils/altFromFileName";
-import { userName, leftDecoImagePath, rightDecoImagePath } from "../../data/constants";
+import { leftDecoImagePath, rightDecoImagePath } from "../../data/constants";
 import Button from "../layout/Button";
 
 export default function Contact() {
@@ -30,14 +30,29 @@ export default function Contact() {
 
     return (
         <main id="contact">
-            <img src={contactImagePath} alt={altFromFileName(contactImagePath)} className="large-page-image" />
+            <img
+                src={contactImagePath}
+                alt={altFromFileName(contactImagePath)}
+                className="large-page-image"
+            />
             <div className="page-title-row">
-                <img src={leftDecoImagePath} alt={altFromFileName(leftDecoImagePath)} className="end-deco-image" />
+                <img
+                    src={leftDecoImagePath}
+                    alt={altFromFileName(leftDecoImagePath)}
+                    className="end-deco-image"
+                />
                 <h1 className="title">Contact</h1>
-                <img src={rightDecoImagePath} alt={altFromFileName(rightDecoImagePath)} className="end-deco-image" />
+                <img
+                    src={rightDecoImagePath}
+                    alt={altFromFileName(rightDecoImagePath)}
+                    className="end-deco-image"
+                />
             </div>
             <h2>Questions or Feedback?</h2>
-            <div>Feel free to reach out with any questions or suggestions you have! I'd love to hear from you.</div>
+            <div>
+                Feel free to reach out with any questions or suggestions you have! I'd love to hear
+                from you.
+            </div>
             <div>
                 <strong>✉️ Email:</strong> support@plantthyme.com
             </div>
@@ -56,9 +71,25 @@ export default function Contact() {
             <form onSubmit={handleSubmit}>
                 <h2>Drop Us a Note!</h2>
                 <label htmlFor="name">Name:</label>
-                <input id="name" type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} required />
+                <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                />
                 <label htmlFor="email">Email:</label>
-                <input id="email" type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+                <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                />
                 <label htmlFor="feedback">Message:</label>
                 <textarea
                     id="notes"
