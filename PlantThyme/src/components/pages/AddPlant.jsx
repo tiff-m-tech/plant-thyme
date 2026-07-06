@@ -1,6 +1,7 @@
 import Button from "../layout/Button";
 import plantDatabase from "../../data/plantDatabase.json";
 import { useState } from "react";
+import SearchCard from "../layout/SearchCard";
 
 export default function AddPlant() {
     const [searchValue, setSearchValue] = useState("");
@@ -17,15 +18,22 @@ export default function AddPlant() {
 
     return (
         <main id="addPlant">
-            <input
-                type="search"
-                name="search"
-                placeholder="Type a plant name here..."
-                value={searchValue}
-                onChange={handleChange}
-                required
-            />
-            <Button innerText="Search" />
+            <div>
+                <input
+                    type="search"
+                    name="search"
+                    placeholder="Type a plant name here..."
+                    value={searchValue}
+                    onChange={handleChange}
+                    required
+                />
+                <Button innerText="Search" />
+            </div>
+            <div className="search-cards-container">
+                {filteredPlants.map((plant) => (
+                    <SearchCard key={plant.id} imgPath={plant.image} name={plant.name} />
+                ))}
+            </div>
         </main>
     );
 }
