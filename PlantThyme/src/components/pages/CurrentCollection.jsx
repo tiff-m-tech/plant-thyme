@@ -39,15 +39,18 @@ export default function CurrentCollection({ collection, removePlantFromCollectio
                         />
                         <h2 className="plant-count">Plant Count: {plantCount}</h2>
                     </div>
-                    {collection.map((plant) => (
-                        <CollectionCard
-                            key={plant.collectionId}
-                            collectionId={plant.collectionId}
-                            imgPath={plant.image}
-                            name={plant.name}
-                            removePlantFromCollection={removePlantFromCollection}
-                        />
-                    ))}
+                    {[...collection]
+                        // compares a reference string with a target string and returns a negative, zero, or positive number to indicate their relative alphabetical sort order
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((plant) => (
+                            <CollectionCard
+                                key={plant.collectionId}
+                                collectionId={plant.collectionId}
+                                imgPath={plant.image}
+                                name={plant.name}
+                                removePlantFromCollection={removePlantFromCollection}
+                            />
+                        ))}
                 </div>
             ) : (
                 <>
