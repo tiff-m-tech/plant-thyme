@@ -3,6 +3,8 @@ import { altFromFileName } from "../../utils/altFromFileName";
 import { useNavigate } from "react-router";
 
 export default function SearchCard({ imgPath, name, plant, addPlantToCollection }) {
+    // useNavigate returns a function that lets you navigate programmatically in the browser in response to user interactions or effects
+    // must initialize the hook at the top level to use
     const navigate = useNavigate();
 
     return (
