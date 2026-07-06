@@ -1,7 +1,10 @@
 import Button from "../layout/Button";
 import { altFromFileName } from "../../utils/altFromFileName";
+import { useNavigate } from "react-router";
 
 export default function SearchCard({ imgPath, name, plant, addPlantToCollection }) {
+    const navigate = useNavigate();
+
     return (
         <div className="search-card-container">
             <img
@@ -11,7 +14,13 @@ export default function SearchCard({ imgPath, name, plant, addPlantToCollection 
             />
             <div className="search-card-right-container">
                 <div>{name}</div>
-                <Button innerText="Add Plant" onClick={() => addPlantToCollection(plant)} />
+                <Button
+                    innerText="Add Plant"
+                    onClick={() => {
+                        addPlantToCollection(plant);
+                        navigate("/currentCollection");
+                    }}
+                />
             </div>
         </div>
     );
