@@ -2,10 +2,12 @@ import { altFromFileName } from "../../utils/altFromFileName";
 import { leftDecoImagePath, rightDecoImagePath } from "../../data/constants";
 import Button from "../layout/Button";
 import { useNavigate } from "react-router";
+import CollectionCard from "../cards/CollectionCard";
 
-export default function CurrentCollection() {
+export default function CurrentCollection({ collection, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.png";
-    const plantCount = null;
+    // const plantCount = null;
+    let plantCount = collection.length;
     const navigate = useNavigate();
 
     return (
@@ -29,14 +31,39 @@ export default function CurrentCollection() {
                 />
             </div>
             {plantCount ? (
-                <div>Plant Count: {plantCount}</div>
+                <div className="collection-cards-container">
+                    <div className="collection-page-btn-h1-row">
+                        <Button
+                            innerText="Add Plant"
+                            onClick={() => navigate("/currentCollection/add")}
+                        />
+                        <h2 className="plant-count">Plant Count: {plantCount}</h2>
+                    </div>
+                    {[...collection]
+                        // compares a reference string with a target string and returns a negative, zero, or positive number to indicate their relative alphabetical sort order
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((plant) => (
+                            <CollectionCard
+                                key={plant.collectionId}
+                                collectionId={plant.collectionId}
+                                imgPath={plant.image}
+                                name={plant.name}
+                                removePlantFromCollection={removePlantFromCollection}
+                            />
+                        ))}
+                </div>
             ) : (
-                <p>
-                    You have not added any plants to your collection yet. Lets fill this list up
-                    with leafy friends! :D
-                </p>
+                <>
+                    <p>
+                        You have not added any plants to your collection yet. Lets fill this list up
+                        with leafy friends! :D
+                    </p>
+                    <Button
+                        innerText="Add Plant"
+                        onClick={() => navigate("/currentCollection/add")}
+                    />
+                </>
             )}
-            <Button innerText="Add Plant" onClick={() => navigate("/currentCollection/add")} />
         </main>
     );
 }
