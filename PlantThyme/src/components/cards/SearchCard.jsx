@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "../layout/Button";
 import { altFromFileName } from "../../utils/altFromFileName";
 
 export default function SearchCard({ imgPath, name, plant, addPlantToCollection }) {

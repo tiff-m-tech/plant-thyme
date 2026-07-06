@@ -2,7 +2,7 @@ import { altFromFileName } from "../../utils/altFromFileName";
 import { leftDecoImagePath, rightDecoImagePath } from "../../data/constants";
 import Button from "../layout/Button";
 import { useNavigate } from "react-router";
-import CollectionCard from "../layout/CollectionCard";
+import CollectionCard from "../cards/CollectionCard";
 
 export default function CurrentCollection({ collection, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.png";

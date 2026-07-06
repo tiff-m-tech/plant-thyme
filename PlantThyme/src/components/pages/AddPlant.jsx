@@ -1,7 +1,7 @@
 import Button from "../layout/Button";
 import plantDatabase from "../../data/plantDatabase.json";
 import { useState } from "react";
-import SearchCard from "../layout/SearchCard";
+import SearchCard from "../cards/SearchCard";
 
 export default function AddPlant({ addPlantToCollection }) {
     const [searchValue, setSearchValue] = useState("");

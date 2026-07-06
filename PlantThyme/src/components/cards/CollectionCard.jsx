@@ -1,5 +1,5 @@
 import { altFromFileName } from "../../utils/altFromFileName";
-import Button from "./Button";
+import Button from "../layout/Button";
 
 export default function CollectionCard({ collectionId, imgPath, name, removePlantFromCollection }) {
     return (
