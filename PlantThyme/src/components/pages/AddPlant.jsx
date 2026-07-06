@@ -2,11 +2,13 @@ import Button from "../layout/Button";
 import plantDatabase from "../../data/plantDatabase.json";
 import { useState } from "react";
 import SearchCard from "../cards/SearchCard";
+import { useNavigate } from "react-router";
 
 export default function AddPlant({ addPlantToCollection }) {
     const [searchValue, setSearchValue] = useState("");
     const [filteredPlants, setFilteredPlants] = useState([]);
     const [hasSearched, setHasSearched] = useState(false);
+    const navigate = useNavigate();
 
     function handleChange(event) {
         setSearchValue(event.target.value);
@@ -24,6 +26,8 @@ export default function AddPlant({ addPlantToCollection }) {
     return (
         <main id="addPlant">
             <div>
+                {/* To go back to last page using useNavigate pass -1 as argument to the navigate function, this tells the browser to move back one step in its history stack */}
+                <Button innerText="Back" onClick={() => navigate(-1)} />
                 <input
                     type="search"
                     name="search"
