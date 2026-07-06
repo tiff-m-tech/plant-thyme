@@ -1,7 +1,7 @@
 import Button from "./Button";
 import { altFromFileName } from "../../utils/altFromFileName";
 
-export default function SearchCard({ imgPath, name }) {
+export default function SearchCard({ imgPath, name, plant, addPlantToCollection }) {
     return (
         <div className="search-card-container">
             <img
@@ -11,7 +11,7 @@ export default function SearchCard({ imgPath, name }) {
             />
             <div className="search-card-right-container">
                 <div>{name}</div>
-                <Button innerText="Add Plant" />
+                <Button innerText="Add Plant" onClick={() => addPlantToCollection(plant)} />
             </div>
         </div>
     );

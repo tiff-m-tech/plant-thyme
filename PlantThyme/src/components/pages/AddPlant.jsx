@@ -3,7 +3,7 @@ import plantDatabase from "../../data/plantDatabase.json";
 import { useState } from "react";
 import SearchCard from "../layout/SearchCard";
 
-export default function AddPlant() {
+export default function AddPlant({ addPlantToCollection }) {
     const [searchValue, setSearchValue] = useState("");
     const [filteredPlants, setFilteredPlants] = useState([]);
     const [hasSearched, setHasSearched] = useState(false);
@@ -35,7 +35,13 @@ export default function AddPlant() {
             </div>
             <div className="search-cards-container">
                 {filteredPlants.map((plant) => (
-                    <SearchCard key={plant.id} imgPath={plant.image} name={plant.name} />
+                    <SearchCard
+                        key={plant.id}
+                        imgPath={plant.image}
+                        name={plant.name}
+                        plant={plant}
+                        addPlantToCollection={addPlantToCollection}
+                    />
                 ))}
                 {hasSearched && filteredPlants.length === 0 && (
                     <p>No results found, please search again!</p>
