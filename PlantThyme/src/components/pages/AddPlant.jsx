@@ -6,18 +6,19 @@ import SearchCard from "../layout/SearchCard";
 export default function AddPlant() {
     const [searchValue, setSearchValue] = useState("");
     const [filteredPlants, setFilteredPlants] = useState([]);
+    const [hasSearched, setHasSearched] = useState(false);
 
     function handleChange(event) {
         setSearchValue(event.target.value);
     }
 
     function handleSearch() {
-        if (searchValue.trim().length <= 1) return; // don't want to search with no value or 1 char - would bring up every plant that has that letter
-
+        if (searchValue.trim().length <= 1) return;
         const results = plantDatabase.filter((plant) =>
             plant.name.toLowerCase().trim().includes(searchValue.toLowerCase().trim()),
         );
         setFilteredPlants(results);
+        setHasSearched(true);
     }
 
     return (
@@ -36,6 +37,9 @@ export default function AddPlant() {
                 {filteredPlants.map((plant) => (
                     <SearchCard key={plant.id} imgPath={plant.image} name={plant.name} />
                 ))}
+                {hasSearched && filteredPlants.length === 0 && (
+                    <p>No results found, please search again!</p>
+                )}
             </div>
         </main>
     );
