@@ -1,7 +1,7 @@
 import { altFromFileName } from "../../utils/altFromFileName";
 import Button from "./Button";
 
-export default function CollectionCard({ imgPath, name }) {
+export default function CollectionCard({ collectionId, imgPath, name, removePlantFromCollection }) {
     return (
         <div className="collection-card-container">
             <img
@@ -11,7 +11,10 @@ export default function CollectionCard({ imgPath, name }) {
             />
             <div className="collection-card-right-container">
                 <div>{name}</div>
-                <Button innerText="Remove Plant" />
+                <Button
+                    innerText="Remove Plant"
+                    onClick={() => removePlantFromCollection(collectionId)}
+                />
             </div>
         </div>
     );

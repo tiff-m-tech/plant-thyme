@@ -4,7 +4,7 @@ import Button from "../layout/Button";
 import { useNavigate } from "react-router";
 import CollectionCard from "../layout/CollectionCard";
 
-export default function CurrentCollection({ collection }) {
+export default function CurrentCollection({ collection, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.png";
     // const plantCount = null;
     let plantCount = collection.length;
@@ -42,8 +42,10 @@ export default function CurrentCollection({ collection }) {
                     {collection.map((plant) => (
                         <CollectionCard
                             key={plant.collectionId}
+                            collectionId={plant.collectionId}
                             imgPath={plant.image}
                             name={plant.name}
+                            removePlantFromCollection={removePlantFromCollection}
                         />
                     ))}
                 </div>

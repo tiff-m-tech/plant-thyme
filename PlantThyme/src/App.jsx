@@ -32,6 +32,13 @@ function App() {
         console.log(newCollectionId);
     }
 
+    // originally used delete, but it removes the value at an index and leaves an empty hole behind
+    function removePlantFromCollection(idToRemove) {
+        setCollection((currentCollection) =>
+            currentCollection.filter((plant) => plant.collectionId !== idToRemove),
+        );
+    }
+
     return (
         <>
             <Header />
@@ -40,7 +47,12 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route
                     path="/currentCollection"
-                    element={<CurrentCollection collection={collection} />}
+                    element={
+                        <CurrentCollection
+                            collection={collection}
+                            removePlantFromCollection={removePlantFromCollection}
+                        />
+                    }
                 />
                 <Route
                     path="/currentCollection/add"
