@@ -6,7 +6,7 @@ import Button from "../layout/Button";
 
 export default function CurrentCollection({ collection, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.png";
-    let plantCount = collection.length;
+    const plantCount = collection.length;
     const navigate = useNavigate();
 
     return (
@@ -39,7 +39,7 @@ export default function CurrentCollection({ collection, removePlantFromCollectio
                         <h2 className="plant-count">Plant Count: {plantCount}</h2>
                     </div>
                     {[...collection]
-                        // compares a reference string with a target string and returns a negative, zero, or positive number to indicate their relative alphabetical sort order
+                        // localeCompare compares a reference string with a target string and returns a negative, zero, or positive number to indicate their relative alphabetical sort order
                         .sort((a, b) => a.name.localeCompare(b.name))
                         .map((plant) => (
                             <CollectionCard
@@ -55,7 +55,7 @@ export default function CurrentCollection({ collection, removePlantFromCollectio
                 <>
                     <p>
                         You have not added any plants to your collection yet. Lets fill this list up
-                        with leafy friends! :D
+                        with leafy friends! 🪴🥰
                     </p>
                     <Button
                         innerText="Add Plant"
