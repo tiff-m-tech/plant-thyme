@@ -60,7 +60,7 @@ function App() {
                     element={<AddPlant addPlantToCollection={addPlantToCollection} />}
                 />
                 <Route
-                    path="currentCollection/:collectionId"
+                    path="/currentCollection/:collectionId"
                     element={<PlantDetails collection={collection} />}
                 />
             </Routes>
