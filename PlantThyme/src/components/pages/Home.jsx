@@ -24,11 +24,11 @@ export default function Home() {
                     className="end-deco-image"
                 />
             </div>
-            <h2>Track your plants, save their stories, and watch them grow over time.</h2>
+            <h2>Grow your collection, one plant story at a time.</h2>
             <p>
-                Plant Thyme helps you keep track of your growing plant collection, save details like
-                when and where each plant was purchased, add care notes, and look back on progress
-                photos over time.
+                Plant Thyme helps you keep track of your plants, save meaningful details like where
+                and when they were purchased, add other notes, and look back on progress photos as
+                they grow.
             </p>
         </main>
     );
