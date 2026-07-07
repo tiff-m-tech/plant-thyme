@@ -6,6 +6,8 @@ import PageTitle from "../layout/PageTitle";
 
 export default function CurrentCollection({ collection, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.png";
+    // Use line below to test when you have no plants in the collection.
+    // const plantCount = 0;
     const plantCount = collection.length;
     const navigate = useNavigate();
 
