@@ -1,5 +1,5 @@
-import { altFromFileName } from "../../utils/altFromFileName";
 import { userName, leftDecoImagePath, rightDecoImagePath } from "../../data/constants";
+import { altFromFileName } from "../../utils/altFromFileName";
 
 export default function Home() {
     const logoImagePath = "/images/brand/large-logo.png";

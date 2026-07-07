@@ -1,8 +1,8 @@
+import { useNavigate } from "react-router";
 import { altFromFileName } from "../../utils/altFromFileName";
 import { leftDecoImagePath, rightDecoImagePath } from "../../data/constants";
-import Button from "../layout/Button";
-import { useNavigate } from "react-router";
 import CollectionCard from "../cards/CollectionCard";
+import Button from "../layout/Button";
 
 export default function CurrentCollection({ collection, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.png";

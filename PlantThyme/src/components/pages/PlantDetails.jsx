@@ -1,8 +1,7 @@
-import { useParams } from "react-router";
-import { altFromFileName } from "../../utils/altFromFileName";
 import { useState } from "react";
+import { useParams, useNavigate } from "react-router";
+import { altFromFileName } from "../../utils/altFromFileName";
 import Button from "../layout/Button";
-import { useNavigate } from "react-router";
 
 // This page will need to be updated in Unit 2 with backend for saving the info.
 

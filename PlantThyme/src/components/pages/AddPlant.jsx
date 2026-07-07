@@ -1,8 +1,8 @@
-import Button from "../layout/Button";
-import plantDatabase from "../../data/plantDatabase.json";
 import { useState } from "react";
-import SearchCard from "../cards/SearchCard";
 import { useNavigate } from "react-router";
+import plantDatabase from "../../data/plantDatabase.json";
+import Button from "../layout/Button";
+import SearchCard from "../cards/SearchCard";
 
 export default function AddPlant({ addPlantToCollection }) {
     const [searchValue, setSearchValue] = useState("");
