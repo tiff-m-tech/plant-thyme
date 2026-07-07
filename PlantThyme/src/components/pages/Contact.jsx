@@ -94,7 +94,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                 />
-                <Button innerText="Submit" onClick={handleSubmit} />
+                <Button innerText="Submit" type="submit" />
             </form>
         </main>
     );
