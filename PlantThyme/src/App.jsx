@@ -13,8 +13,6 @@ import PlantDetails from "./components/pages/PlantDetails";
 function App() {
     const [collection, setCollection] = useState(currentCollection);
 
-    console.log("new collection", collection);
-
     function addPlantToCollection(plant) {
         const newCollectionId = Math.max(...collection.map((plant) => plant.collectionId)) + 1;
         const newEntry = {
@@ -29,8 +27,6 @@ function App() {
             progressPictures: [],
         };
         setCollection([...collection, newEntry]);
-        console.log("AddPlant was fired.");
-        console.log(newCollectionId);
     }
 
     // originally used delete, but it removes the value at an index and leaves an empty hole behind

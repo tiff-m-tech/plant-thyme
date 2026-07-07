@@ -6,7 +6,6 @@ import CollectionCard from "../cards/CollectionCard";
 
 export default function CurrentCollection({ collection, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.png";
-    // const plantCount = null;
     let plantCount = collection.length;
     const navigate = useNavigate();
 
