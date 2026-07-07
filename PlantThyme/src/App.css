@@ -175,6 +175,10 @@ footer {
     border-radius: 5px;
 }
 
+.red-font {
+    color: red;
+}
+
 /* Current Collection Page ---------------------------------------------------------------------------------- */
 #currentCollection {
     display: flex;

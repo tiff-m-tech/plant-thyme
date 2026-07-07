@@ -5,11 +5,8 @@ import Button from "../layout/Button";
 
 export default function Contact() {
     const contactImagePath = "/images/brand/contact.png";
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        feedback: "",
-    });
+    const initialFormData = { name: "", email: "", message: "" };
+    const [formData, setFormData] = useState(initialFormData);
 
     // event.target is the DOM element that fired the event, the actual input the user typed in
     // { name, value } is destructuring
@@ -25,7 +22,10 @@ export default function Contact() {
 
     function handleSubmit(event) {
         event.preventDefault(); // stops browser from reloading the page
+
         console.log("Submitting", formData); // later change this to send values to backend
+
+        setFormData(initialFormData);
     }
 
     return (
@@ -48,13 +48,13 @@ export default function Contact() {
                     className="end-deco-image"
                 />
             </div>
-            <h2>Questions or Feedback?</h2>
+            <h2>Dont be a stranger, leaf me a message!</h2>
             <div>
-                Feel free to reach out with any questions or suggestions you have! I'd love to hear
-                from you.
+                Have a question, suggestion, or a leafy idea to share? Send it my way. I'd love to
+                hear from you!
             </div>
             <div>
-                <strong>✉️ Email:</strong> support@plantthyme.com
+                <strong>✉️ Email:</strong> support@plant_thyme.com
             </div>
             <div>
                 <strong>☎ Phone:</strong> 610-867-5309
@@ -70,7 +70,9 @@ export default function Contact() {
             </div>
             <form onSubmit={handleSubmit}>
                 <h2>Drop Us a Note!</h2>
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name">
+                    Name <span className="red-font">*</span>
+                </label>
                 <input
                     id="name"
                     type="text"
@@ -80,7 +82,9 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                 />
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email">
+                    Email <span className="red-font">*</span>
+                </label>
                 <input
                     id="email"
                     type="email"
@@ -90,9 +94,11 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                 />
-                <label htmlFor="feedback">Message:</label>
+                <label htmlFor="message">
+                    Message <span className="red-font">*</span>
+                </label>
                 <textarea
-                    id="notes"
+                    id="message"
                     name="message"
                     placeholder="Your message here..."
                     maxLength="500"
