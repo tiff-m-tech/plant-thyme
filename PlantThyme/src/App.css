@@ -136,7 +136,8 @@ footer {
 #home,
 #contact,
 #currentCollection,
-#addPlant {
+#addPlant,
+#plantDetails {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -262,4 +263,31 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+}
+
+/* Details Page ----------------------------------------------------------------------------------------- */
+.details-page-image {
+    width: 400px;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+#plantDetails form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+#plantDetails form label {
+    font-weight: bold;
+    text-align: left;
+}
+
+#plantDetails form input,
+#plantDetails form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid black;
+    border-radius: 5px;
 }
