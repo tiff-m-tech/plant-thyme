@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router";
 import { altFromFileName } from "../../utils/altFromFileName";
-import { leftDecoImagePath, rightDecoImagePath } from "../../data/constants";
 import CollectionCard from "../cards/CollectionCard";
 import Button from "../layout/Button";
+import PageTitle from "../layout/PageTitle";
 
 export default function CurrentCollection({ collection, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.png";
@@ -16,19 +16,7 @@ export default function CurrentCollection({ collection, removePlantFromCollectio
                 alt={altFromFileName(currentCollectionImagePath)}
                 className="large-page-image"
             />
-            <div className="page-title-row">
-                <img
-                    src={leftDecoImagePath}
-                    alt={altFromFileName(leftDecoImagePath)}
-                    className="end-deco-image"
-                />
-                <h1 className="title">Current Plant Collection</h1>
-                <img
-                    src={rightDecoImagePath}
-                    alt={altFromFileName(rightDecoImagePath)}
-                    className="end-deco-image"
-                />
-            </div>
+            <PageTitle title="My Leafy Collection" />
             {plantCount ? (
                 <div className="collection-cards-container">
                     <div className="collection-page-btn-h1-row">

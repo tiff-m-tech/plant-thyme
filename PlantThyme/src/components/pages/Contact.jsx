@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { altFromFileName } from "../../utils/altFromFileName";
-import { leftDecoImagePath, rightDecoImagePath } from "../../data/constants";
 import Button from "../layout/Button";
+import PageTitle from "../layout/PageTitle";
 
 export default function Contact() {
     const contactImagePath = "/images/brand/contact.png";
@@ -35,19 +35,7 @@ export default function Contact() {
                 alt={altFromFileName(contactImagePath)}
                 className="large-page-image"
             />
-            <div className="page-title-row">
-                <img
-                    src={leftDecoImagePath}
-                    alt={altFromFileName(leftDecoImagePath)}
-                    className="end-deco-image"
-                />
-                <h1 className="title">Contact</h1>
-                <img
-                    src={rightDecoImagePath}
-                    alt={altFromFileName(rightDecoImagePath)}
-                    className="end-deco-image"
-                />
-            </div>
+            <PageTitle title="Contact" />
             <h2>Dont be a stranger, leaf me a message!</h2>
             <div>
                 Have a question, suggestion, or a leafy idea to share? Send it my way. I'd love to
