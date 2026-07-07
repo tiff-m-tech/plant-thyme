@@ -1,7 +1,9 @@
-import { leftDecoImagePath, rightDecoImagePath } from "../../data/constants";
 import { altFromFileName } from "../../utils/altFromFileName";
 
 export default function PageTitle({ title }) {
+    const leftDecoImagePath = "/images/brand/left-deco-leaf.png";
+    const rightDecoImagePath = "/images/brand/right-deco-leaf.png";
+
     return (
         <div className="page-title-row">
             <img
