@@ -11,7 +11,6 @@ export default function Header() {
                 />
                 <span className="header-brand-name">Plant Thyme</span>
             </div>
-
             <NavBar />
         </header>
     );

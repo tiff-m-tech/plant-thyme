@@ -1,16 +1,29 @@
-# React + Vite
+# Plant Thyme 🪴
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React app for tracking a personal houseplant collection. Search for plants,
+add them to your collection, view and edit details for each plant, and remove
+plants you no longer have.
 
-Currently, two official plugins are available:
+## Features 🧩
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Search a plant database and add plants to your collection.
+- View your current collection, sorted alphabetically.
+- View and edit details for each plant (purchase date, store, cost, notes).
+- Remove plants from your collection.
 
-## React Compiler
+## Built With 🛠️
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- React Router
+- Vite
 
-## Expanding the ESLint configuration
+## Getting Started 💻
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repo
+2. Run `npm install`
+3. Run `npm run dev` to start the development server
+
+## Notes 📝
+
+Data is currently stored in app state (resets on refresh). Persistence and
+backend features are planned for Unit 2!

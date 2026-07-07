@@ -1,7 +1,7 @@
-import "./App.css";
 import { useState } from "react";
-import { currentCollection } from "./data/currentCollection";
 import { Routes, Route } from "react-router";
+import { currentCollection } from "./data/currentCollection";
+import "./App.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
@@ -12,8 +12,6 @@ import PlantDetails from "./components/pages/PlantDetails";
 
 function App() {
     const [collection, setCollection] = useState(currentCollection);
-
-    console.log("new collection", collection);
 
     function addPlantToCollection(plant) {
         const newCollectionId = Math.max(...collection.map((plant) => plant.collectionId)) + 1;
@@ -29,8 +27,6 @@ function App() {
             progressPictures: [],
         };
         setCollection([...collection, newEntry]);
-        console.log("AddPlant was fired.");
-        console.log(newCollectionId);
     }
 
     // originally used delete, but it removes the value at an index and leaves an empty hole behind

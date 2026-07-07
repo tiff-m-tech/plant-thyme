@@ -5,7 +5,7 @@ export default function NavBar() {
         <nav>
             <Link to="/">Home</Link>
             <Link to="/contact">Contact</Link>
-            <Link to="/currentCollection">Current Collection</Link>
+            <Link to="/currentCollection">My Leafy Collection</Link>
         </nav>
     );
 }
