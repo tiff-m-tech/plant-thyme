@@ -39,7 +39,36 @@ export default function CurrentCollection({ collection, removePlantFromCollectio
                 className="large-page-image"
             />
             <PageTitle title="My Leafy Collection" />
-            {plantCount ? (
+            {plantCount === 0 ? (
+                <div>
+                    <p>
+                        You have not added any plants to your collection yet. Lets fill this list up
+                        with leafy friends! 🪴🥰
+                    </p>
+                    <Button
+                        innerText="Add Plant"
+                        onClick={() => navigate("/currentCollection/add")}
+                    />
+                </div>
+            ) : displayedPlants.length === 0 ? (
+                <div>
+                    <div className="collection-page-btn-h1-row">
+                        <Button
+                            innerText="Add Plant"
+                            onClick={() => navigate("/currentCollection/add")}
+                        />
+                        <h2 className="plant-count">Plant Count: {plantCount}</h2>
+                    </div>
+                    <SearchBar
+                        value={searchValue}
+                        onChange={handleChange}
+                        onSearch={handleSearch}
+                        placeholder="Search your leafy friends..."
+                        showButton={false}
+                    />
+                    <p>No plants match your search.</p>
+                </div>
+            ) : (
                 <div className="collection-cards-container">
                     <div className="collection-page-btn-h1-row">
                         <Button
@@ -68,18 +97,14 @@ export default function CurrentCollection({ collection, removePlantFromCollectio
                             />
                         ))}
                 </div>
-            ) : (
-                <div>
-                    <p>
-                        You have not added any plants to your collection yet. Lets fill this list up
-                        with leafy friends! 🪴🥰
-                    </p>
-                    <Button
-                        innerText="Add Plant"
-                        onClick={() => navigate("/currentCollection/add")}
-                    />
-                </div>
             )}
         </main>
     );
 }
+// {plantCount === 0 ? (
+//     <p>You have no plants yet...</p>
+// ) : displayedPlants.length === 0 ? (
+//     <p>No plants match your search.</p>
+// ) : (
+//     <div>{/* the cards */}</div>
+// )}
