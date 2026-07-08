@@ -133,12 +133,17 @@ export const currentCollection = [
             {
                 id: 1,
                 date: "7/12/2025",
-                picture: "progress1.png",
+                picture: "brasil-progress-picture-1png",
             },
             {
                 id: 2,
                 date: "1/6/2026",
-                picture: "progress2.png",
+                picture: "brasil-progress-picture-2.png",
+            },
+            {
+                id: 3,
+                date: "4/28/2026",
+                picture: "brasil-progress-picture-3.png",
             },
         ],
     },
