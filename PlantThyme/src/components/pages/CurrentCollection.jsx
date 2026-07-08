@@ -6,7 +6,7 @@ import Button from "../layout/Button";
 import PageTitle from "../layout/PageTitle";
 import SearchBar from "../layout/SearchBar";
 
-export default function CurrentCollection({ collection, removePlantFromCollection }) {
+export default function CurrentCollection({ collection, loading, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.png";
     // Use line below to test when you have no plants in the collection.
     // const plantCount = 0;
@@ -28,6 +28,49 @@ export default function CurrentCollection({ collection, removePlantFromCollectio
         if (searchValue.trim().length <= 1) return;
         const results = collection.filter((plant) =>
             plant.name.toLowerCase().trim().includes(searchValue.toLowerCase().trim()),
+        );
+    }
+
+    if (loading) {
+        return (
+            <main id="currentCollection">
+                <img
+                    src={currentCollectionImagePath}
+                    alt={altFromFileName(currentCollectionImagePath)}
+                    className="large-page-image"
+                />
+                <PageTitle title="My Leafy Collection" />
+                <div>
+                    <div className="collection-page-btn-h1-row">
+                        <Button
+                            innerText="Add Plant"
+                            onClick={() => navigate("/currentCollection/add")}
+                        />
+                        <h2 className="plant-count">Plant Count: {plantCount}</h2>
+                    </div>
+                    <SearchBar
+                        value={searchValue}
+                        onChange={handleChange}
+                        onSearch={handleSearch}
+                        placeholder="Search your leafy friends..."
+                        showButton={false}
+                    />
+                    <div className="loader">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </main>
         );
     }
 
