@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router";
 import { currentCollection } from "./data/currentCollection";
 import "./App.css";
@@ -11,7 +11,32 @@ import AddPlant from "./components/pages/AddPlant";
 import PlantDetails from "./components/pages/PlantDetails";
 
 function App() {
-    const [collection, setCollection] = useState(currentCollection);
+    const [collection, setCollection] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // Fake fetch: simulates loading data from an API with a delay.
+        // In Unit 2 this will be replaced with a real fetch to a backend.
+        function fetchCollection() {
+            return new Promise((resolve) => {
+                // To simulate loading.
+                setTimeout(() => resolve(currentCollection), 1000);
+            });
+        }
+
+        async function loadCollection() {
+            try {
+                const data = await fetchCollection();
+                setCollection(data);
+            } catch (error) {
+                console.error("Failed to load collection:", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        loadCollection();
+    }, []);
 
     function addPlantToCollection(plant) {
         const newCollectionId = Math.max(...collection.map((plant) => plant.collectionId)) + 1;
@@ -47,6 +72,7 @@ function App() {
                     element={
                         <CurrentCollection
                             collection={collection}
+                            loading={loading}
                             removePlantFromCollection={removePlantFromCollection}
                         />
                     }
