@@ -4,10 +4,11 @@ import { altFromFileName } from "../../utils/altFromFileName";
 import Button from "../layout/Button";
 import PageTitle from "../layout/PageTitle";
 import ProgressGallery from "../cards/ProgressGallery";
+import Loading from "../layout/Loading";
 
 // This page will need to be updated in Unit 2 with backend for saving the info.
 
-export default function PlantDetails({ collection }) {
+export default function PlantDetails({ collection, loading }) {
     const navigate = useNavigate();
     const { collectionId } = useParams();
     // pramas gives you a string so convert with Number
@@ -22,6 +23,7 @@ export default function PlantDetails({ collection }) {
 
     const [isEditing, setIsEditing] = useState(false);
 
+    if (loading) return <Loading />;
     if (!plant) return <p>Plant not found!</p>;
 
     function handleChange(event) {

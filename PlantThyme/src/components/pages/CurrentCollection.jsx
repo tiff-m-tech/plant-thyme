@@ -5,6 +5,7 @@ import CollectionCard from "../cards/CollectionCard";
 import Button from "../layout/Button";
 import PageTitle from "../layout/PageTitle";
 import SearchBar from "../layout/SearchBar";
+import Loading from "../layout/Loading";
 
 export default function CurrentCollection({ collection, loading, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.webp";
@@ -55,20 +56,7 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
                         placeholder="Search your leafy friends..."
                         showButton={false}
                     />
-                    <div className="loader">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
+                    <Loading />
                 </div>
             </main>
         );
