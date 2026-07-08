@@ -129,7 +129,18 @@ export const currentCollection = [
         purchaseStore: "Home Depot",
         cost: 12.99,
         notes: "Currently more than 10 feet long - going up the bathroom wall and across the ceiling now. 4 years old!",
-        progressPictures: [],
+        progressPictures: [
+            {
+                id: 1,
+                date: "7/12/2025",
+                picture: "progress1.png",
+            },
+            {
+                id: 2,
+                date: "1/6/2026",
+                picture: "progress2.png",
+            },
+        ],
     },
     {
         collectionId: 113,
