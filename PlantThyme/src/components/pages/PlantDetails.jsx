@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router";
 import { altFromFileName } from "../../utils/altFromFileName";
 import Button from "../layout/Button";
 import PageTitle from "../layout/PageTitle";
+import ProgressGallery from "../cards/ProgressGallery";
 
 // This page will need to be updated in Unit 2 with backend for saving the info.
 
@@ -83,6 +84,7 @@ export default function PlantDetails({ collection }) {
                 <Button innerText="Save" onClick={() => handleSave()} />
                 <Button innerText="Edit" onClick={() => setIsEditing(true)} />
             </form>
+            <ProgressGallery plant={plant} />
         </main>
     );
 }
