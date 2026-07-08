@@ -4,7 +4,7 @@ import Button from "../layout/Button";
 import PageTitle from "../layout/PageTitle";
 
 export default function Contact() {
-    const contactImagePath = "/images/brand/contact.png";
+    const contactImagePath = "/images/brand/contact.webp";
     const initialFormData = { name: "", email: "", message: "" };
     const [formData, setFormData] = useState(initialFormData);
 

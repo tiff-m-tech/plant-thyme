@@ -7,7 +7,7 @@ import PageTitle from "../layout/PageTitle";
 import SearchBar from "../layout/SearchBar";
 
 export default function CurrentCollection({ collection, loading, removePlantFromCollection }) {
-    const currentCollectionImagePath = "/images/brand/current-collection.png";
+    const currentCollectionImagePath = "/images/brand/current-collection.webp";
     // Use line below to test when you have no plants in the collection.
     // const plantCount = 0;
     const plantCount = collection.length;

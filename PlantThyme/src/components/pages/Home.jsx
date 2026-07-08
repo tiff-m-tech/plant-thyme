@@ -3,7 +3,7 @@ import { altFromFileName } from "../../utils/altFromFileName";
 import PageTitle from "../layout/PageTitle";
 
 export default function Home() {
-    const logoImagePath = "/images/brand/large-logo.png";
+    const logoImagePath = "/images/brand/large-logo.webp";
 
     return (
         <main id="home">
