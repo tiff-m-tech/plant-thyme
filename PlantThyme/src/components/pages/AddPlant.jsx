@@ -4,6 +4,7 @@ import plantDatabase from "../../data/plantDatabase.json";
 import Button from "../layout/Button";
 import SearchCard from "../cards/SearchCard";
 import PageTitle from "../layout/PageTitle";
+import SearchBar from "../layout/SearchBar";
 
 export default function AddPlant({ addPlantToCollection }) {
     const [searchValue, setSearchValue] = useState("");
@@ -30,14 +31,12 @@ export default function AddPlant({ addPlantToCollection }) {
             <div>
                 {/* To go back to last page using useNavigate pass -1 as argument to the navigate function, this tells the browser to move back one step in its history stack */}
                 <Button innerText="Back" onClick={() => navigate(-1)} />
-                <input
-                    type="search"
-                    name="search"
-                    placeholder="Type a plant name here..."
+                <SearchBar
                     value={searchValue}
                     onChange={handleChange}
+                    onSearch={handleSearch}
+                    placeholder="Find your next leafy friend..."
                 />
-                <Button innerText="Search" onClick={handleSearch} />
             </div>
             <div className="search-cards-container">
                 {filteredPlants.map((plant) => (

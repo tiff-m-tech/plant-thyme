@@ -188,6 +188,13 @@ footer {
     margin: 0 auto;
 }
 
+#currentCollection input {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
 .collection-page-btn-h1-row {
     display: flex;
     align-items: center;
