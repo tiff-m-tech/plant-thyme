@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-export default function SearchBar({ value, onChange, onSearch, placeholder }) {
+export default function SearchBar({ value, onChange, onSearch, placeholder, showButton = true }) {
     return (
         <div>
             <input
@@ -10,7 +10,7 @@ export default function SearchBar({ value, onChange, onSearch, placeholder }) {
                 value={value}
                 onChange={onChange}
             />
-            <Button innerText="Search" onClick={onSearch} />
+            {showButton && <Button innerText="Search" onClick={onSearch} />}
         </div>
     );
 }
