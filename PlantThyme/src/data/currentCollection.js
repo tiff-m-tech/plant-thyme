@@ -133,7 +133,7 @@ export const currentCollection = [
             {
                 id: 1,
                 date: "7/12/2025",
-                picture: "brasil-progress-picture-1png",
+                picture: "brasil-progress-picture-1.png",
             },
             {
                 id: 2,
