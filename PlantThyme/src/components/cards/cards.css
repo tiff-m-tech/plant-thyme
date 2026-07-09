@@ -4,23 +4,39 @@
     align-items: center;
     gap: 0.25rem;
     text-align: left;
-    border: 1px solid black;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    width: 350px;
+    padding: 0.75rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s;
+}
+
+.collection-card:hover {
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
 .collection-card-picture {
-    width: 100px;
+    width: 110px;
     border: 1px solid black;
     border-radius: 5px;
-    margin: 10px;
+}
+
+.collection-card-title {
+    margin: 0;
+    font-size: 1.1rem;
 }
 
 .collection-card-right-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0.5rem;
+    flex: 1;
+    padding: 0 0.75rem;
 }
 
 /* Search Card ----------------------------------------------------------------------------------------- */

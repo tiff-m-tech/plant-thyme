@@ -13,7 +13,7 @@ export default function CollectionCard({ collectionId, imgPath, name, removePlan
                 className="collection-card-picture"
             />
             <div className="collection-card-right-container">
-                <div>{name}</div>
+                <h3 className="collection-card-title">{name}</h3>
                 <Button
                     innerText="Remove Plant"
                     onClick={() => removePlantFromCollection(collectionId)}
