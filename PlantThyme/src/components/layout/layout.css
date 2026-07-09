@@ -1,0 +1,92 @@
+/* Header -------------------------------------------------------------------- */
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--brand-font);
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--light-green);
+    padding: 5px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-brand-name {
+    font-size: 1.75rem;
+}
+
+/* Navbar — mobile first ------------------------------------------------------ */
+.mini-logo {
+    width: 40px;
+    margin: 5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.hamburger:hover {
+    background: none;
+}
+
+.nav-links {
+    display: none;
+}
+
+.nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: var(--light-green);
+    padding: 1rem;
+    z-index: 10;
+}
+
+nav a {
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: var(--regular-font);
+}
+
+nav a:hover {
+    color: var(--dark-green);
+}
+
+nav a:active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Footer -------------------------------------------------------------------------------------------- */
+footer {
+    text-align: center;
+    background-color: var(--light-green);
+    padding: 1rem;
+}
+
+/* Media Queries ---------------------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+    nav a {
+        font-size: 1rem; /* tablet/desktop horizontal nav */
+    }
+}
