@@ -9,12 +9,12 @@ import Loading from "../layout/Loading";
 
 export default function CurrentCollection({ collection, loading, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.webp";
-    // Use line below to test when you have no plants in the collection.
+    // NOTE: Use line below to test when you have no plants in the collection.
     // const plantCount = 0;
     const plantCount = collection.length;
     const navigate = useNavigate();
     const [searchValue, setSearchValue] = useState("");
-    // filter the collection by search term or show all if no term
+    // Filter collection by search term or show all if no term.
     const displayedPlants = searchValue.trim()
         ? collection.filter((plant) =>
               plant.name.toLowerCase().includes(searchValue.toLowerCase().trim()),
@@ -116,7 +116,6 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
                         showButton={false}
                     />
                     {[...displayedPlants]
-                        // localeCompare compares a reference string with a target string and returns a negative, zero, or positive number to indicate their relative alphabetical sort order
                         .sort((a, b) => a.name.localeCompare(b.name))
                         .map((plant) => (
                             <CollectionCard
@@ -132,10 +131,3 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
         </main>
     );
 }
-// {plantCount === 0 ? (
-//     <p>You have no plants yet...</p>
-// ) : displayedPlants.length === 0 ? (
-//     <p>No plants match your search.</p>
-// ) : (
-//     <div>{/* the cards */}</div>
-// )}
