@@ -1,3 +1,8 @@
+/* NOTE: This is for when editing, uncomment to draw a red line on every element. */
+* {
+    outline: 1px solid red;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -8,20 +13,13 @@ html {
 }
 body {
     margin: 0;
-    min-height: 100vh;
     font-family: var(--regular-font);
 }
-
 #root {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
-
-main {
-    flex: 1;
-}
-
 :root {
     --dark-green: #51742e;
     --medium-green: #6f7d42;
@@ -30,6 +28,10 @@ main {
     --light-brown: #f2dec6;
     --brand-font: "Lobster Two", cursive;
     --regular-font: "Nunito Sans", sans-serif;
+}
+
+main {
+    flex: 1;
 }
 
 /* Common --------------------------------------------------------------------------------------------- */
@@ -80,9 +82,9 @@ h1 {
 .end-deco-image {
     width: 20px;
 }
-
-/* Header -------------------------------------------------------------------------------------------- */
+/* Header -------------------------------------------------------------------- */
 header {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -99,14 +101,43 @@ header {
 }
 
 .header-brand-name {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
 }
-/* Navbar -------------------------------------------------------------------------------------------- */
+
+/* Navbar — mobile first ------------------------------------------------------ */
 nav {
     display: flex;
-    align-items: right;
-    gap: 1.5rem;
-    margin-right: 5px;
+    align-items: center;
+}
+
+.hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.hamburger:hover {
+    background: none;
+}
+
+.nav-links {
+    display: none;
+}
+
+.nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: var(--light-green);
+    padding: 1rem;
+    z-index: 10;
 }
 
 nav a {
@@ -123,6 +154,12 @@ nav a:hover {
 nav a:active {
     font-weight: bold;
     text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    nav a {
+        font-size: 1rem; /* tablet/desktop horizontal nav */
+    }
 }
 
 /* Footer -------------------------------------------------------------------------------------------- */
