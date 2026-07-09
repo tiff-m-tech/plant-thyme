@@ -6,12 +6,12 @@ import PageTitle from "../layout/PageTitle";
 import ProgressGallery from "../cards/ProgressGallery";
 import Loading from "../layout/Loading";
 
-// This page will need to be updated in Unit 2 with backend for saving the info.
+// NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
 export default function PlantDetails({ collection, loading }) {
     const navigate = useNavigate();
     const { collectionId } = useParams();
-    // pramas gives you a string so convert with Number
+    // Pramas gives you a string so convert with Number.
     const plant = collection.find((plant) => plant.collectionId === Number(collectionId));
 
     const [detailsData, setDetailsData] = useState({
