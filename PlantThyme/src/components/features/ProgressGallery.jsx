@@ -1,6 +1,6 @@
 import { useState } from "react";
-import PageTitle from "../layout/PageTitle";
-import ProgressPictureCard from "./ProgressPictureCard";
+import PageTitle from "../ui/PageTitle";
+import ProgressPictureCard from "../cards/ProgressPictureCard";
 
 export default function ProgressGallery({ plant }) {
     const pictures = plant.progressPictures;

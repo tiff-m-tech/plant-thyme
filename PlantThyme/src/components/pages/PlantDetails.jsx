@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { altFromFileName } from "../../utils/altFromFileName";
-import Button from "../layout/Button";
-import PageTitle from "../layout/PageTitle";
-import ProgressGallery from "../cards/ProgressGallery";
-import Loading from "../layout/Loading";
+import Button from "../ui/Button";
+import PageTitle from "../ui/PageTitle";
+import ProgressGallery from "../features/ProgressGallery";
+import Loading from "../ui/Loading";
 
 // NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 

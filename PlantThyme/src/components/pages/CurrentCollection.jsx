@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { altFromFileName } from "../../utils/altFromFileName";
 import CollectionCard from "../cards/CollectionCard";
-import Button from "../layout/Button";
-import PageTitle from "../layout/PageTitle";
-import SearchBar from "../layout/SearchBar";
-import Loading from "../layout/Loading";
+import Button from "../ui/Button";
+import PageTitle from "../ui/PageTitle";
+import SearchBar from "../ui/SearchBar";
+import Loading from "../ui/Loading";
 
 export default function CurrentCollection({ collection, loading, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.webp";

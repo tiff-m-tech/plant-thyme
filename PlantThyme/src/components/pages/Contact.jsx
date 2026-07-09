@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { altFromFileName } from "../../utils/altFromFileName";
-import Button from "../layout/Button";
-import PageTitle from "../layout/PageTitle";
+import Button from "../ui/Button";
+import PageTitle from "../ui/PageTitle";
 
 export default function Contact() {
     const contactImagePath = "/images/brand/contact.webp";
