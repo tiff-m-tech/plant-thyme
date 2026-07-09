@@ -1,25 +1,34 @@
 /* NOTE: This is for when editing, uncomment to draw a red line on every element. */
-* {
+/* * {
     outline: 1px solid red;
-}
+} */
 
 html {
     box-sizing: border-box;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 *,
 *:before,
 *:after {
     box-sizing: inherit;
 }
+
 body {
     margin: 0;
     font-family: var(--regular-font);
 }
+
 #root {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
+
 :root {
     --dark-green: #51742e;
     --medium-green: #6f7d42;
