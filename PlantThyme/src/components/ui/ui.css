@@ -21,7 +21,7 @@ button {
     font-weight: bold;
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     background-color: var(--light-green);
     border: none;
     border-radius: 5px;

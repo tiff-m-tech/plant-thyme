@@ -4,7 +4,7 @@ main {
 }
 
 .large-page-image {
-    width: 200px;
+    width: 250px;
 }
 
 h2 {
@@ -28,7 +28,7 @@ h2 {
 
 /* Home Page -------------------------------------------------------------------------------------------- */
 .home-page-app-summary {
-    margin-bottom: 1rem;
+    margin: 0 1rem 1rem 1rem;
 }
 
 .home-page-feature-list-container {
@@ -44,10 +44,27 @@ h2 {
 }
 
 /* Contact Page -------------------------------------------------------------------------------------------- */
+.contact-page-summary {
+    margin: 0 1rem 1rem 1rem;
+}
+
+.contact-info-container {
+    text-align: left;
+}
+
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.address-label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
 #contact form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    width: 90%;
 }
 
 #contact form label {
@@ -59,9 +76,14 @@ h2 {
 #contact form textarea {
     width: 100%;
     padding: 0.5rem;
+    align-self: center;
     margin-bottom: 0.75rem;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+#contact form button {
+    align-self: center;
 }
 
 .red-font {

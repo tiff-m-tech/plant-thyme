@@ -33,24 +33,27 @@ export default function Contact() {
             />
             <PageTitle title="Contact" />
             <h2>Dont be a stranger, leaf me a message!</h2>
-            <div>
+            <div className="contact-page-summary">
                 Have a question, suggestion, or a leafy idea to share? Send it my way. I'd love to
                 hear from you!
             </div>
-            <div>
-                <strong>✉️ Email:</strong> support@plant_thyme.com
-            </div>
-            <div>
-                <strong>☎ Phone:</strong> 610-867-5309
-            </div>
-            <div>
-                <strong>🏠Address:</strong>
-                <br />
-                Plant Thyme
-                <br />
-                123 Greenhouse Lane
-                <br />
-                Sproutville, PA 19008
+            <div className="contact-info-container">
+                <div className="contact-info">
+                    <strong>Email:</strong> support@plant_thyme.com
+                </div>
+                <div className="contact-info">
+                    <strong>Phone:</strong> 610-867-5309
+                </div>
+                <div className="contact-info">
+                    <span className="address-label">
+                        <strong>Address:</strong>
+                    </span>
+                    Plant Thyme
+                    <br />
+                    123 Greenhouse Lane
+                    <br />
+                    Sproutville, PA 19008
+                </div>
             </div>
             <form onSubmit={handleSubmit}>
                 <h2>Drop Us a Note!</h2>
@@ -85,6 +88,7 @@ export default function Contact() {
                     id="message"
                     name="message"
                     placeholder="Your message here..."
+                    rows="4"
                     maxLength="500"
                     value={formData.message}
                     onChange={handleChange}
