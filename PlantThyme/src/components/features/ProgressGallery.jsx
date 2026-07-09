@@ -1,8 +1,6 @@
 import { useState } from "react";
-import PageTitle from "../layout/PageTitle";
-import ProgressPictureCard from "./ProgressPictureCard";
-
-// https://www.youtube.com/shorts/bTll3osO074 tutorial for image preview
+import PageTitle from "../ui/PageTitle";
+import ProgressPictureCard from "../cards/ProgressPictureCard";
 
 export default function ProgressGallery({ plant }) {
     const pictures = plant.progressPictures;
@@ -18,8 +16,8 @@ export default function ProgressGallery({ plant }) {
                     accept="image/*"
                     onChange={(event) => {
                         const file = event.target.files?.[0];
-                        // URL.createObjectURL creates a temporary in-browser URL (blob:...) for the
-                        // selected file so we can preview it immediately. This is temporary and does, real saving/upload comes in Unit 2.
+                        // URL.createObjectURL creates temporary in-browser URL (blob:...) for selected file so we can preview it immediately
+                        // NOTE: Change this in Unit 2 to save file.
                         setSelectedImage(file ? URL.createObjectURL(file) : undefined);
                     }}
                 />

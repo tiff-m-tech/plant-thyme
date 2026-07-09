@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { altFromFileName } from "../../utils/altFromFileName";
-import Button from "../layout/Button";
-import PageTitle from "../layout/PageTitle";
-import ProgressGallery from "../cards/ProgressGallery";
+import Button from "../ui/Button";
+import PageTitle from "../ui/PageTitle";
+import ProgressGallery from "../features/ProgressGallery";
+import Loading from "../ui/Loading";
 
-// This page will need to be updated in Unit 2 with backend for saving the info.
+// NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
-export default function PlantDetails({ collection }) {
+export default function PlantDetails({ collection, loading }) {
     const navigate = useNavigate();
     const { collectionId } = useParams();
-    // pramas gives you a string so convert with Number
+    // Pramas gives you a string so convert with Number.
     const plant = collection.find((plant) => plant.collectionId === Number(collectionId));
 
     const [detailsData, setDetailsData] = useState({
@@ -22,6 +23,7 @@ export default function PlantDetails({ collection }) {
 
     const [isEditing, setIsEditing] = useState(false);
 
+    if (loading) return <Loading />;
     if (!plant) return <p>Plant not found!</p>;
 
     function handleChange(event) {

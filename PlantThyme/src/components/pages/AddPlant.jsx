@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import plantDatabase from "../../data/plantDatabase.json";
-import Button from "../layout/Button";
+import Button from "../ui/Button";
 import SearchCard from "../cards/SearchCard";
-import PageTitle from "../layout/PageTitle";
-import SearchBar from "../layout/SearchBar";
+import PageTitle from "../ui/PageTitle";
+import SearchBar from "../ui/SearchBar";
 
 export default function AddPlant({ addPlantToCollection }) {
     const [searchValue, setSearchValue] = useState("");
@@ -29,7 +29,7 @@ export default function AddPlant({ addPlantToCollection }) {
         <main id="addPlant">
             <PageTitle title="Plant Search" />
             <div>
-                {/* To go back to last page using useNavigate pass -1 as argument to the navigate function, this tells the browser to move back one step in its history stack */}
+                {/* To go back to last page pass -1 as argument for navigate function, this tells browser to move back one step in its history stack */}
                 <Button innerText="Back" onClick={() => navigate(-1)} />
                 <SearchBar
                     value={searchValue}

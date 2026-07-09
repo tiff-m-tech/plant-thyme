@@ -15,8 +15,7 @@ function App() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Fake fetch: simulates loading data from an API with a delay.
-        // In Unit 2 this will be replaced with a real fetch to a backend.
+        // NOTE: Fake Fetch: Simulates loading data from an API with a delay. Replace in Unit 2!
         function fetchCollection() {
             return new Promise((resolve) => {
                 // To simulate loading.
@@ -54,10 +53,10 @@ function App() {
         setCollection([...collection, newEntry]);
     }
 
-    // originally used delete, but it removes the value at an index and leaves an empty hole behind
+    // Originally used built in JavaScript delete, but it removes the value at an index and leaves an empty hole behind. Meant for objects not arrays.
     function removePlantFromCollection(idToRemove) {
-        setCollection((currentCollection) =>
-            currentCollection.filter((plant) => plant.collectionId !== idToRemove),
+        setCollection((prevCollection) =>
+            prevCollection.filter((plant) => plant.collectionId !== idToRemove),
         );
     }
 
@@ -83,7 +82,7 @@ function App() {
                 />
                 <Route
                     path="/currentCollection/:collectionId"
-                    element={<PlantDetails collection={collection} />}
+                    element={<PlantDetails collection={collection} loading={loading} />}
                 />
             </Routes>
             <Footer />

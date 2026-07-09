@@ -1,6 +1,6 @@
 import { altFromFileName } from "../../utils/altFromFileName";
-import Button from "../layout/Button";
 import { useNavigate } from "react-router";
+import Button from "../ui/Button";
 
 export default function CollectionCard({ collectionId, imgPath, name, removePlantFromCollection }) {
     const navigate = useNavigate();

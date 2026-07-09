@@ -1,29 +1,25 @@
 import { useState } from "react";
 import { altFromFileName } from "../../utils/altFromFileName";
-import Button from "../layout/Button";
-import PageTitle from "../layout/PageTitle";
+import Button from "../ui/Button";
+import PageTitle from "../ui/PageTitle";
 
 export default function Contact() {
-    const contactImagePath = "/images/brand/contact.png";
+    const contactImagePath = "/images/brand/contact.webp";
     const initialFormData = { name: "", email: "", message: "" };
     const [formData, setFormData] = useState(initialFormData);
 
-    // event.target is the DOM element that fired the event, the actual input the user typed in
-    // { name, value } is destructuring
-    // using setFormData and passing a function, passes current state as prev, using spread operator copies every key/value pair from previous state object
-    // [name]: value uses square brackets = "computed property name"
-    // it evaluates the `name` variable and uses its value as the key
-    // ie if name is "email", this becomes email: value
-    // aka take everything from the old state and overwrite the one field that changed
+    // Copies the previous state (prev), then overwrites just the field that changed ([name]: value)
+    // [name] is a computed property name - it uses the input's name attribute as the key.
     function handleChange(event) {
         const { name, value } = event.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     }
 
     function handleSubmit(event) {
-        event.preventDefault(); // stops browser from reloading the page
+        event.preventDefault(); // Stops browser from reloading page.
 
-        console.log("Submitting", formData); // later change this to send values to backend
+        // NOTE: Later change this to send values to backend in Unit 2.
+        console.log("Submitting", formData);
 
         setFormData(initialFormData);
     }
