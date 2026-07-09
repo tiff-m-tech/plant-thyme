@@ -6,7 +6,7 @@ export default function CollectionCard({ collectionId, imgPath, name, removePlan
     const navigate = useNavigate();
 
     return (
-        <div className="collection-card-container">
+        <div className="collection-card">
             <img
                 src={`/images/plants/${imgPath}`}
                 alt={altFromFileName(imgPath)}

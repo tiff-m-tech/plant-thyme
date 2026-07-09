@@ -35,7 +35,11 @@ export default function Home() {
                     <p>Look back on progress photos over time.</p>
                 </div>
             </div>
-            <Button innerText="View My Collection" onClick={() => navigate("/currentCollection")} />
+            <Button
+                innerText="View My Collection"
+                onClick={() => navigate("/currentCollection")}
+                className="home-view-collection-btn"
+            />
         </main>
     );
 }
