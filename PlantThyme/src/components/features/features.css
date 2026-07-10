@@ -15,4 +15,23 @@
     width: 100%;
 }
 
+.file-upload-input {
+    display: none; /* hide the ugly default */
+}
+
+.file-upload-label {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 1.5rem 0;
+    background-color: var(--light-green);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.file-upload-label:hover {
+    background-color: var(--medium-green);
+}
 /* Media Queries ---------------------------------------------------------------------------------------- */
