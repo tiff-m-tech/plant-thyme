@@ -2,7 +2,7 @@ import { altFromFileName } from "../../utils/altFromFileName";
 import { useNavigate } from "react-router";
 import Button from "../ui/Button";
 
-export default function CollectionCard({ collectionId, imgPath, name, removePlantFromCollection }) {
+export default function CollectionCard({ collectionId, imgPath, name }) {
     const navigate = useNavigate();
 
     return (
@@ -14,10 +14,6 @@ export default function CollectionCard({ collectionId, imgPath, name, removePlan
             />
             <div className="collection-card-right-container">
                 <h3 className="collection-card-title">{name}</h3>
-                <Button
-                    innerText="Remove Plant"
-                    onClick={() => removePlantFromCollection(collectionId)}
-                />
                 <Button
                     innerText="See Plant Details"
                     onClick={() => navigate(`/currentCollection/${collectionId}`)}

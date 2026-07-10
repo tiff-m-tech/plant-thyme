@@ -8,7 +8,7 @@ import Loading from "../ui/Loading";
 
 // NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
-export default function PlantDetails({ collection, loading }) {
+export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
     const navigate = useNavigate();
     const { collectionId } = useParams();
     // Pramas gives you a string so convert with Number.
@@ -35,9 +35,16 @@ export default function PlantDetails({ collection, loading }) {
         setIsEditing(false);
     }
 
+    function handleRemove() {
+        if (window.confirm(`Remove ${plant.name} from your collection?`)) {
+            removePlantFromCollection(plant.collectionId);
+            navigate("/currentCollection");
+        }
+    }
+
     return (
         <main id="plantDetails">
-            <Button innerText="Back" onClick={() => navigate(-1)} />
+            <Button innerText="Back" onClick={() => navigate(-1)} className="back-btn" />
             <img
                 src={`/images/plants/${plant.image}`}
                 alt={altFromFileName(plant.image)}
@@ -78,15 +85,25 @@ export default function PlantDetails({ collection, loading }) {
                     id="notes"
                     name="notes"
                     placeholder="Your notes here..."
+                    rows="6"
                     maxLength="1000"
                     value={detailsData.notes}
                     disabled={!isEditing}
                     onChange={handleChange}
                 />
-                <Button innerText="Save" onClick={() => handleSave()} />
-                <Button innerText="Edit" onClick={() => setIsEditing(true)} />
+                {isEditing ? (
+                    <Button innerText="Save" onClick={() => handleSave()} />
+                ) : (
+                    <Button innerText="Edit" onClick={() => setIsEditing(true)} />
+                )}
             </form>
             <ProgressGallery plant={plant} />
+            <div className="section-divider">
+                <span className="divider-line"></span>
+                <img src="/images/brand/seperator.png" alt="" className="divider-ornament" />
+                <span className="divider-line"></span>
+            </div>
+            <Button innerText="Remove Plant" onClick={handleRemove} className="remove-btn" />
         </main>
     );
 }

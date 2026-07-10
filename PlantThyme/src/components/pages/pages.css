@@ -20,6 +20,7 @@ main {
     max-width: 1100px;
     margin: 0 auto;
     padding: 2rem 0;
+    width: 100%;
 }
 
 .home-page-app-summary,
@@ -136,7 +137,8 @@ main {
 
 /* Details Page ----------------------------------------------------------------------------------------- */
 .details-page-image {
-    width: 400px;
+    width: 300px;
+    margin-top: 1rem;
     border: 1px black solid;
     border-radius: 5px;
 }
@@ -144,7 +146,7 @@ main {
 #plantDetails form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    width: 90%;
 }
 
 #plantDetails form label {
@@ -154,11 +156,26 @@ main {
 
 #plantDetails form input,
 #plantDetails form textarea {
+    background-color: white;
     width: 100%;
     padding: 0.5rem;
+    align-self: center;
     margin-bottom: 0.75rem;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+#plantDetails form button {
+    margin-top: 1rem;
+    align-self: center;
+}
+
+.remove-btn {
+    background-color: #b85450;
+}
+
+.remove-btn:hover {
+    background-color: #9c4340;
 }
 
 /* Media Queries ---------------------------------------------------------------------------------------- */

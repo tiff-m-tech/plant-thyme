@@ -67,13 +67,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route
                     path="/currentCollection"
-                    element={
-                        <CurrentCollection
-                            collection={collection}
-                            loading={loading}
-                            removePlantFromCollection={removePlantFromCollection}
-                        />
-                    }
+                    element={<CurrentCollection collection={collection} loading={loading} />}
                 />
                 <Route
                     path="/currentCollection/add"
@@ -81,7 +75,13 @@ function App() {
                 />
                 <Route
                     path="/currentCollection/:collectionId"
-                    element={<PlantDetails collection={collection} loading={loading} />}
+                    element={
+                        <PlantDetails
+                            collection={collection}
+                            loading={loading}
+                            removePlantFromCollection={removePlantFromCollection}
+                        />
+                    }
                 />
             </Routes>
             <Footer />
