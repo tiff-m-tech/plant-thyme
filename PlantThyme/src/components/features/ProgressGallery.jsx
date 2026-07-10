@@ -27,7 +27,7 @@ export default function ProgressGallery({ plant }) {
                     }}
                 />
             </div>
-            <div className="progress-cards-container">
+            <div className="progress-pictures-cards-container">
                 {pictures.map((plant) => (
                     <ProgressPictureCard
                         key={plant.id}

@@ -59,11 +59,10 @@
 
 .progress-picture-date {
     font-weight: bold;
-    color: var(--dark-green);
 }
 
 .progress-picture {
-    width: 200px;
+    width: 150px;
     border-radius: 5px;
 }
 
