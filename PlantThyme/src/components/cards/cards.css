@@ -1,5 +1,6 @@
-/* Collection Card ------------------------------------------------------------------------------------- */
-.collection-card {
+/* Collection Card / Search Card ------------------------------------------------------------------------------------- */
+.collection-card,
+.search-card {
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -14,61 +15,33 @@
         transform 0.2s;
 }
 
-.collection-card:hover {
+.collection-card:hover,
+.search-card:hover {
     box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
 }
 
-.collection-card-picture {
+.collection-card-picture,
+.search-card-picture {
     width: 110px;
     border: 1px solid black;
     border-radius: 5px;
 }
 
-.collection-card-title {
+.collection-card-title,
+.search-card-title {
     margin: 0;
     font-size: 1.1rem;
 }
 
-.collection-card-right-container {
+.collection-card-right-container,
+.search-card-right-container {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 0.5rem;
     flex: 1;
     padding: 0 0.75rem;
-}
-
-/* Search Card ----------------------------------------------------------------------------------------- */
-.search-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    width: 100%;
-}
-
-.search-card-container {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    text-align: left;
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 350px;
-}
-
-.search-card-picture {
-    width: 100px;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 10px;
-}
-
-.search-card-right-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
 }
 
 /* Progress Card --------------------------------------------------------------------------------------- */

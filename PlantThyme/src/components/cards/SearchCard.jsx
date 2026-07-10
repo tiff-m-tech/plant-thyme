@@ -7,14 +7,14 @@ export default function SearchCard({ imgPath, name, plant, addPlantToCollection 
     const navigate = useNavigate();
 
     return (
-        <div className="search-card-container">
+        <div className="search-card">
             <img
                 src={`/images/plants/${imgPath}`}
                 alt={altFromFileName(imgPath)}
                 className="search-card-picture"
             />
             <div className="search-card-right-container">
-                <div>{name}</div>
+                <h3 className="search-card-title">{name}</h3>
                 <Button
                     innerText="Add Plant"
                     onClick={() => {
