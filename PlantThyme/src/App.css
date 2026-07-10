@@ -40,3 +40,22 @@ body {
     --brand-font: "Lobster Two", cursive;
     --regular-font: "Nunito Sans", sans-serif;
 }
+
+/* Scrollbar Chrome, Edge, Safari. Sorry FireFox another day I'll add code for you ------------------------------------ */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-green);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--medium-green);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-green);
+}
