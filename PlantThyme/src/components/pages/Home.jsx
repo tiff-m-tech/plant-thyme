@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { userName } from "../../data/constants";
+import { usePageTitle, userName } from "../../data/constants";
 import { altFromFileName } from "../../utils/altFromFileName";
 import PageTitle from "../ui/PageTitle";
 import Button from "../ui/Button";
@@ -7,6 +7,8 @@ import Button from "../ui/Button";
 export default function Home() {
     const logoImagePath = "/images/brand/large-logo.webp";
     const navigate = useNavigate();
+
+    usePageTitle("Home");
 
     return (
         <main id="home">

@@ -6,6 +6,7 @@ import PageTitle from "../ui/PageTitle";
 import ProgressGallery from "../features/ProgressGallery";
 import Loading from "../ui/Loading";
 import SectionDivider from "../ui/SectionDivider";
+import { usePageTitle } from "../../data/constants";
 
 // NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
@@ -42,6 +43,8 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
             navigate("/currentCollection");
         }
     }
+
+    usePageTitle("Plant Details");
 
     return (
         <main id="plantDetails">

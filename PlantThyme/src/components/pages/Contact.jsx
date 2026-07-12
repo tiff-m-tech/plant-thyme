@@ -3,6 +3,7 @@ import { altFromFileName } from "../../utils/altFromFileName";
 import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
 import SectionDivider from "../ui/SectionDivider";
+import { usePageTitle } from "../../data/constants";
 
 export default function Contact() {
     const contactImagePath = "/images/brand/contact.webp";
@@ -24,6 +25,8 @@ export default function Contact() {
 
         setFormData(initialFormData);
     }
+
+    usePageTitle("Contact");
 
     return (
         <main id="contact">
