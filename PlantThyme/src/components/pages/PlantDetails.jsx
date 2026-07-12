@@ -5,6 +5,7 @@ import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
 import ProgressGallery from "../features/ProgressGallery";
 import Loading from "../ui/Loading";
+import SectionDivider from "../ui/SectionDivider";
 
 // NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
@@ -97,12 +98,9 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
                     <Button innerText="Edit" onClick={() => setIsEditing(true)} />
                 )}
             </form>
+            <SectionDivider />
             <ProgressGallery plant={plant} />
-            <div className="section-divider">
-                <span className="divider-line"></span>
-                <img src="/images/brand/seperator.png" alt="" className="divider-ornament" />
-                <span className="divider-line"></span>
-            </div>
+            <SectionDivider />
             <Button innerText="Remove Plant" onClick={handleRemove} className="remove-btn" />
         </main>
     );
