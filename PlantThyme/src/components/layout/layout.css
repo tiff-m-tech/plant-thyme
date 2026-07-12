@@ -27,6 +27,7 @@ header {
 }
 
 nav {
+    padding-right: 5px;
     display: flex;
     align-items: center;
 }
@@ -64,6 +65,7 @@ nav {
 nav a {
     color: black;
     font-size: 1.5rem;
+    font-weight: bold;
     text-decoration: none;
     font-family: var(--regular-font);
 }
@@ -85,7 +87,20 @@ footer {
 }
 
 /* Media Queries ---------------------------------------------------------------------------------------- */
-@media (min-width: 768px) {
+@media (min-width: 600px) {
+    .hamburger {
+        display: none; /* hide hamburger on tablet+ */
+    }
+
+    .nav-links {
+        display: flex; /* show the links... */
+        flex-direction: row; /* ...horizontally */
+        gap: 1.5rem;
+        position: static; /* undo the mobile dropdown positioning */
+        width: auto;
+        padding: 0;
+        background: none;
+    }
     nav a {
         font-size: 1rem; /* tablet/desktop horizontal nav */
     }
