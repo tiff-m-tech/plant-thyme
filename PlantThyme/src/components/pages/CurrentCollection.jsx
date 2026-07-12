@@ -6,7 +6,7 @@ import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
 import SearchBar from "../ui/SearchBar";
 import Loading from "../ui/Loading";
-import { usePageTitle } from "../../data/constants";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 export default function CurrentCollection({ collection, loading, removePlantFromCollection }) {
     const currentCollectionImagePath = "/images/brand/current-collection.webp";

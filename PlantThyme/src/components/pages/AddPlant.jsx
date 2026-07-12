@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 import SearchCard from "../cards/SearchCard";
 import PageTitle from "../ui/PageTitle";
 import SearchBar from "../ui/SearchBar";
-import { usePageTitle } from "../../data/constants";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 export default function AddPlant({ addPlantToCollection }) {
     const [searchValue, setSearchValue] = useState("");

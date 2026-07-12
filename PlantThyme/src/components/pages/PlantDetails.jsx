@@ -6,7 +6,7 @@ import PageTitle from "../ui/PageTitle";
 import ProgressGallery from "../features/ProgressGallery";
 import Loading from "../ui/Loading";
 import SectionDivider from "../ui/SectionDivider";
-import { usePageTitle } from "../../data/constants";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 // NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
