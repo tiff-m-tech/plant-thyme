@@ -1,4 +1,3 @@
-/* Collection Card / Search Card ------------------------------------------------------------------------------------- */
 .collection-card,
 .search-card {
     display: flex;
@@ -19,7 +18,8 @@
 }
 
 .collection-card:hover,
-.search-card:hover {
+.search-card:hover,
+.progress-picture-card:hover {
     box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
 }
@@ -48,15 +48,19 @@
 }
 
 /* Progress Card --------------------------------------------------------------------------------------- */
-.progress-picture-container {
+.progress-picture-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid black;
+    border: 1px solid #bebebe;
     border-radius: 5px;
     padding: 0.75rem;
     background-color: var(--light-brown);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s;
 }
 
 .progress-picture-date {
