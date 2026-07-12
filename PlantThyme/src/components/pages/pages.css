@@ -27,6 +27,22 @@ main {
     margin: 1rem;
 }
 
+#contact form label,
+#plantDetails form label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.collection-cards-container,
+.search-cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 1rem;
+}
+
 /* Home Page -------------------------------------------------------------------------------------------- */
 #home {
     max-width: 700px;
@@ -71,11 +87,6 @@ main {
     margin-top: 1.5rem;
 }
 
-#contact form label {
-    font-weight: bold;
-    text-align: left;
-}
-
 #contact form input,
 #contact form textarea {
     width: 100%;
@@ -116,15 +127,6 @@ main {
     font-weight: bold;
 }
 
-.collection-cards-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 1rem;
-}
-
 /* Add Plant Page ------------------------------------------------------------------------------------------ */
 #addPlant input {
     display: flex;
@@ -132,15 +134,6 @@ main {
     margin-bottom: 0.75rem;
     border: 1px solid black;
     border-radius: 5px;
-}
-
-.search-cards-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 1rem;
 }
 
 /* Details Page ----------------------------------------------------------------------------------------- */
@@ -157,11 +150,6 @@ main {
     width: 90%;
     max-width: 500px;
     margin-bottom: 2rem;
-}
-
-#plantDetails form label {
-    font-weight: bold;
-    text-align: left;
 }
 
 #plantDetails form input,
