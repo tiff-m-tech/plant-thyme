@@ -2,6 +2,7 @@ import { useState } from "react";
 import { altFromFileName } from "../../utils/altFromFileName";
 import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
+import SectionDivider from "../ui/SectionDivider";
 
 export default function Contact() {
     const contactImagePath = "/images/brand/contact.webp";
@@ -55,6 +56,7 @@ export default function Contact() {
                     Sproutville, PA 19008
                 </div>
             </div>
+            <SectionDivider />
             <form onSubmit={handleSubmit}>
                 <h2>Drop Us a Note!</h2>
                 <label htmlFor="name">
