@@ -11,8 +11,7 @@ main {
 #contact,
 #currentCollection,
 #addPlant,
-#plantDetails,
-#progressGallery {
+#plantDetails {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,6 +146,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 90%;
+    margin-bottom: 2rem;
 }
 
 #plantDetails form label {
@@ -172,6 +172,7 @@ main {
 
 .remove-btn {
     background-color: #b85450;
+    margin-top: 2rem;
 }
 
 .remove-btn:hover {
