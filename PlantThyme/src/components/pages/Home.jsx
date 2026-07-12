@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router";
 import { altFromFileName } from "../../utils/altFromFileName";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import { userName } from "../../data/constants";
+import PageTitle from "../ui/PageTitle";
 import Button from "../ui/Button";
 
 export default function Home() {
