@@ -5,10 +5,11 @@ import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
 import ProgressGallery from "../features/ProgressGallery";
 import Loading from "../ui/Loading";
+import SectionDivider from "../ui/SectionDivider";
 
 // NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
-export default function PlantDetails({ collection, loading }) {
+export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
     const navigate = useNavigate();
     const { collectionId } = useParams();
     // Pramas gives you a string so convert with Number.
@@ -35,9 +36,16 @@ export default function PlantDetails({ collection, loading }) {
         setIsEditing(false);
     }
 
+    function handleRemove() {
+        if (window.confirm(`Remove ${plant.name} from your collection?`)) {
+            removePlantFromCollection(plant.collectionId);
+            navigate("/currentCollection");
+        }
+    }
+
     return (
         <main id="plantDetails">
-            <Button innerText="Back" onClick={() => navigate(-1)} />
+            <Button innerText="Back" onClick={() => navigate(-1)} className="back-btn" />
             <img
                 src={`/images/plants/${plant.image}`}
                 alt={altFromFileName(plant.image)}
@@ -78,15 +86,22 @@ export default function PlantDetails({ collection, loading }) {
                     id="notes"
                     name="notes"
                     placeholder="Your notes here..."
+                    rows="6"
                     maxLength="1000"
                     value={detailsData.notes}
                     disabled={!isEditing}
                     onChange={handleChange}
                 />
-                <Button innerText="Save" onClick={() => handleSave()} />
-                <Button innerText="Edit" onClick={() => setIsEditing(true)} />
+                {isEditing ? (
+                    <Button innerText="Save" onClick={() => handleSave()} />
+                ) : (
+                    <Button innerText="Edit" onClick={() => setIsEditing(true)} />
+                )}
             </form>
+            <SectionDivider />
             <ProgressGallery plant={plant} />
+            <SectionDivider />
+            <Button innerText="Remove Plant" onClick={handleRemove} className="remove-btn" />
         </main>
     );
 }

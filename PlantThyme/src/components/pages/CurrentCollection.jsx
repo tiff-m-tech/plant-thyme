@@ -41,14 +41,12 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
                     className="large-page-image"
                 />
                 <PageTitle title="My Leafy Collection" />
-                <div>
-                    <div className="collection-page-btn-h1-row">
-                        <Button
-                            innerText="Add Plant"
-                            onClick={() => navigate("/currentCollection/add")}
-                        />
-                        <h2 className="plant-count">Plant Count: {plantCount}</h2>
-                    </div>
+                <div className="collection-page-controls-container">
+                    <h2 className="plant-count">Plant Count: {plantCount}</h2>
+                    <Button
+                        innerText="Add Plant"
+                        onClick={() => navigate("/currentCollection/add")}
+                    />
                     <SearchBar
                         value={searchValue}
                         onChange={handleChange}
@@ -83,7 +81,7 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
                 </div>
             ) : displayedPlants.length === 0 ? (
                 <div>
-                    <div className="collection-page-btn-h1-row">
+                    <div className="collection-page-controls-container">
                         <Button
                             innerText="Add Plant"
                             onClick={() => navigate("/currentCollection/add")}
@@ -100,33 +98,36 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
                     <p>No plants match your search.</p>
                 </div>
             ) : (
-                <div className="collection-cards-container">
-                    <div className="collection-page-btn-h1-row">
+                <>
+                    <div className="collection-page-controls-container">
+                        <h2 className="plant-count">Plant Count: {plantCount}</h2>
                         <Button
                             innerText="Add Plant"
                             onClick={() => navigate("/currentCollection/add")}
                         />
-                        <h2 className="plant-count">Plant Count: {plantCount}</h2>
+
+                        <SearchBar
+                            value={searchValue}
+                            onChange={handleChange}
+                            onSearch={handleSearch}
+                            placeholder="Search your leafy friends..."
+                            showButton={false}
+                        />
                     </div>
-                    <SearchBar
-                        value={searchValue}
-                        onChange={handleChange}
-                        onSearch={handleSearch}
-                        placeholder="Search your leafy friends..."
-                        showButton={false}
-                    />
-                    {[...displayedPlants]
-                        .sort((a, b) => a.name.localeCompare(b.name))
-                        .map((plant) => (
-                            <CollectionCard
-                                key={plant.collectionId}
-                                collectionId={plant.collectionId}
-                                imgPath={plant.image}
-                                name={plant.name}
-                                removePlantFromCollection={removePlantFromCollection}
-                            />
-                        ))}
-                </div>
+                    <div className="collection-cards-container">
+                        {[...displayedPlants]
+                            .sort((a, b) => a.name.localeCompare(b.name))
+                            .map((plant) => (
+                                <CollectionCard
+                                    key={plant.collectionId}
+                                    collectionId={plant.collectionId}
+                                    imgPath={plant.image}
+                                    name={plant.name}
+                                    removePlantFromCollection={removePlantFromCollection}
+                                />
+                            ))}
+                    </div>
+                </>
             )}
         </main>
     );

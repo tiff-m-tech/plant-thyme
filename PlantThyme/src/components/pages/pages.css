@@ -1,0 +1,193 @@
+/* Pages Common ------------------------------------------------------------------------------------------------ */
+main {
+    flex: 1;
+}
+
+.large-page-image {
+    width: 250px;
+}
+
+#home,
+#contact,
+#currentCollection,
+#addPlant,
+#plantDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.home-page-app-summary,
+.contact-page-summary {
+    margin: 1rem;
+}
+
+/* Home Page -------------------------------------------------------------------------------------------- */
+.home-page-feature-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.home-page-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.home-view-collection-btn {
+    margin-top: 1rem;
+}
+/* Contact Page -------------------------------------------------------------------------------------------- */
+.contact-info-container {
+    text-align: left;
+}
+
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.address-label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+#contact form label {
+    font-weight: bold;
+    text-align: left;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    align-self: center;
+    margin-bottom: 0.75rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#contact form button {
+    align-self: center;
+}
+
+.contact-submit-btn {
+    margin-top: 1rem;
+}
+
+.red-font {
+    color: red;
+}
+
+/* Current Collection Page ---------------------------------------------------------------------------------- */
+#currentCollection input {
+    padding: 0.65rem;
+    margin-bottom: 0.75rem;
+}
+
+.collection-page-controls-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+}
+
+.plant-count {
+    font-weight: bold;
+}
+
+.collection-cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Add Plant Page ------------------------------------------------------------------------------------------ */
+#addPlant input {
+    display: flex;
+    padding: 0.65rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.search-cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Details Page ----------------------------------------------------------------------------------------- */
+.details-page-image {
+    width: 300px;
+    margin-top: 1rem;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+#plantDetails form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-bottom: 2rem;
+}
+
+#plantDetails form label {
+    font-weight: bold;
+    text-align: left;
+}
+
+#plantDetails form input,
+#plantDetails form textarea {
+    background-color: white;
+    width: 100%;
+    padding: 0.5rem;
+    align-self: center;
+    margin-bottom: 0.75rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#plantDetails form button {
+    margin-top: 1rem;
+    align-self: center;
+}
+
+.remove-btn {
+    background-color: #b85450;
+    margin-top: 2rem;
+}
+
+.remove-btn:hover {
+    background-color: #9c4340;
+}
+
+/* Media Queries ---------------------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+    .collection-cards-container {
+        grid-template-columns: repeat(2, 1fr); /* tablet: two */
+    }
+}
+
+@media (min-width: 1024px) {
+    .collection-cards-container {
+        grid-template-columns: repeat(3, 1fr); /* desktop: three */
+    }
+}

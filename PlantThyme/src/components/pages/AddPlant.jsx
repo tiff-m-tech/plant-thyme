@@ -27,10 +27,10 @@ export default function AddPlant({ addPlantToCollection }) {
 
     return (
         <main id="addPlant">
+            {/* To go back to last page pass -1 as argument for navigate function, this tells browser to move back one step in its history stack */}
+            <Button innerText="Back" onClick={() => navigate(-1)} className="back-btn" />
             <PageTitle title="Plant Search" />
             <div>
-                {/* To go back to last page pass -1 as argument for navigate function, this tells browser to move back one step in its history stack */}
-                <Button innerText="Back" onClick={() => navigate(-1)} />
                 <SearchBar
                     value={searchValue}
                     onChange={handleChange}

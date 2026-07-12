@@ -1,0 +1,69 @@
+/* Collection Card / Search Card ------------------------------------------------------------------------------------- */
+.collection-card,
+.search-card {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 1rem;
+    padding: 0.75rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s;
+}
+
+.collection-card:hover,
+.search-card:hover {
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.collection-card-picture,
+.search-card-picture {
+    width: 110px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.collection-card-title,
+.search-card-title {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.collection-card-right-container,
+.search-card-right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    flex: 1;
+    padding: 0 0.75rem;
+}
+
+/* Progress Card --------------------------------------------------------------------------------------- */
+.progress-picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.75rem;
+    background-color: var(--light-brown);
+}
+
+.progress-picture-date {
+    font-weight: bold;
+}
+
+.progress-picture {
+    width: 150px;
+    border-radius: 5px;
+}
+
+/* Media Queries ---------------------------------------------------------------------------------------- */
