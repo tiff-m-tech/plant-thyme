@@ -12,9 +12,14 @@ import { usePageTitle } from "../../hooks/usePageTitle";
 
 export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
     const navigate = useNavigate();
-    const { collectionId } = useParams();
     // Pramas gives you a string so convert with Number.
+    const { collectionId } = useParams();
+
+    // Must stay before state or page will be blank when refreshed due to setTimeOut()
+    if (loading) return <Loading />;
+
     const plant = collection.find((plant) => plant.collectionId === Number(collectionId));
+    if (!plant) return <p>Plant not found!</p>;
 
     const [detailsData, setDetailsData] = useState({
         purchaseDate: plant.purchaseDate,
@@ -22,11 +27,7 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
         cost: plant.cost,
         notes: plant.notes,
     });
-
     const [isEditing, setIsEditing] = useState(false);
-
-    if (loading) return <Loading />;
-    if (!plant) return <p>Plant not found!</p>;
 
     function handleChange(event) {
         const { name, value } = event.target;
