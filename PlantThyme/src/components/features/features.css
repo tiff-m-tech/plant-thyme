@@ -1,3 +1,47 @@
+/* Care Instructions ---------------------------------------------------------------------------------- */
+#careInstructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+    margin: 2rem 0;
+}
+
+.care-instructions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 1rem 1rem 1rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.care-instructions-container:hover {
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.care-instructions-title {
+    align-self: center;
+}
+
+.sun-icon {
+    color: #ffe100;
+}
+
+.water-icon {
+    color: blue;
+}
+
+.fertilize-icon {
+    color: green;
+}
+
 /* Progress Gallery ----------------------------------------------------------------------------------- */
 #progressGallery {
     display: flex;

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router";
 import { altFromFileName } from "../../utils/altFromFileName";
 import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
+import CareInstructions from "../features/CareInstructions";
 import ProgressGallery from "../features/ProgressGallery";
 import Loading from "../ui/Loading";
 import SectionDivider from "../ui/SectionDivider";
@@ -102,6 +103,8 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
                     <Button innerText="Edit" onClick={() => setIsEditing(true)} />
                 )}
             </form>
+            <SectionDivider />
+            <CareInstructions plant={plant} />
             <SectionDivider />
             <ProgressGallery plant={plant} />
             <SectionDivider />
