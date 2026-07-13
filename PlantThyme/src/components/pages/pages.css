@@ -45,7 +45,8 @@ main {
 }
 
 /* Log In Page ------------------------------------------------------------------------------------------ */
-#logIn form {
+#logIn form,
+.signup-container {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -61,6 +62,21 @@ main {
     margin-bottom: 0.75rem;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+.forgot-password {
+    color: #666;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+.forgot-password:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+.signup-container {
+    gap: 1.5rem;
 }
 
 /* Home Page -------------------------------------------------------------------------------------------- */
