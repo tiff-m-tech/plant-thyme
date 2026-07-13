@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router";
-import { useNavigate } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import { currentCollection } from "./data/currentCollection";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -15,7 +14,6 @@ function App() {
     const [collection, setCollection] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const navigate = useNavigate;
 
     useEffect(() => {
         // NOTE: Fake Fetch: Simulates loading data from an API with a delay. Replace in Unit 2!
@@ -65,9 +63,10 @@ function App() {
 
     return (
         <>
-            <Header isLoggedIn={isLoggedIn} />
+            <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             {isLoggedIn ? (
                 <Routes>
+                    <Route path="/" element={<Navigate to="/home" replace />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route
@@ -88,13 +87,11 @@ function App() {
                             />
                         }
                     />
+                    <Route path="*" element={<Navigate to="/home" replace />} />
                 </Routes>
             ) : (
                 <Routes>
-                    <Route
-                        path="/"
-                        element={<LogIn isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
-                    />
+                    <Route path="*" element={<LogIn setIsLoggedIn={setIsLoggedIn} />} />
                 </Routes>
             )}
 

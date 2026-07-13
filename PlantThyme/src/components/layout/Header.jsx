@@ -15,7 +15,7 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
                 </Link>
                 <span className="header-brand-name">Plant Thyme</span>
             </div>
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         </header>
     );
 }

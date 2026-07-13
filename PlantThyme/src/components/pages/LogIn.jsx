@@ -6,7 +6,7 @@ import Button from "../ui/Button";
 import { useNavigate } from "react-router";
 
 // NOTE: In Unit 2 redo this so it's not hardcoded.
-export default function LogIn({ isLoggedIn, setIsLoggedIn }) {
+export default function LogIn({ setIsLoggedIn }) {
     const navigate = useNavigate();
 
     function handleLogin() {
@@ -40,13 +40,13 @@ export default function LogIn({ isLoggedIn, setIsLoggedIn }) {
                     placeholder="🔒︎ Type Your Password"
                     required
                 />
-                <Button
-                    innerText="Login"
-                    type="button"
-                    className="contact-submit-btn"
-                    onClick={handleLogin}
-                />
+                <div className="forgot-password">Forgot Password?</div>
+                <Button innerText="Login" type="button" onClick={handleLogin} />
             </form>
+            <div className="signup-container">
+                <p>Don't have an account yet?</p>
+                <Button innerText="Sign Up" type="button" />
+            </div>
         </main>
     );
 }
