@@ -30,7 +30,7 @@ export default function NavBar() {
                 ☰
             </button>
             <div className={isOpen ? "nav-links open" : "nav-links"}>
-                <Link to="/" onClick={() => setIsOpen(false)}>
+                <Link to="/home" onClick={() => setIsOpen(false)}>
                     <FontAwesomeIcon icon={faHouse} />
                     Home
                 </Link>

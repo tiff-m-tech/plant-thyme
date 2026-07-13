@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <header>
             <div className="header-left">
-                <Link to="/">
+                <Link to="/home">
                     <img
                         href="index.html"
                         src="/images/brand/mini-logo.png"
