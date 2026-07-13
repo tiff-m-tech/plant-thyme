@@ -44,7 +44,7 @@
         "name": "Gold Dust Croton",
         "image": "gold-dust-croton.webp",
         "careInstructions": [
-            { "light": "bright indirect light with some gentle direct sun | 6 to 8 hours" },
+            { "light": "bright indirect light | 6 to 8 hours" },
             { "water": "when the top inch of soil is dry" },
             { "fertilize": "monthly in spring & summer" }
         ]
@@ -184,7 +184,7 @@
         "name": "Petra Croton",
         "image": "petra-croton.webp",
         "careInstructions": [
-            { "light": "bright indirect light with some gentle direct sun | 6 to 8 hours" },
+            { "light": "bright indirect light | 6 to 8 hours" },
             { "water": "when the top inch of soil is dry" },
             { "fertilize": "monthly in spring & summer" }
         ]
@@ -284,7 +284,7 @@
         "name": "String of Hearts",
         "image": "string-of-hearts.webp",
         "careInstructions": [
-            { "light": "bright indirect light with gentle direct sun | 6 to 8 hours" },
+            { "light": "bright indirect light | 6 to 8 hours" },
             { "water": "when most of the soil is dry" },
             { "fertilize": "monthly in spring & summer" }
         ]
@@ -294,7 +294,7 @@
         "name": "String of Pearls",
         "image": "string-of-pearls.webp",
         "careInstructions": [
-            { "light": "bright indirect light with gentle direct sun | 6 to 8 hours" },
+            { "light": "bright indirect light | 6 to 8 hours" },
             { "water": "when the soil is almost completely dry" },
             { "fertilize": "monthly in spring & summer" }
         ]

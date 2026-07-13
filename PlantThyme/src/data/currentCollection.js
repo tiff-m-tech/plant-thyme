@@ -118,7 +118,7 @@ export const currentCollection = [
         image: "gold-dust-croton.webp",
         careInstructions: [
             {
-                light: "bright indirect light with some gentle direct sun | 6 to 8 hours",
+                light: "bright indirect light | 6 to 8 hours",
             },
             { water: "when the top inch of soil is dry" },
             { fertilize: "monthly in spring & summer" },
@@ -136,7 +136,7 @@ export const currentCollection = [
         image: "petra-croton.webp",
         careInstructions: [
             {
-                light: "bright indirect light with some gentle direct sun | 6 to 8 hours",
+                light: "bright indirect light | 6 to 8 hours",
             },
             { water: "when the top inch of soil is dry" },
             { fertilize: "monthly in spring & summer" },
@@ -250,7 +250,7 @@ export const currentCollection = [
         image: "string-of-hearts.webp",
         careInstructions: [
             {
-                light: "bright indirect light with gentle direct sun | 6 to 8 hours",
+                light: "bright indirect light | 6 to 8 hours",
             },
             { water: "when most of the soil is dry" },
             { fertilize: "monthly in spring & summer" },
