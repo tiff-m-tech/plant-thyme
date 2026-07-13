@@ -1,11 +1,13 @@
 import { Link } from "react-router";
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faHouse, faLeaf } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faHouse, faLeaf, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
-export default function NavBar() {
+export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
     const [isOpen, setIsOpen] = useState(false);
     const navRef = useRef(null); // Reference to actual DOM nav
+    const navigate = useNavigate();
 
     useEffect(() => {
         function handleClickOutside(event) {
@@ -19,30 +21,47 @@ export default function NavBar() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
+    function handleLogout() {
+        setIsLoggedIn(false);
+        navigate("/");
+    }
+
     return (
-        <nav ref={navRef}>
-            <button
-                className="hamburger"
-                // !isOpen = opposite of whatever it currently is
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label="Toggle Menu"
-            >
-                ☰
-            </button>
-            <div className={isOpen ? "nav-links open" : "nav-links"}>
-                <Link to="/" onClick={() => setIsOpen(false)}>
-                    <FontAwesomeIcon icon={faHouse} />
-                    Home
-                </Link>
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
-                    <FontAwesomeIcon icon={faPhone} />
-                    Contact
-                </Link>
-                <Link to="/currentCollection" onClick={() => setIsOpen(false)}>
-                    <FontAwesomeIcon icon={faLeaf} />
-                    My Leafy Collection
-                </Link>
-            </div>
-        </nav>
+        <>
+            {isLoggedIn ? (
+                <nav ref={navRef}>
+                    <button
+                        className="hamburger"
+                        // !isOpen = opposite of whatever it currently is
+                        onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle Menu"
+                    >
+                        ☰
+                    </button>
+                    <div className={isOpen ? "nav-links open" : "nav-links"}>
+                        <Link to="/home" onClick={() => setIsOpen(false)}>
+                            <FontAwesomeIcon icon={faHouse} /> Home
+                        </Link>
+                        <Link to="/contact" onClick={() => setIsOpen(false)}>
+                            <FontAwesomeIcon icon={faPhone} /> Contact
+                        </Link>
+                        <Link to="/currentCollection" onClick={() => setIsOpen(false)}>
+                            <FontAwesomeIcon icon={faLeaf} /> My Leafy Collection
+                        </Link>
+                        <Link
+                            to="/"
+                            onClick={() => {
+                                setIsOpen(false);
+                                handleLogout();
+                            }}
+                        >
+                            <FontAwesomeIcon icon={faRightFromBracket} /> Log Out
+                        </Link>
+                    </div>
+                </nav>
+            ) : (
+                <></>
+            )}
+        </>
     );
 }

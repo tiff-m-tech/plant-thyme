@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import { currentCollection } from "./data/currentCollection";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -8,10 +8,12 @@ import Contact from "./components/pages/Contact";
 import CurrentCollection from "./components/pages/CurrentCollection";
 import AddPlant from "./components/pages/AddPlant";
 import PlantDetails from "./components/pages/PlantDetails";
+import LogIn from "./components/pages/LogIn";
 
 function App() {
     const [collection, setCollection] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
         // NOTE: Fake Fetch: Simulates loading data from an API with a delay. Replace in Unit 2!
@@ -61,29 +63,38 @@ function App() {
 
     return (
         <>
-            <Header />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route
-                    path="/currentCollection"
-                    element={<CurrentCollection collection={collection} loading={loading} />}
-                />
-                <Route
-                    path="/currentCollection/add"
-                    element={<AddPlant addPlantToCollection={addPlantToCollection} />}
-                />
-                <Route
-                    path="/currentCollection/:collectionId"
-                    element={
-                        <PlantDetails
-                            collection={collection}
-                            loading={loading}
-                            removePlantFromCollection={removePlantFromCollection}
-                        />
-                    }
-                />
-            </Routes>
+            <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+            {isLoggedIn ? (
+                <Routes>
+                    <Route path="/" element={<Navigate to="/home" replace />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route
+                        path="/currentCollection"
+                        element={<CurrentCollection collection={collection} loading={loading} />}
+                    />
+                    <Route
+                        path="/currentCollection/add"
+                        element={<AddPlant addPlantToCollection={addPlantToCollection} />}
+                    />
+                    <Route
+                        path="/currentCollection/:collectionId"
+                        element={
+                            <PlantDetails
+                                collection={collection}
+                                loading={loading}
+                                removePlantFromCollection={removePlantFromCollection}
+                            />
+                        }
+                    />
+                    <Route path="*" element={<Navigate to="/home" replace />} />
+                </Routes>
+            ) : (
+                <Routes>
+                    <Route path="*" element={<LogIn setIsLoggedIn={setIsLoggedIn} />} />
+                </Routes>
+            )}
+
             <Footer />
         </>
     );

@@ -1,11 +1,11 @@
 import NavBar from "./NavBar";
 import { Link } from "react-router";
 
-export default function Header() {
+export default function Header({ isLoggedIn, setIsLoggedIn }) {
     return (
         <header>
             <div className="header-left">
-                <Link to="/">
+                <Link to="/home">
                     <img
                         href="index.html"
                         src="/images/brand/mini-logo.png"
@@ -15,7 +15,7 @@ export default function Header() {
                 </Link>
                 <span className="header-brand-name">Plant Thyme</span>
             </div>
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         </header>
     );
 }
