@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { altFromFileName } from "../../utils/altFromFileName";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhone, faHouse, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
 import SectionDivider from "../ui/SectionDivider";
@@ -43,13 +45,16 @@ export default function Contact() {
             </div>
             <div className="contact-info-container">
                 <div className="contact-info">
+                    <FontAwesomeIcon icon={faEnvelope} />
                     <strong>Email:</strong> support@plant_thyme.com
                 </div>
                 <div className="contact-info">
+                    <FontAwesomeIcon icon={faPhone} />
                     <strong>Phone:</strong> 610-867-5309
                 </div>
                 <div className="contact-info">
                     <span className="address-label">
+                        <FontAwesomeIcon icon={faHouse} />
                         <strong>Address:</strong>
                     </span>
                     Plant Thyme
@@ -61,7 +66,9 @@ export default function Contact() {
             </div>
             <SectionDivider />
             <form onSubmit={handleSubmit}>
-                <h2>Drop Us a Note!</h2>
+                <h2>
+                    <FontAwesomeIcon icon={faPenToSquare} /> Drop Us a Note!
+                </h2>
                 <label htmlFor="name">
                     Name <span className="red-font">*</span>
                 </label>

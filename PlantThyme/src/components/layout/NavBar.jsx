@@ -1,5 +1,7 @@
 import { Link } from "react-router";
 import { useState, useEffect, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone, faHouse, faLeaf } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,12 +31,15 @@ export default function NavBar() {
             </button>
             <div className={isOpen ? "nav-links open" : "nav-links"}>
                 <Link to="/" onClick={() => setIsOpen(false)}>
+                    <FontAwesomeIcon icon={faHouse} />
                     Home
                 </Link>
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
+                    <FontAwesomeIcon icon={faPhone} />
                     Contact
                 </Link>
                 <Link to="/currentCollection" onClick={() => setIsOpen(false)}>
+                    <FontAwesomeIcon icon={faLeaf} />
                     My Leafy Collection
                 </Link>
             </div>
