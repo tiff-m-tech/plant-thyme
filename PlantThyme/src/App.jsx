@@ -13,14 +13,16 @@ import LogIn from "./components/pages/LogIn";
 function App() {
     const [collection, setCollection] = useState([]);
     const [loading, setLoading] = useState(true);
+    // Set original state back to false when done testing.
     const [isLoggedIn, setIsLoggedIn] = useState(true);
 
     useEffect(() => {
         // NOTE: Fake Fetch: Simulates loading data from an API with a delay. Replace in Unit 2!
+        // Change setTimeout back to 1000 when done testing.
         function fetchCollection() {
             return new Promise((resolve) => {
                 // To simulate loading.
-                setTimeout(() => resolve(currentCollection), 1000);
+                setTimeout(() => resolve(currentCollection), 0);
             });
         }
 
