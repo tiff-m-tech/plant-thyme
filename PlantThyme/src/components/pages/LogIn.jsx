@@ -1,35 +1,51 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import PageTitle from "../ui/PageTitle";
 import Button from "../ui/Button";
+import { useNavigate } from "react-router";
 
-export default function LogIn() {
+// NOTE: In Unit 2 redo this so it's not hardcoded.
+export default function LogIn({ isLoggedIn, setIsLoggedIn }) {
+    const navigate = useNavigate();
+
+    function handleLogin() {
+        setIsLoggedIn(true);
+        navigate("/home");
+    }
+
     usePageTitle("Log In");
 
     return (
         <main id="logIn">
             <PageTitle title="Log In" />
             <form>
-                <label htmlFor="userName">
-                    UserName <span className="red-font">*</span>
+                <label htmlFor="username">
+                    Username <span className="red-font">*</span>
                 </label>
                 <input
-                    id="userName"
+                    id="username"
                     type="text"
-                    userName="userName"
-                    placeholder="Type Your Username"
+                    name="username"
+                    placeholder="♙ Type Your username"
                     required
                 />
                 <label htmlFor="password">
-                    Email <span className="red-font">*</span>
+                    Password <span className="red-font">*</span>
                 </label>
                 <input
                     id="password"
                     type="password"
                     name="password"
-                    placeholder="Type Your Password"
+                    placeholder="🔒︎ Type Your Password"
                     required
                 />
-                <Button innerText="Login" type="submit" className="contact-submit-btn" />
+                <Button
+                    innerText="Login"
+                    type="button"
+                    className="contact-submit-btn"
+                    onClick={handleLogin}
+                />
             </form>
         </main>
     );

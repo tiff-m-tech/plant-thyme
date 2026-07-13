@@ -1,7 +1,7 @@
 import NavBar from "./NavBar";
 import { Link } from "react-router";
 
-export default function Header() {
+export default function Header({ isLoggedIn, setIsLoggedIn }) {
     return (
         <header>
             <div className="header-left">
