@@ -47,6 +47,18 @@
     padding: 0 0.75rem;
 }
 
+.care-info-container {
+    display: none;
+}
+
+.care-info-div {
+    margin: 0.25rem 0;
+}
+
+.care-info-title {
+    font-size: 1.1rem;
+}
+
 /* Progress Card --------------------------------------------------------------------------------------- */
 .progress-picture-card {
     display: flex;
@@ -73,3 +85,17 @@
 }
 
 /* Media Queries ---------------------------------------------------------------------------------------- */
+/* Desktop */
+@media (min-width: 1500px) {
+    .collection-card {
+        min-width: 650px;
+    }
+
+    .collection-card-picture {
+        width: 200px;
+    }
+
+    .care-info-container {
+        display: block;
+    }
+}
