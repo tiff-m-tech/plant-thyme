@@ -1,11 +1,11 @@
 import { altFromFileName } from "../../utils/altFromFileName";
 
-export default function PageTitle({ title }) {
+export default function PageTitle({ title, className = "" }) {
     const leftDecoImagePath = "/images/brand/left-deco-leaf.png";
     const rightDecoImagePath = "/images/brand/right-deco-leaf.png";
 
     return (
-        <div className="page-title-row">
+        <div className={`page-title-row ${className}`}>
             <img
                 src={leftDecoImagePath}
                 alt={altFromFileName(leftDecoImagePath)}

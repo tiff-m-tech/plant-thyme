@@ -225,8 +225,11 @@ main {
 }
 
 /* Desktop */
-@media (min-width: 1024px) {
-    .collection-cards-container,
+@media (min-width: 1500px) {
+    .collection-cards-container {
+        max-width: 100%;
+    }
+
     .search-cards-container {
         grid-template-columns: repeat(3, 1fr); /* desktop: three */
     }

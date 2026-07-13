@@ -126,6 +126,9 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
                                     collectionId={plant.collectionId}
                                     imgPath={plant.image}
                                     name={plant.name}
+                                    light={plant.careInstructions[0].light}
+                                    water={plant.careInstructions[1].water}
+                                    fertilize={plant.careInstructions[2].fertilize}
                                     removePlantFromCollection={removePlantFromCollection}
                                 />
                             ))}

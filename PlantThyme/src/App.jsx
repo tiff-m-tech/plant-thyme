@@ -13,7 +13,7 @@ import LogIn from "./components/pages/LogIn";
 function App() {
     const [collection, setCollection] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
 
     useEffect(() => {
         // NOTE: Fake Fetch: Simulates loading data from an API with a delay. Replace in Unit 2!
