@@ -22,7 +22,7 @@ function App() {
         function fetchCollection() {
             return new Promise((resolve) => {
                 // To simulate loading.
-                setTimeout(() => resolve(currentCollection), 0);
+                setTimeout(() => resolve(currentCollection), 3000);
             });
         }
 

@@ -7,7 +7,7 @@ import SearchBar from "../ui/SearchBar";
 import Loading from "../ui/Loading";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
-export default function CurrentCollection({ collection, loading, removePlantFromCollection }) {
+export default function CurrentCollection({ collection, loading }) {
     const currentCollectionImagePath = "/images/brand/current-collection.webp";
     // NOTE: Use line below to test when you have no plants in the collection.
     // TODO: delete this! const plantCount = 0;
@@ -99,7 +99,6 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
                                         light={plant.careInstructions[0].light}
                                         water={plant.careInstructions[1].water}
                                         fertilize={plant.careInstructions[2].fertilize}
-                                        removePlantFromCollection={removePlantFromCollection}
                                     />
                                 ))}
                         </div>
