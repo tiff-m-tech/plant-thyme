@@ -60,6 +60,11 @@ export default function LogIn({ setIsLoggedIn }) {
                 {error && <p className="red-font">{error}</p>}
                 <Button innerText="Login" type="submit" />
             </form>
+            <div className="mock-credentials">
+                <strong>Demo login</strong>
+                <p>Username: tiffany</p>
+                <p>Password: 123</p>
+            </div>
         </main>
     );
 }
