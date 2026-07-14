@@ -53,7 +53,11 @@ function App() {
             cost: "",
             notes: "",
             progressPictures: [],
-            careInstructions: [{ light: "" }, { water: "" }, { fertilize: "" }],
+            careInstructions: [
+                { light: plant.careInstructions[0].light },
+                { water: plant.careInstructions[1].water },
+                { fertilize: plant.careInstructions[2].fertilize },
+            ],
         };
         setCollection((prev) => [...prev, newEntry]);
     }
