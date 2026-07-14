@@ -28,41 +28,36 @@ export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
     }
 
     return (
-        <>
-            {isLoggedIn ? (
-                <nav ref={navRef}>
-                    <button
-                        className="hamburger"
-                        // !isOpen = opposite of whatever it currently is
-                        onClick={() => setIsOpen(!isOpen)}
-                        aria-label="Toggle Menu"
+        isLoggedIn && (
+            <nav ref={navRef}>
+                <button
+                    className="hamburger"
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle Menu"
+                >
+                    ☰
+                </button>
+                <div className={isOpen ? "nav-links open" : "nav-links"}>
+                    <Link to="/home" onClick={() => setIsOpen(false)}>
+                        <FontAwesomeIcon icon={faHouse} /> Home
+                    </Link>
+                    <Link to="/contact" onClick={() => setIsOpen(false)}>
+                        <FontAwesomeIcon icon={faPhone} /> Contact
+                    </Link>
+                    <Link to="/currentCollection" onClick={() => setIsOpen(false)}>
+                        <FontAwesomeIcon icon={faLeaf} /> My Leafy Collection
+                    </Link>
+                    <Link
+                        to="/"
+                        onClick={() => {
+                            setIsOpen(false);
+                            handleLogout();
+                        }}
                     >
-                        ☰
-                    </button>
-                    <div className={isOpen ? "nav-links open" : "nav-links"}>
-                        <Link to="/home" onClick={() => setIsOpen(false)}>
-                            <FontAwesomeIcon icon={faHouse} /> Home
-                        </Link>
-                        <Link to="/contact" onClick={() => setIsOpen(false)}>
-                            <FontAwesomeIcon icon={faPhone} /> Contact
-                        </Link>
-                        <Link to="/currentCollection" onClick={() => setIsOpen(false)}>
-                            <FontAwesomeIcon icon={faLeaf} /> My Leafy Collection
-                        </Link>
-                        <Link
-                            to="/"
-                            onClick={() => {
-                                setIsOpen(false);
-                                handleLogout();
-                            }}
-                        >
-                            <FontAwesomeIcon icon={faRightFromBracket} /> Log Out
-                        </Link>
-                    </div>
-                </nav>
-            ) : (
-                <></>
-            )}
-        </>
+                        <FontAwesomeIcon icon={faRightFromBracket} /> Log Out
+                    </Link>
+                </div>
+            </nav>
+        )
     );
 }
