@@ -224,6 +224,16 @@ main {
     background-color: #c84f4b;
 }
 
+.not-found-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+    gap: 1rem;
+}
+
 /* Media Queries ---------------------------------------------------------------------------------------- */
 /* base = mobile (iPhone SE ~375px and up), no query */
 

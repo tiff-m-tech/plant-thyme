@@ -12,6 +12,7 @@ import { usePageTitle } from "../../hooks/usePageTitle";
 // NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
 export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
+    const navigate = useNavigate();
     const { collectionId } = useParams();
 
     // Must stay before state or page will be blank when refreshed due to setTimeOut()
@@ -19,7 +20,18 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
 
     // Params gives you a string so convert with Number.
     const plant = collection.find((plant) => plant.collectionId === Number(collectionId));
-    if (!plant) return <p>Plant not found!</p>;
+    if (!plant) {
+        return (
+            <main className="not-found-page">
+                <h1>Plant not found!</h1>
+                <p>The plant you are looking for is not in your collection.</p>
+                <Button
+                    innerText="Back to Collection"
+                    onClick={() => navigate("/currentCollection")}
+                />
+            </main>
+        );
+    }
 
     return (
         <PlantDetailsContent plant={plant} removePlantFromCollection={removePlantFromCollection} />

@@ -23,6 +23,7 @@ body {
     padding: 0;
     font-family: var(--regular-font);
     background-color: #f2ede6;
+    min-height: 100%;
 }
 
 #root {
