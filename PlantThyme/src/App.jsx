@@ -6,7 +6,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
 import Contact from "./components/pages/Contact";
 import CurrentCollection from "./components/pages/CurrentCollection";
-import AddPlant from "./components/pages/AddPlant";
+import AddPlant from "./components/pages/PlantSearch";
 import PlantDetails from "./components/pages/PlantDetails";
 import LogIn from "./components/pages/LogIn";
 
