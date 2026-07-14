@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import { altFromFileName } from "../../utils/altFromFileName";
+import { logoImagePath } from "../../data/constants";
 import PageTitle from "../ui/PageTitle";
 import Button from "../ui/Button";
 import { useNavigate } from "react-router";
@@ -31,6 +33,11 @@ export default function LogIn({ setIsLoggedIn }) {
 
     return (
         <main id="logIn">
+            <img
+                src={logoImagePath}
+                alt={altFromFileName(logoImagePath)}
+                className="large-page-image"
+            />
             <PageTitle title="Log In" />
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">
