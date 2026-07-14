@@ -40,7 +40,6 @@ export default function LogIn({ setIsLoggedIn }) {
                     placeholder="🔒︎ Type Your Password"
                     required
                 />
-                <div className="forgot-password">Forgot Password?</div>
                 <Button innerText="Login" type="button" onClick={handleLogin} />
             </form>
             <div className="signup-container">
