@@ -26,7 +26,7 @@ export default function AddPlant({ addPlantToCollection }) {
         setHasSearched(true);
     }
 
-    usePageTitle("Add a Plant");
+    usePageTitle("Plant Search");
 
     return (
         <main id="addPlant">
