@@ -6,7 +6,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
 import Contact from "./components/pages/Contact";
 import CurrentCollection from "./components/pages/CurrentCollection";
-import AddPlant from "./components/pages/AddPlant";
+import AddPlant from "./components/pages/PlantSearch";
 import PlantDetails from "./components/pages/PlantDetails";
 import LogIn from "./components/pages/LogIn";
 import NotFound from "./components/pages/NotFound";
@@ -14,14 +14,16 @@ import NotFound from "./components/pages/NotFound";
 function App() {
     const [collection, setCollection] = useState([]);
     const [loading, setLoading] = useState(true);
+    // TODO: Set original state back to false when done testing.
     const [isLoggedIn, setIsLoggedIn] = useState(true);
 
     useEffect(() => {
         // NOTE: Fake Fetch: Simulates loading data from an API with a delay. Replace in Unit 2!
+        // TODO: Change setTimeout back to 1000 when done testing.
         function fetchCollection() {
             return new Promise((resolve) => {
                 // To simulate loading.
-                setTimeout(() => resolve(currentCollection), 1000);
+                setTimeout(() => resolve(currentCollection), 3000);
             });
         }
 
@@ -40,7 +42,8 @@ function App() {
     }, []);
 
     function addPlantToCollection(plant) {
-        const newCollectionId = Math.max(...collection.map((plant) => plant.collectionId)) + 1;
+        const newCollectionId =
+            collection.length > 0 ? Math.max(...collection.map((p) => p.collectionId)) + 1 : 1;
         const newEntry = {
             collectionId: newCollectionId,
             plantId: plant.id,
@@ -48,11 +51,16 @@ function App() {
             image: plant.image,
             purchaseDate: "",
             purchaseStore: "",
-            cost: null,
+            cost: "",
             notes: "",
             progressPictures: [],
+            careInstructions: [
+                { light: plant.careInstructions[0].light },
+                { water: plant.careInstructions[1].water },
+                { fertilize: plant.careInstructions[2].fertilize },
+            ],
         };
-        setCollection([...collection, newEntry]);
+        setCollection((prev) => [...prev, newEntry]);
     }
 
     // Originally used built in JavaScript delete, but it removes the value at an index and leaves an empty hole behind. Meant for objects not arrays.

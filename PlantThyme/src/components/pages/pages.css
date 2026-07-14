@@ -65,19 +65,25 @@ main {
     border-radius: 5px;
 }
 
-.forgot-password {
-    color: #666;
-    font-size: 0.9rem;
-    margin-left: auto;
+.mock-credentials {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f4f4f2; /* light neutral, or a pale green to match your theme */
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    max-width: 500px;
+    width: 90%;
+    text-align: left;
 }
 
-.forgot-password:hover {
-    color: #333;
-    text-decoration: underline;
+.mock-credentials strong {
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
-.signup-container {
-    gap: 1.5rem;
+.mock-credentials p {
+    margin: 0.25rem 0;
+    font-family: monospace;
 }
 
 /* Home Page -------------------------------------------------------------------------------------------- */
@@ -146,6 +152,11 @@ main {
     color: red;
 }
 
+.confirmation-form-submitted {
+    color: green;
+    margin-top: 1rem;
+}
+
 /* Current Collection Page ---------------------------------------------------------------------------------- */
 #currentCollection input {
     padding: 0.65rem;
@@ -206,12 +217,22 @@ main {
 }
 
 .remove-btn {
-    background-color: #b85450;
+    background-color: #da5955;
     margin-top: 2rem;
 }
 
 .remove-btn:hover {
-    background-color: #9c4340;
+    background-color: #c84f4b;
+}
+
+.not-found-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+    gap: 1rem;
 }
 
 /* Not Found Page --------------------------------------------------------------------------------------- */
