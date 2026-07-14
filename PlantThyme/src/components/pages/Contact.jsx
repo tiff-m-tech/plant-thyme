@@ -11,6 +11,7 @@ export default function Contact() {
     const contactImagePath = "/images/brand/contact.webp";
     const initialFormData = { name: "", email: "", message: "" };
     const [formData, setFormData] = useState(initialFormData);
+    const [submitted, setSubmitted] = useState(false);
 
     // Copies the previous state (prev), then overwrites just the field that changed ([name]: value)
     // [name] is a computed property name - it uses the input's name attribute as the key.
@@ -22,21 +23,15 @@ export default function Contact() {
     function handleSubmit(event) {
         event.preventDefault(); // Stops browser from reloading page.
 
-        // NOTE: Later change this to send values to backend in Unit 2.
-        console.log("Submitting", formData);
-
         setFormData(initialFormData);
+        setSubmitted(true);
     }
 
     usePageTitle("Contact");
 
     return (
         <main id="contact">
-            <img
-                src={contactImagePath}
-                alt={altFromFileName(contactImagePath)}
-                className="large-page-image"
-            />
+            <img src={contactImagePath} alt="" className="large-page-image" />
             <PageTitle title="Contact" />
             <h2>Dont be a stranger, leaf me a message!</h2>
             <div className="contact-page-summary">
@@ -77,6 +72,7 @@ export default function Contact() {
                     type="text"
                     name="name"
                     placeholder="Full Name"
+                    autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -89,6 +85,7 @@ export default function Contact() {
                     type="email"
                     name="email"
                     placeholder="Email"
+                    autoComplete="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -100,6 +97,7 @@ export default function Contact() {
                     id="message"
                     name="message"
                     placeholder="Your message here..."
+                    autoComplete="off"
                     rows="4"
                     maxLength="500"
                     value={formData.message}
@@ -107,6 +105,11 @@ export default function Contact() {
                     required
                 />
                 <Button innerText="Submit" type="submit" className="contact-submit-btn" />
+                {submitted && (
+                    <p className="confirmation-form-submitted">
+                        🥰<strong> Thanks! Your message has been sent. </strong>🌱
+                    </p>
+                )}
             </form>
         </main>
     );

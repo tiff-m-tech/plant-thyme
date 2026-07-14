@@ -15,9 +15,9 @@ export default function CollectionCard({ collectionId, imgPath, name, light, wat
                 className="collection-card-picture"
             />
             <div className="collection-card-right-container">
-                <h3 className="collection-card-title">{name}</h3>
+                <h2 className="collection-card-title">{name}</h2>
                 <div className="care-info-container">
-                    <h2 className="care-info-title">Care Instructions:</h2>
+                    <h3 className="care-info-title">Care Instructions:</h3>
                     <div className="care-info-div">
                         <FontAwesomeIcon icon={faSun} className="sun-icon" />
                         <strong>Light:</strong> {light}

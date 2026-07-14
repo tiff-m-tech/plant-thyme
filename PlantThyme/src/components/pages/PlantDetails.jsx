@@ -13,14 +13,34 @@ import { usePageTitle } from "../../hooks/usePageTitle";
 
 export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
     const navigate = useNavigate();
-    // Pramas gives you a string so convert with Number.
     const { collectionId } = useParams();
 
     // Must stay before state or page will be blank when refreshed due to setTimeOut()
     if (loading) return <Loading />;
 
+    // Params gives you a string so convert with Number.
     const plant = collection.find((plant) => plant.collectionId === Number(collectionId));
-    if (!plant) return <p>Plant not found!</p>;
+    if (!plant) {
+        return (
+            <main className="not-found-page">
+                <h1>Plant not found!</h1>
+                <p>The plant you are looking for is not in your collection.</p>
+                <Button
+                    innerText="Back to Collection"
+                    onClick={() => navigate("/currentCollection")}
+                />
+            </main>
+        );
+    }
+
+    return (
+        <PlantDetailsContent plant={plant} removePlantFromCollection={removePlantFromCollection} />
+    );
+}
+
+function PlantDetailsContent({ plant, removePlantFromCollection }) {
+    const navigate = useNavigate();
+    usePageTitle("Plant Details");
 
     const [detailsData, setDetailsData] = useState({
         purchaseDate: plant.purchaseDate,
@@ -40,13 +60,9 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
     }
 
     function handleRemove() {
-        if (window.confirm(`Remove ${plant.name} from your collection?`)) {
-            removePlantFromCollection(plant.collectionId);
-            navigate("/currentCollection");
-        }
+        removePlantFromCollection(plant.collectionId);
+        navigate("/currentCollection");
     }
-
-    usePageTitle("Plant Details");
 
     return (
         <main id="plantDetails">
@@ -59,7 +75,7 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
             <PageTitle title={plant.name} />
             <h2>Plant Details</h2>
             <form>
-                <label htmlFor="purchasedDate">Purchased Date:</label>
+                <label htmlFor="purchaseDate">Purchased Date:</label>
                 <input
                     id="purchaseDate"
                     type="text"

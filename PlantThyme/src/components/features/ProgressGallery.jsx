@@ -28,12 +28,12 @@ export default function ProgressGallery({ plant }) {
                 />
             </div>
             <div className="progress-pictures-cards-container">
-                {pictures.map((plant) => (
+                {pictures.map((progressPic) => (
                     <ProgressPictureCard
-                        key={plant.id}
-                        imgPath={plant.picture}
-                        date={plant.date}
-                        src={`/images/progressPictures/${plant.picture}`}
+                        key={progressPic.id}
+                        imgPath={progressPic.picture}
+                        date={progressPic.date}
+                        src={`/images/progressPictures/${progressPic.picture}`}
                     />
                 ))}
                 {selectedImage && <ProgressPictureCard src={selectedImage} date={today} />}

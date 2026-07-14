@@ -6,20 +6,7 @@ import { faPhone, faHouse, faLeaf, faRightFromBracket } from "@fortawesome/free-
 
 export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
     const [isOpen, setIsOpen] = useState(false);
-    const navRef = useRef(null); // Reference to actual DOM nav
     const navigate = useNavigate();
-
-    useEffect(() => {
-        function handleClickOutside(event) {
-            // If the click wasn't inside the nav, close the menu.
-            if (navRef.current && !navRef.current.contains(event.target)) {
-                setIsOpen(false);
-            }
-        }
-        // mousedown, not click - avoids fighting the hamburger's onClick.
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
 
     function handleLogout() {
         setIsLoggedIn(false);
@@ -27,41 +14,40 @@ export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
     }
 
     return (
-        <>
-            {isLoggedIn ? (
-                <nav ref={navRef}>
-                    <button
-                        className="hamburger"
-                        // !isOpen = opposite of whatever it currently is
-                        onClick={() => setIsOpen(!isOpen)}
-                        aria-label="Toggle Menu"
+        isLoggedIn && (
+            <nav>
+                <button
+                    className="hamburger"
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle Menu"
+                >
+                    ☰
+                </button>
+
+                {/* Invisible backdrop — clicking it closes the menu, covers area outside of menu */}
+                {isOpen && <div className="nav-backdrop" onClick={() => setIsOpen(false)}></div>}
+
+                <div className={isOpen ? "nav-links open" : "nav-links"}>
+                    <Link to="/home" onClick={() => setIsOpen(false)}>
+                        <FontAwesomeIcon icon={faHouse} /> Home
+                    </Link>
+                    <Link to="/contact" onClick={() => setIsOpen(false)}>
+                        <FontAwesomeIcon icon={faPhone} /> Contact
+                    </Link>
+                    <Link to="/currentCollection" onClick={() => setIsOpen(false)}>
+                        <FontAwesomeIcon icon={faLeaf} /> My Leafy Collection
+                    </Link>
+                    <Link
+                        to="/"
+                        onClick={() => {
+                            setIsOpen(false);
+                            handleLogout();
+                        }}
                     >
-                        ☰
-                    </button>
-                    <div className={isOpen ? "nav-links open" : "nav-links"}>
-                        <Link to="/home" onClick={() => setIsOpen(false)}>
-                            <FontAwesomeIcon icon={faHouse} /> Home
-                        </Link>
-                        <Link to="/contact" onClick={() => setIsOpen(false)}>
-                            <FontAwesomeIcon icon={faPhone} /> Contact
-                        </Link>
-                        <Link to="/currentCollection" onClick={() => setIsOpen(false)}>
-                            <FontAwesomeIcon icon={faLeaf} /> My Leafy Collection
-                        </Link>
-                        <Link
-                            to="/"
-                            onClick={() => {
-                                setIsOpen(false);
-                                handleLogout();
-                            }}
-                        >
-                            <FontAwesomeIcon icon={faRightFromBracket} /> Log Out
-                        </Link>
-                    </div>
-                </nav>
-            ) : (
-                <></>
-            )}
-        </>
+                        <FontAwesomeIcon icon={faRightFromBracket} /> Log Out
+                    </Link>
+                </div>
+            </nav>
+        )
     );
 }

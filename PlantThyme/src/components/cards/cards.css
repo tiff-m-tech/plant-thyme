@@ -95,6 +95,10 @@
         width: 200px;
     }
 
+    .collection-card-title {
+        font-size: 1.5rem;
+    }
+
     .care-info-container {
         display: block;
     }
