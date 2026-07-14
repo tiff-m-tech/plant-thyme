@@ -63,7 +63,7 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
             <PageTitle title={plant.name} />
             <h2>Plant Details</h2>
             <form>
-                <label htmlFor="purchasedDate">Purchased Date:</label>
+                <label htmlFor="purchaseDate">Purchased Date:</label>
                 <input
                     id="purchaseDate"
                     type="text"

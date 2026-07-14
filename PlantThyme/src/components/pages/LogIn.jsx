@@ -41,6 +41,7 @@ export default function LogIn({ setIsLoggedIn }) {
                     type="text"
                     name="username"
                     placeholder="♙ Type Your username"
+                    autoComplete="username"
                     value={username}
                     onChange={(event) => setUsername(event.target.value)}
                     required
@@ -53,6 +54,7 @@ export default function LogIn({ setIsLoggedIn }) {
                     type="password"
                     name="password"
                     placeholder="🔒︎ Type Your Password"
+                    autoComplete="current-password"
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
                     required

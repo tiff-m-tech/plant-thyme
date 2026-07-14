@@ -72,6 +72,7 @@ export default function Contact() {
                     type="text"
                     name="name"
                     placeholder="Full Name"
+                    autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -84,6 +85,7 @@ export default function Contact() {
                     type="email"
                     name="email"
                     placeholder="Email"
+                    autoComplete="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -95,6 +97,7 @@ export default function Contact() {
                     id="message"
                     name="message"
                     placeholder="Your message here..."
+                    autoComplete="off"
                     rows="4"
                     maxLength="500"
                     value={formData.message}
