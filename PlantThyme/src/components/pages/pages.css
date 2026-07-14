@@ -130,6 +130,11 @@ main {
     color: red;
 }
 
+.confirmation-form-submitted {
+    color: green;
+    margin-top: 1rem;
+}
+
 /* Current Collection Page ---------------------------------------------------------------------------------- */
 #currentCollection input {
     padding: 0.65rem;

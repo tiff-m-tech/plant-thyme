@@ -11,6 +11,7 @@ export default function Contact() {
     const contactImagePath = "/images/brand/contact.webp";
     const initialFormData = { name: "", email: "", message: "" };
     const [formData, setFormData] = useState(initialFormData);
+    const [submitted, setSubmitted] = useState(false);
 
     // Copies the previous state (prev), then overwrites just the field that changed ([name]: value)
     // [name] is a computed property name - it uses the input's name attribute as the key.
@@ -24,8 +25,8 @@ export default function Contact() {
 
         // NOTE: Later change this to send values to backend in Unit 2.
         console.log("Submitting", formData);
-
         setFormData(initialFormData);
+        setSubmitted(true);
     }
 
     usePageTitle("Contact");
@@ -107,6 +108,11 @@ export default function Contact() {
                     required
                 />
                 <Button innerText="Submit" type="submit" className="contact-submit-btn" />
+                {submitted && (
+                    <p className="confirmation-form-submitted">
+                        🥰<strong> Thanks! Your message has been sent. </strong>🌱
+                    </p>
+                )}
             </form>
         </main>
     );
