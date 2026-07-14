@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { altFromFileName } from "../../utils/altFromFileName";
 import CollectionCard from "../cards/CollectionCard";
 import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
@@ -31,11 +30,7 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
     if (loading) {
         return (
             <main id="currentCollection">
-                <img
-                    src={currentCollectionImagePath}
-                    alt={altFromFileName(currentCollectionImagePath)}
-                    className="large-page-image"
-                />
+                <img src={currentCollectionImagePath} alt="" className="large-page-image" />
                 <PageTitle title="My Leafy Collection" />
                 <div className="collection-page-controls-container">
                     <h2 className="plant-count">Plant Count: {plantCount}</h2>
@@ -57,11 +52,7 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
 
     return (
         <main id="currentCollection">
-            <img
-                src={currentCollectionImagePath}
-                alt={altFromFileName(currentCollectionImagePath)}
-                className="large-page-image"
-            />
+            <img src={currentCollectionImagePath} alt="" className="large-page-image" />
             <PageTitle title="My Leafy Collection" />
             {plantCount === 0 ? (
                 <div>

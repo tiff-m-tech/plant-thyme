@@ -31,11 +31,7 @@ export default function Contact() {
 
     return (
         <main id="contact">
-            <img
-                src={contactImagePath}
-                alt={altFromFileName(contactImagePath)}
-                className="large-page-image"
-            />
+            <img src={contactImagePath} alt="" className="large-page-image" />
             <PageTitle title="Contact" />
             <h2>Dont be a stranger, leaf me a message!</h2>
             <div className="contact-page-summary">
