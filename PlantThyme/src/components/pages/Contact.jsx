@@ -23,9 +23,6 @@ export default function Contact() {
     function handleSubmit(event) {
         event.preventDefault(); // Stops browser from reloading page.
 
-        // TODO: Need to remove, no consolelogs per requirement for project?
-        // NOTE: Later change this to send values to backend in Unit 2.
-        console.log("Submitting", formData);
         setFormData(initialFormData);
         setSubmitted(true);
     }
