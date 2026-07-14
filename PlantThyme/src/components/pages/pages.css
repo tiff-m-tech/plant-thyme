@@ -64,21 +64,6 @@ main {
     border-radius: 5px;
 }
 
-.forgot-password {
-    color: #666;
-    font-size: 0.9rem;
-    margin-left: auto;
-}
-
-.forgot-password:hover {
-    color: #333;
-    text-decoration: underline;
-}
-
-.signup-container {
-    gap: 1.5rem;
-}
-
 /* Home Page -------------------------------------------------------------------------------------------- */
 #home {
     max-width: 700px;
