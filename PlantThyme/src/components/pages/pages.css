@@ -12,7 +12,8 @@ main {
 #contact,
 #currentCollection,
 #addPlant,
-#plantDetails {
+#plantDetails,
+#notFound {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -211,6 +212,18 @@ main {
 
 .remove-btn:hover {
     background-color: #9c4340;
+}
+
+/* Not Found Page --------------------------------------------------------------------------------------- */
+.not-found-list {
+    text-align: left;
+    display: inline-block;
+    margin: 1rem auto;
+    line-height: 1.8;
+}
+
+.not-found-btn {
+    margin-top: 1rem;
 }
 
 /* Media Queries ---------------------------------------------------------------------------------------- */

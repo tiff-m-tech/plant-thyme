@@ -9,6 +9,7 @@ import CurrentCollection from "./components/pages/CurrentCollection";
 import AddPlant from "./components/pages/AddPlant";
 import PlantDetails from "./components/pages/PlantDetails";
 import LogIn from "./components/pages/LogIn";
+import NotFound from "./components/pages/NotFound";
 
 function App() {
     const [collection, setCollection] = useState([]);
@@ -87,7 +88,7 @@ function App() {
                             />
                         }
                     />
-                    <Route path="*" element={<Navigate to="/home" replace />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             ) : (
                 <Routes>
