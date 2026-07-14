@@ -18,7 +18,7 @@ function App() {
 
     useEffect(() => {
         // NOTE: Fake Fetch: Simulates loading data from an API with a delay. Replace in Unit 2!
-        // Change setTimeout back to 1000 when done testing.
+        // TODO: Change setTimeout back to 1000 when done testing.
         function fetchCollection() {
             return new Promise((resolve) => {
                 // To simulate loading.
@@ -41,7 +41,8 @@ function App() {
     }, []);
 
     function addPlantToCollection(plant) {
-        const newCollectionId = Math.max(...collection.map((plant) => plant.collectionId)) + 1;
+        const newCollectionId =
+            collection.length > 0 ? Math.max(...collection.map((p) => p.collectionId)) + 1 : 1;
         const newEntry = {
             collectionId: newCollectionId,
             plantId: plant.id,
@@ -52,8 +53,9 @@ function App() {
             cost: null,
             notes: "",
             progressPictures: [],
+            careInstructions: [{ light: "" }, { water: "" }, { fertilize: "" }],
         };
-        setCollection([...collection, newEntry]);
+        setCollection((prev) => [...prev, newEntry]);
     }
 
     // Originally used built in JavaScript delete, but it removes the value at an index and leaves an empty hole behind. Meant for objects not arrays.
