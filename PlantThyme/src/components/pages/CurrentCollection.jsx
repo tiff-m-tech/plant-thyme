@@ -83,14 +83,12 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
                     />
                 </div>
             ) : displayedPlants.length === 0 ? (
-                <div>
-                    <div className="collection-page-controls-container">
-                        <Button
-                            innerText="Add Plant"
-                            onClick={() => navigate("/currentCollection/add")}
-                        />
-                        <h2 className="plant-count">Plant Count: {plantCount}</h2>
-                    </div>
+                <div className="collection-page-controls-container">
+                    <h2 className="plant-count">Plant Count: {plantCount}</h2>
+                    <Button
+                        innerText="Add Plant"
+                        onClick={() => navigate("/currentCollection/add")}
+                    />
                     <SearchBar
                         value={searchValue}
                         onChange={handleChange}
