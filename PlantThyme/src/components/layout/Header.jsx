@@ -7,7 +7,6 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
             <div className="header-left">
                 <Link to="/home" className="header-brand-link">
                     <img
-                        href="index.html"
                         src="/images/brand/mini-logo.png"
                         alt="Mini Plant Thyme Logo"
                         className="mini-logo"
