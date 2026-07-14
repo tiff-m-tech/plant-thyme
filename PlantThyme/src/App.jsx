@@ -50,7 +50,7 @@ function App() {
             image: plant.image,
             purchaseDate: "",
             purchaseStore: "",
-            cost: null,
+            cost: "",
             notes: "",
             progressPictures: [],
             careInstructions: [{ light: "" }, { water: "" }, { fertilize: "" }],
