@@ -6,21 +6,7 @@ import { faPhone, faHouse, faLeaf, faRightFromBracket } from "@fortawesome/free-
 
 export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
     const [isOpen, setIsOpen] = useState(false);
-    const navRef = useRef(null); // Reference to actual DOM nav
     const navigate = useNavigate();
-
-    useEffect(() => {
-        function handleClickOutside(event) {
-            // If the click wasn't inside the nav, close the menu.
-            if (navRef.current && !navRef.current.contains(event.target)) {
-                setIsOpen(false);
-            }
-        }
-        // TODO: need to remove for project requirements, no DOM?
-        // mousedown, not click - avoids fighting the hamburger's onClick.
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
 
     function handleLogout() {
         setIsLoggedIn(false);
@@ -29,7 +15,7 @@ export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
 
     return (
         isLoggedIn && (
-            <nav ref={navRef}>
+            <nav>
                 <button
                     className="hamburger"
                     onClick={() => setIsOpen(!isOpen)}
@@ -37,6 +23,10 @@ export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
                 >
                     ☰
                 </button>
+
+                {/* Invisible backdrop — clicking it closes the menu, covers area outside of menu */}
+                {isOpen && <div className="nav-backdrop" onClick={() => setIsOpen(false)}></div>}
+
                 <div className={isOpen ? "nav-links open" : "nav-links"}>
                     <Link to="/home" onClick={() => setIsOpen(false)}>
                         <FontAwesomeIcon icon={faHouse} /> Home
