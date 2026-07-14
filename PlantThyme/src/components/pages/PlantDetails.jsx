@@ -12,15 +12,23 @@ import { usePageTitle } from "../../hooks/usePageTitle";
 // NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
 export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
-    const navigate = useNavigate();
-    // Pramas gives you a string so convert with Number.
     const { collectionId } = useParams();
 
     // Must stay before state or page will be blank when refreshed due to setTimeOut()
     if (loading) return <Loading />;
 
+    // Params gives you a string so convert with Number.
     const plant = collection.find((plant) => plant.collectionId === Number(collectionId));
     if (!plant) return <p>Plant not found!</p>;
+
+    return (
+        <PlantDetailsContent plant={plant} removePlantFromCollection={removePlantFromCollection} />
+    );
+}
+
+function PlantDetailsContent({ plant, removePlantFromCollection }) {
+    const navigate = useNavigate();
+    usePageTitle("Plant Details");
 
     const [detailsData, setDetailsData] = useState({
         purchaseDate: plant.purchaseDate,
@@ -43,8 +51,6 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
         removePlantFromCollection(plant.collectionId);
         navigate("/currentCollection");
     }
-
-    usePageTitle("Plant Details");
 
     return (
         <main id="plantDetails">
