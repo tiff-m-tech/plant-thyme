@@ -40,10 +40,8 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
     }
 
     function handleRemove() {
-        if (window.confirm(`Remove ${plant.name} from your collection?`)) {
-            removePlantFromCollection(plant.collectionId);
-            navigate("/currentCollection");
-        }
+        removePlantFromCollection(plant.collectionId);
+        navigate("/currentCollection");
     }
 
     usePageTitle("Plant Details");
