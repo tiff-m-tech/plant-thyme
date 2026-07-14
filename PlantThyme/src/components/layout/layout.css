@@ -15,7 +15,7 @@ header {
 }
 
 .header-brand-name {
-    color: var(--dark-green);
+    color: #425e26;
     font-size: 2rem;
     font-weight: bold;
 }

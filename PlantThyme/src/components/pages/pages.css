@@ -205,12 +205,12 @@ main {
 }
 
 .remove-btn {
-    background-color: #b85450;
+    background-color: #da5955;
     margin-top: 2rem;
 }
 
 .remove-btn:hover {
-    background-color: #9c4340;
+    background-color: #c84f4b;
 }
 
 /* Media Queries ---------------------------------------------------------------------------------------- */
