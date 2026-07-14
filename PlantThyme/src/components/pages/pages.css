@@ -64,6 +64,27 @@ main {
     border-radius: 5px;
 }
 
+.mock-credentials {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f4f4f2; /* light neutral, or a pale green to match your theme */
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    max-width: 500px;
+    width: 90%;
+    text-align: left;
+}
+
+.mock-credentials strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.mock-credentials p {
+    margin: 0.25rem 0;
+    font-family: monospace;
+}
+
 /* Home Page -------------------------------------------------------------------------------------------- */
 #home {
     max-width: 700px;
