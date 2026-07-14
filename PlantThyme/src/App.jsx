@@ -13,7 +13,7 @@ import LogIn from "./components/pages/LogIn";
 function App() {
     const [collection, setCollection] = useState([]);
     const [loading, setLoading] = useState(true);
-    // Set original state back to false when done testing.
+    // TODO: Set original state back to false when done testing.
     const [isLoggedIn, setIsLoggedIn] = useState(true);
 
     useEffect(() => {

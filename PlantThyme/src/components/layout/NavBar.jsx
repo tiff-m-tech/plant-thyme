@@ -16,6 +16,7 @@ export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
                 setIsOpen(false);
             }
         }
+        // TODO: need to remove for project requirements, no DOM?
         // mousedown, not click - avoids fighting the hamburger's onClick.
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
