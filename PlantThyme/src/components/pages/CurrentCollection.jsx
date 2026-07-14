@@ -26,13 +26,6 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
         setSearchValue(event.target.value);
     }
 
-    function handleSearch() {
-        if (searchValue.trim().length <= 1) return;
-        const results = collection.filter((plant) =>
-            plant.name.toLowerCase().trim().includes(searchValue.toLowerCase().trim()),
-        );
-    }
-
     usePageTitle("Current Collection");
 
     if (loading) {
@@ -53,7 +46,6 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
                     <SearchBar
                         value={searchValue}
                         onChange={handleChange}
-                        onSearch={handleSearch}
                         placeholder="Search your leafy friends..."
                         showButton={false}
                     />
@@ -74,34 +66,20 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
             {plantCount === 0 ? (
                 <div>
                     <p>
-                        You have not added any plants to your collection yet. Lets fill this list up
-                        with leafy friends! 🪴🥰
+                        You have not added any plants to your collection yet. Let's fill this list
+                        up with leafy friends! 🪴🥰
                     </p>
+
                     <Button
                         innerText="Add Plant"
                         onClick={() => navigate("/currentCollection/add")}
                     />
-                </div>
-            ) : displayedPlants.length === 0 ? (
-                <div className="collection-page-controls-container">
-                    <h2 className="plant-count">Plant Count: {plantCount}</h2>
-                    <Button
-                        innerText="Add Plant"
-                        onClick={() => navigate("/currentCollection/add")}
-                    />
-                    <SearchBar
-                        value={searchValue}
-                        onChange={handleChange}
-                        onSearch={handleSearch}
-                        placeholder="Search your leafy friends..."
-                        showButton={false}
-                    />
-                    <p>No plants match your search.</p>
                 </div>
             ) : (
                 <>
                     <div className="collection-page-controls-container">
                         <h2 className="plant-count">Plant Count: {plantCount}</h2>
+
                         <Button
                             innerText="Add Plant"
                             onClick={() => navigate("/currentCollection/add")}
@@ -110,27 +88,31 @@ export default function CurrentCollection({ collection, loading, removePlantFrom
                         <SearchBar
                             value={searchValue}
                             onChange={handleChange}
-                            onSearch={handleSearch}
                             placeholder="Search your leafy friends..."
                             showButton={false}
                         />
                     </div>
-                    <div className="collection-cards-container">
-                        {[...displayedPlants]
-                            .sort((a, b) => a.name.localeCompare(b.name))
-                            .map((plant) => (
-                                <CollectionCard
-                                    key={plant.collectionId}
-                                    collectionId={plant.collectionId}
-                                    imgPath={plant.image}
-                                    name={plant.name}
-                                    light={plant.careInstructions[0].light}
-                                    water={plant.careInstructions[1].water}
-                                    fertilize={plant.careInstructions[2].fertilize}
-                                    removePlantFromCollection={removePlantFromCollection}
-                                />
-                            ))}
-                    </div>
+
+                    {displayedPlants.length === 0 ? (
+                        <p>No plants match your search.</p>
+                    ) : (
+                        <div className="collection-cards-container">
+                            {[...displayedPlants]
+                                .sort((a, b) => a.name.localeCompare(b.name))
+                                .map((plant) => (
+                                    <CollectionCard
+                                        key={plant.collectionId}
+                                        collectionId={plant.collectionId}
+                                        imgPath={plant.image}
+                                        name={plant.name}
+                                        light={plant.careInstructions[0].light}
+                                        water={plant.careInstructions[1].water}
+                                        fertilize={plant.careInstructions[2].fertilize}
+                                        removePlantFromCollection={removePlantFromCollection}
+                                    />
+                                ))}
+                        </div>
+                    )}
                 </>
             )}
         </main>
