@@ -42,10 +42,6 @@ export default function LogIn({ setIsLoggedIn }) {
                 />
                 <Button innerText="Login" type="button" onClick={handleLogin} />
             </form>
-            <div className="signup-container">
-                <p>Don't have an account yet?</p>
-                <Button innerText="Sign Up" type="button" />
-            </div>
         </main>
     );
 }
