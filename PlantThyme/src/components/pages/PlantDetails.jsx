@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router";
+import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { altFromFileName } from "../../utils/altFromFileName";
 import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
@@ -139,7 +140,9 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
                 message={`Are you sure you want to remove the ${plant.name} from your collection?`}
                 confirmText="Remove Plant"
                 cancelText="Cancel"
-                className="remove-btn"
+                className1="modal-yellow-warning-icon"
+                className2="remove-btn"
+                icon={faTriangleExclamation}
             />
         </main>
     );

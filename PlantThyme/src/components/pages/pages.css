@@ -246,6 +246,12 @@ main {
     gap: 1rem;
 }
 
+.modal-yellow-warning-icon {
+    color: #ffdf28;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
 /* Not Found Page --------------------------------------------------------------------------------------- */
 .not-found-list {
     text-align: left;
