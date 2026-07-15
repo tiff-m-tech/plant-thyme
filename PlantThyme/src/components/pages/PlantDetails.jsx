@@ -8,13 +8,13 @@ import ProgressGallery from "../features/ProgressGallery";
 import Loading from "../ui/Loading";
 import SectionDivider from "../ui/SectionDivider";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import Modal from "../ui/Modal";
 
 // NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
 export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
     const navigate = useNavigate();
     const { collectionId } = useParams();
-
     // Must stay before state or page will be blank when refreshed due to setTimeOut()
     if (loading) return <Loading />;
 
@@ -40,6 +40,8 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
 
 function PlantDetailsContent({ plant, removePlantFromCollection }) {
     const navigate = useNavigate();
+    const [showConfirm, setShowConfirm] = useState(false);
+
     usePageTitle("Plant Details");
 
     const [detailsData, setDetailsData] = useState({
@@ -124,7 +126,19 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
             <SectionDivider />
             <ProgressGallery plant={plant} />
             <SectionDivider />
-            <Button innerText="Remove Plant" onClick={handleRemove} className="remove-btn" />
+            <Button
+                innerText="Remove Plant"
+                onClick={() => setShowConfirm(true)}
+                className="remove-btn"
+            />
+            <Modal
+                isOpen={showConfirm}
+                onClose={() => setShowConfirm(false)}
+                onConfirm={handleRemove}
+                message={`Are you sure you want to remove ${plant.name} from your collection?`}
+                confirmText="Remove"
+                cancelText="Cancel"
+            />
         </main>
     );
 }
