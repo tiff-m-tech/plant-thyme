@@ -126,6 +126,7 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
             <SectionDivider />
             <ProgressGallery plant={plant} />
             <SectionDivider />
+            <div className="remove-btn-container"></div>
             <Button
                 innerText="Remove Plant"
                 onClick={() => setShowConfirm(true)}
@@ -135,9 +136,10 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
                 isOpen={showConfirm}
                 onClose={() => setShowConfirm(false)}
                 onConfirm={handleRemove}
-                message={`Are you sure you want to remove ${plant.name} from your collection?`}
-                confirmText="Remove"
+                message={`Are you sure you want to remove the ${plant.name} from your collection?`}
+                confirmText="Remove Plant"
                 cancelText="Cancel"
+                className="remove-btn"
             />
         </main>
     );

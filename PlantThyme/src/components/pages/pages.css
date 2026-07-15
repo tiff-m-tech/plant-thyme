@@ -224,9 +224,12 @@ main {
     align-self: center;
 }
 
+.remove-btn-container {
+    margin-top: 2rem;
+}
+
 .remove-btn {
     background-color: #da5955;
-    margin-top: 2rem;
 }
 
 .remove-btn:hover {
