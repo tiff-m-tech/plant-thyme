@@ -50,7 +50,9 @@ export default function AddPlant({ addPlantToCollection }) {
                     />
                 ))}
                 {hasSearched && filteredPlants.length === 0 && (
-                    <p>No results found, please search again!</p>
+                    <p className="no-search-results-found-message">
+                        No results found, please search again!
+                    </p>
                 )}
             </div>
         </main>

@@ -184,6 +184,10 @@ main {
     border-radius: 5px;
 }
 
+.no-search-results-found-message {
+    grid-column: 1 / -1; /* start at the first line, end at the last */
+}
+
 /* Details Page ----------------------------------------------------------------------------------------- */
 .details-page-image {
     width: 300px;
