@@ -105,7 +105,7 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
                     disabled={!isEditing}
                     onChange={handleChange}
                 />
-                <label htmlFor="notes">Other Notes</label>
+                <label htmlFor="notes">Notes:</label>
                 <textarea
                     id="notes"
                     name="notes"
