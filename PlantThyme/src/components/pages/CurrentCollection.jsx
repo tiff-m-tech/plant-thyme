@@ -58,7 +58,6 @@ export default function CurrentCollection({ collection, loading }) {
                         You have not added any plants to your collection yet. Let's fill this list
                         up with leafy friends! 🪴🥰
                     </p>
-
                     <Button
                         innerText="Add Plant"
                         onClick={() => navigate("/currentCollection/add")}
@@ -68,12 +67,10 @@ export default function CurrentCollection({ collection, loading }) {
                 <>
                     <div className="collection-page-controls-container">
                         <h2 className="plant-count">Plant Count: {plantCount}</h2>
-
                         <Button
                             innerText="Add Plant"
                             onClick={() => navigate("/currentCollection/add")}
                         />
-
                         <SearchBar
                             value={searchValue}
                             onChange={handleChange}
@@ -81,7 +78,6 @@ export default function CurrentCollection({ collection, loading }) {
                             showButton={false}
                         />
                     </div>
-
                     {displayedPlants.length === 0 ? (
                         <p>No plants match your search.</p>
                     ) : (

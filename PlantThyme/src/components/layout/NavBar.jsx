@@ -23,10 +23,8 @@ export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
                 >
                     ☰
                 </button>
-
                 {/* Invisible backdrop — clicking it closes the menu, covers area outside of menu */}
                 {isOpen && <div className="nav-backdrop" onClick={() => setIsOpen(false)}></div>}
-
                 <div className={isOpen ? "nav-links open" : "nav-links"}>
                     <Link to="/home" onClick={() => setIsOpen(false)}>
                         <FontAwesomeIcon icon={faHouse} /> Home
