@@ -70,14 +70,15 @@ nav {
 
 nav a {
     color: black;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
     text-decoration: none;
     font-family: var(--regular-font);
 }
 
 nav a:hover {
-    color: var(--dark-green);
+    font-weight: bold;
+    color: #28400f;
 }
 
 nav a:active {
@@ -101,7 +102,7 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     background-color: var(--light-green);
 }
 
@@ -131,22 +132,23 @@ footer {
 }
 
 /* Media Queries ---------------------------------------------------------------------------------------- */
-@media (min-width: 600px) {
+/* Tablet */
+@media (min-width: 768px) {
     .hamburger {
-        display: none; /* hide hamburger on tablet+ */
+        display: none;
     }
 
     .nav-links {
-        display: flex; /* show the links... */
-        flex-direction: row; /* ...horizontally */
+        display: flex;
+        flex-direction: row;
         gap: 1.5rem;
-        position: static; /* undo the mobile dropdown positioning */
+        position: static;
         width: auto;
         padding: 0;
         background: none;
     }
     nav a {
-        font-size: 1rem; /* tablet/desktop horizontal nav */
+        font-size: 1rem;
     }
 
     .nav-backdrop {

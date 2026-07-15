@@ -12,7 +12,8 @@ main {
 #contact,
 #currentCollection,
 #addPlant,
-#plantDetails {
+#plantDetails,
+#notFound {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,7 +41,7 @@ main {
     grid-template-columns: 1fr;
     gap: 1rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1050px;
     margin-top: 1rem;
 }
 
@@ -174,6 +175,10 @@ main {
     font-weight: bold;
 }
 
+.empty-collection-text {
+    margin-bottom: 1rem;
+}
+
 /* Add Plant Page ------------------------------------------------------------------------------------------ */
 #addPlant input {
     display: flex;
@@ -181,6 +186,10 @@ main {
     margin-bottom: 0.75rem;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+.no-search-results-found-message {
+    grid-column: 1 / -1; /* start at the first line, end at the last */
 }
 
 /* Details Page ----------------------------------------------------------------------------------------- */
@@ -234,21 +243,33 @@ main {
     gap: 1rem;
 }
 
+/* Not Found Page --------------------------------------------------------------------------------------- */
+.not-found-list {
+    text-align: left;
+    display: inline-block;
+    margin: 1rem auto;
+    line-height: 1.8;
+}
+
+.not-found-btn {
+    margin-top: 1rem;
+}
+
 /* Media Queries ---------------------------------------------------------------------------------------- */
 /* base = mobile (iPhone SE ~375px and up), no query */
 
-/* Tablet  */
-@media (min-width: 768px) {
+/* Tablet */
+@media (min-width: 1000px) {
     .collection-cards-container,
     .search-cards-container {
         grid-template-columns: repeat(2, 1fr); /* tablet: two */
     }
 }
 
-/* Desktop */
+/* Desktop 1024*/
 @media (min-width: 1500px) {
     .collection-cards-container {
-        max-width: 100%;
+        max-width: 1400px;
     }
 
     .search-cards-container {

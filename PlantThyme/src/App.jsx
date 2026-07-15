@@ -9,6 +9,8 @@ import CurrentCollection from "./components/pages/CurrentCollection";
 import AddPlant from "./components/pages/PlantSearch";
 import PlantDetails from "./components/pages/PlantDetails";
 import LogIn from "./components/pages/LogIn";
+import NotFound from "./components/pages/NotFound";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 function App() {
     const [collection, setCollection] = useState([]);
@@ -22,7 +24,7 @@ function App() {
         function fetchCollection() {
             return new Promise((resolve) => {
                 // To simulate loading.
-                setTimeout(() => resolve(currentCollection), 3000);
+                setTimeout(() => resolve(currentCollection), 0);
             });
         }
 
@@ -71,6 +73,7 @@ function App() {
 
     return (
         <>
+            <ScrollToTop />
             <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             {isLoggedIn ? (
                 <Routes>
@@ -95,7 +98,7 @@ function App() {
                             />
                         }
                     />
-                    <Route path="*" element={<Navigate to="/home" replace />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             ) : (
                 <Routes>

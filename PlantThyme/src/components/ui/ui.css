@@ -52,7 +52,7 @@ button:active {
 }
 
 .search-bar input {
-    flex: 1; /* input fills the available space in the flex row */
+    flex: 1; /*input fills the available space in the flex row */
     /* padding: 0.75rem; */
     border: 1px solid black;
     border-radius: 5px;
@@ -140,6 +140,7 @@ button:active {
     align-items: center;
     gap: 1rem;
     width: 90%;
+    max-width: 1050px;
 }
 
 .divider-line {
