@@ -56,7 +56,7 @@ export default function CurrentCollection({ collection, loading }) {
             <PageTitle title="My Leafy Collection" />
             {plantCount === 0 ? (
                 <div>
-                    <p>
+                    <p className="empty-collection-text">
                         You have not added any plants to your collection yet. Let's fill this list
                         up with leafy friends! 🪴🥰
                     </p>

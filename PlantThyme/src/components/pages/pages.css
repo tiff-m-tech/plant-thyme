@@ -175,6 +175,10 @@ main {
     font-weight: bold;
 }
 
+.empty-collection-text {
+    margin-bottom: 1rem;
+}
+
 /* Add Plant Page ------------------------------------------------------------------------------------------ */
 #addPlant input {
     display: flex;
