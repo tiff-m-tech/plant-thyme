@@ -261,7 +261,7 @@ main {
 /* Desktop 1024*/
 @media (min-width: 1500px) {
     .collection-cards-container {
-        max-width: 100%;
+        max-width: 1400px;
     }
 
     .search-cards-container {
