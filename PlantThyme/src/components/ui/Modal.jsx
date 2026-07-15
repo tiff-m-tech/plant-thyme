@@ -1,5 +1,3 @@
-// tutorial https://medium.com/@SaimRizvi/beginners-guide-to-building-a-modal-with-react-5ba05b218214
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "./Button";
 

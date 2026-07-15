@@ -11,8 +11,6 @@ import SectionDivider from "../ui/SectionDivider";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import Modal from "../ui/Modal";
 
-// NOTE: This page will need to be updated in Unit 2 with backend for saving info.
-
 export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
     const navigate = useNavigate();
     const { collectionId } = useParams();

@@ -68,7 +68,7 @@ main {
 .mock-credentials {
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #f4f4f2; /* light neutral, or a pale green to match your theme */
+    background-color: #f4f4f2;
     padding: 1rem 1.25rem;
     margin: 1.5rem 0;
     max-width: 500px;
@@ -265,23 +265,21 @@ main {
 }
 
 /* Media Queries ---------------------------------------------------------------------------------------- */
-/* base = mobile (iPhone SE ~375px and up), no query */
-
 /* Tablet */
 @media (min-width: 1000px) {
     .collection-cards-container,
     .search-cards-container {
-        grid-template-columns: repeat(2, 1fr); /* tablet: two */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Desktop 1024*/
+/* Large Desktop */
 @media (min-width: 1500px) {
     .collection-cards-container {
         max-width: 1400px;
     }
 
     .search-cards-container {
-        grid-template-columns: repeat(3, 1fr); /* desktop: three */
+        grid-template-columns: repeat(3, 1fr);
     }
 }

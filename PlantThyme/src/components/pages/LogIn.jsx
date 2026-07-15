@@ -8,7 +8,6 @@ import PageTitle from "../ui/PageTitle";
 import Button from "../ui/Button";
 import { useNavigate } from "react-router";
 
-// NOTE: Hardcoded login for now — replace with real auth in Unit 2.
 const HARDCODED_USERNAME = "tiffany";
 const HARDCODED_PASSWORD = "123";
 
