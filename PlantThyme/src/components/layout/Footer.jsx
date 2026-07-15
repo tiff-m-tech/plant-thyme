@@ -19,3 +19,7 @@ export default function Footer() {
         </footer>
     );
 }
+
+// "noopener" main security protection against the new page manipulating the page that opened it
+// "noreferrer" also provides referrer privacy (destination site does not receive URL or page user came from)
+// and generally includes the protection provided by noopener in modern browsers
