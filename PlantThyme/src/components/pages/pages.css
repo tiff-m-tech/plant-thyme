@@ -41,7 +41,7 @@ main {
     grid-template-columns: 1fr;
     gap: 1rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1050px;
     margin-top: 1rem;
 }
 
@@ -250,15 +250,15 @@ main {
 /* Media Queries ---------------------------------------------------------------------------------------- */
 /* base = mobile (iPhone SE ~375px and up), no query */
 
-/* Tablet  */
-@media (min-width: 768px) {
+/* Tablet */
+@media (min-width: 1000px) {
     .collection-cards-container,
     .search-cards-container {
         grid-template-columns: repeat(2, 1fr); /* tablet: two */
     }
 }
 
-/* Desktop */
+/* Desktop 1024*/
 @media (min-width: 1500px) {
     .collection-cards-container {
         max-width: 100%;

@@ -41,16 +41,16 @@ export default function Contact() {
             <div className="contact-info-container">
                 <div className="contact-info">
                     <FontAwesomeIcon icon={faEnvelope} />
-                    <strong>Email:</strong> support@plant_thyme.com
+                    <strong> Email:</strong> support@plant_thyme.com
                 </div>
                 <div className="contact-info">
                     <FontAwesomeIcon icon={faPhone} />
-                    <strong>Phone:</strong> 610-867-5309
+                    <strong> Phone:</strong> 610-867-5309
                 </div>
                 <div className="contact-info">
                     <span className="address-label">
                         <FontAwesomeIcon icon={faHouse} />
-                        <strong>Address:</strong>
+                        <strong> Address:</strong>
                     </span>
                     Plant Thyme
                     <br />
