@@ -224,9 +224,12 @@ main {
     align-self: center;
 }
 
+.remove-btn-container {
+    margin-top: 2rem;
+}
+
 .remove-btn {
     background-color: #da5955;
-    margin-top: 2rem;
 }
 
 .remove-btn:hover {
@@ -241,6 +244,12 @@ main {
     flex: 1;
     text-align: center;
     gap: 1rem;
+}
+
+.modal-yellow-warning-icon {
+    color: #ffdf28;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 /* Not Found Page --------------------------------------------------------------------------------------- */

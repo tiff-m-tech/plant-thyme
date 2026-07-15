@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router";
+import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { altFromFileName } from "../../utils/altFromFileName";
 import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
@@ -8,13 +9,13 @@ import ProgressGallery from "../features/ProgressGallery";
 import Loading from "../ui/Loading";
 import SectionDivider from "../ui/SectionDivider";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import Modal from "../ui/Modal";
 
 // NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
 export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
     const navigate = useNavigate();
     const { collectionId } = useParams();
-
     // Must stay before state or page will be blank when refreshed due to setTimeOut()
     if (loading) return <Loading />;
 
@@ -40,6 +41,8 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
 
 function PlantDetailsContent({ plant, removePlantFromCollection }) {
     const navigate = useNavigate();
+    const [showConfirm, setShowConfirm] = useState(false);
+
     usePageTitle("Plant Details");
 
     const [detailsData, setDetailsData] = useState({
@@ -124,7 +127,23 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
             <SectionDivider />
             <ProgressGallery plant={plant} />
             <SectionDivider />
-            <Button innerText="Remove Plant" onClick={handleRemove} className="remove-btn" />
+            <div className="remove-btn-container"></div>
+            <Button
+                innerText="Remove Plant"
+                onClick={() => setShowConfirm(true)}
+                className="remove-btn"
+            />
+            <Modal
+                isOpen={showConfirm}
+                onClose={() => setShowConfirm(false)}
+                onConfirm={handleRemove}
+                message={`Are you sure you want to remove the ${plant.name} from your collection?`}
+                confirmText="Remove Plant"
+                cancelText="Cancel"
+                className1="modal-yellow-warning-icon"
+                className2="remove-btn"
+                icon={faTriangleExclamation}
+            />
         </main>
     );
 }
