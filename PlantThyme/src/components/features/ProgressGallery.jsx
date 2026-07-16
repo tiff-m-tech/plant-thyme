@@ -30,7 +30,7 @@ export default function ProgressGallery({ plant }) {
                 {pictures.map((progressPic) => (
                     <ProgressPictureCard
                         key={progressPic.id}
-                        imgPath={progressPic.picture}
+                        fileName={progressPic.picture}
                         date={progressPic.date}
                         src={`/images/progressPictures/${progressPic.picture}`}
                     />
