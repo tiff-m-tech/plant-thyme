@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 import { altFromFileName } from "../../utils/altFromFileName";
 import { logoImagePath } from "../../data/constants";
 import PageTitle from "../ui/PageTitle";
@@ -28,7 +28,7 @@ export default function LogIn({ setIsLoggedIn }) {
         }
     }
 
-    usePageTitle("Log In");
+    usePageTitleForBrowserTab("Log In");
 
     return (
         <main id="logIn">

@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 import SearchCard from "../cards/SearchCard";
 import PageTitle from "../ui/PageTitle";
 import SearchBar from "../ui/SearchBar";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 
 export default function AddPlant({ addPlantToCollection }) {
     const [searchValue, setSearchValue] = useState("");
@@ -26,7 +26,7 @@ export default function AddPlant({ addPlantToCollection }) {
         setHasSearched(true);
     }
 
-    usePageTitle("Plant Search");
+    usePageTitleForBrowserTab("Plant Search");
 
     return (
         <main id="addPlant">

@@ -8,7 +8,7 @@ import CareInstructions from "../features/CareInstructions";
 import ProgressGallery from "../features/ProgressGallery";
 import Loading from "../ui/Loading";
 import SectionDivider from "../ui/SectionDivider";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 import Modal from "../ui/Modal";
 
 export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
@@ -41,7 +41,7 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
     const navigate = useNavigate();
     const [showConfirm, setShowConfirm] = useState(false);
 
-    usePageTitle("Plant Details");
+    usePageTitleForBrowserTab("Plant Details");
 
     const [detailsData, setDetailsData] = useState({
         purchaseDate: plant.purchaseDate,

@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
 
 export default function NotFound() {
     const navigate = useNavigate();
-    usePageTitle("Page Not Found");
+    usePageTitleForBrowserTab("Page Not Found");
 
     return (
         <main id="notFound">

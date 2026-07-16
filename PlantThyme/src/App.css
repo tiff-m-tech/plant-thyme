@@ -37,7 +37,7 @@ body {
     --regular-font: "Nunito Sans", sans-serif;
 }
 
-/* Scrollbar Chrome, Edge, Safari. Sorry FireFox another day I'll add code for you ------------------------------------ */
+/* Scrollbar for Chrome, Edge, Safari, not FireFlox ------------------------------------ */
 ::-webkit-scrollbar {
     width: 15px;
 }

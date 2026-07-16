@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
 import SearchBar from "../ui/SearchBar";
 import Loading from "../ui/Loading";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 
 export default function CurrentCollection({ collection, loading }) {
     const currentCollectionImagePath = "/images/brand/current-collection.webp";
@@ -23,7 +23,7 @@ export default function CurrentCollection({ collection, loading }) {
         setSearchValue(event.target.value);
     }
 
-    usePageTitle("Current Collection");
+    usePageTitleForBrowserTab("Current Collection");
 
     if (loading) {
         return (

@@ -5,9 +5,10 @@ import { faEnvelope, faPhone, faHouse, faPenToSquare } from "@fortawesome/free-s
 import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
 import SectionDivider from "../ui/SectionDivider";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 
 export default function Contact() {
+    const pageTitle = "Contact";
     const contactImagePath = "/images/brand/contact.webp";
     const initialFormData = { name: "", email: "", message: "" };
     const [formData, setFormData] = useState(initialFormData);
@@ -27,12 +28,12 @@ export default function Contact() {
         setSubmitted(true);
     }
 
-    usePageTitle("Contact");
+    usePageTitleForBrowserTab(pageTitle);
 
     return (
         <main id="contact">
             <img src={contactImagePath} alt="" className="large-page-image" />
-            <PageTitle title="Contact" />
+            <PageTitle title={pageTitle} />
             <h2>Dont be a stranger, leaf me a message!</h2>
             <div className="contact-page-summary">
                 Have a question, suggestion, or a leafy idea to share? Send it my way. I'd love to
