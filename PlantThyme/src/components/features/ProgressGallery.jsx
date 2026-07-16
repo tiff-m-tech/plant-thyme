@@ -21,7 +21,7 @@ export default function ProgressGallery({ plant }) {
                     className="file-upload-input"
                     onChange={(event) => {
                         const file = event.target.files?.[0];
-                        // URL.createObjectURL creates temporary in-browser URL (blob:...) for selected file so we can preview it immediately
+                        // Creates a temporary blob URL (ex blob:http://localhost...) that points to the selected image data so it can be previewed immediately.
                         setSelectedImage(file ? URL.createObjectURL(file) : undefined);
                     }}
                 />
