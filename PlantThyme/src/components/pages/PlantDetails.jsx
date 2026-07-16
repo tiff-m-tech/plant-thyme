@@ -138,14 +138,16 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
             </div>
             {/* Removing a plant is destructive, so the user must confirm the action in a modal.  */}
             <Modal
+                role="dialog" // For screen readers.
+                aria-modal="true" // This tells assistive technology that the dialog is modal.
                 isOpen={showConfirm}
                 onClose={() => setShowConfirm(false)}
                 onConfirm={handleRemove}
                 message={`Are you sure you want to remove the ${plant.name} from your collection?`}
                 confirmText="Remove Plant"
                 cancelText="Cancel"
-                className1="modal-yellow-warning-icon"
-                className2="remove-btn"
+                iconClassName="modal-yellow-warning-icon"
+                confirmButtonClassName="remove-btn"
                 icon={faTriangleExclamation}
             />
         </main>
