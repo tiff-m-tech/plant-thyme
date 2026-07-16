@@ -21,7 +21,7 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
     const plant = collection.find((plant) => plant.collectionId === Number(collectionId));
     if (!plant) {
         return (
-            <main className="not-found-page">
+            <main className="plant-not-foound-in-collection-message">
                 <h1>Plant not found!</h1>
                 <p>The plant you are looking for is not in your collection.</p>
                 <Button

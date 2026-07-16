@@ -236,7 +236,7 @@ main {
     background-color: #c84f4b;
 }
 
-.not-found-page {
+.plant-not-foound-in-collection-message {
     display: flex;
     flex-direction: column;
     justify-content: center;
