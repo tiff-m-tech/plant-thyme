@@ -14,15 +14,15 @@ export default function Contact() {
     const [formData, setFormData] = useState(initialFormData);
     const [submitted, setSubmitted] = useState(false);
 
-    // Copies the previous state (prev), then overwrites just the field that changed ([name]: value)
-    // [name] is a computed property name - it uses the input's name attribute as the key.
+    // Copies the previous state, then rewrites only the fields that changed.
+    // [name] uses the input's name attribute as the object key, value is what user types in input
     function handleChange(event) {
         const { name, value } = event.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     }
 
     function handleSubmit(event) {
-        event.preventDefault(); // Stops browser from reloading page.
+        event.preventDefault();
 
         setFormData(initialFormData);
         setSubmitted(true);
