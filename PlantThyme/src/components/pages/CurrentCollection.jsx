@@ -25,6 +25,7 @@ export default function CurrentCollection({ collection, loading }) {
 
     usePageTitleForBrowserTab("Current Collection");
 
+    // Show the loading spinner while collection data is loading. ---------------------------------------------------------
     if (loading) {
         return (
             <main id="currentCollection">
@@ -54,6 +55,7 @@ export default function CurrentCollection({ collection, loading }) {
             <PageTitle title="My Leafy Collection" />
             {plantCount === 0 ? (
                 <div>
+                    {/* Show a message when the collection is empty. ------------------------------------------------------- */}
                     <p className="empty-collection-text">
                         You have not added any plants to your collection yet. Let's fill this list
                         up with leafy friends! 🪴🥰
@@ -65,6 +67,7 @@ export default function CurrentCollection({ collection, loading }) {
                 </div>
             ) : (
                 <>
+                    {/* Show a message when no plants match the search. ------------------------------------------------------*/}
                     <div className="collection-page-controls-container">
                         <h2 className="plant-count">Plant Count: {plantCount}</h2>
                         <Button
@@ -82,6 +85,7 @@ export default function CurrentCollection({ collection, loading }) {
                         <p>No plants match your search.</p>
                     ) : (
                         <div className="collection-cards-container">
+                            {/* Show matching plants in alphabetical order + copy array so displayedPlants is not modified. -------------------*/}
                             {[...displayedPlants]
                                 .sort((a, b) => a.name.localeCompare(b.name))
                                 .map((plant) => (
