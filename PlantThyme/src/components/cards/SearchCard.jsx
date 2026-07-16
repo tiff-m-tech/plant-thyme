@@ -3,7 +3,6 @@ import { useNavigate } from "react-router";
 import Button from "../ui/Button";
 
 export default function SearchCard({ imgPath, name, plant, addPlantToCollection }) {
-    // Must initialize the hook at the top level to use.
     const navigate = useNavigate();
 
     return (
