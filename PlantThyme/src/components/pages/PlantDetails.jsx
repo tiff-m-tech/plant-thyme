@@ -14,14 +14,17 @@ import Modal from "../ui/Modal";
 export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
     const navigate = useNavigate();
     const { collectionId } = useParams();
-    // Must stay before state or page will be blank when refreshed due to setTimeOut()
+
+    // Show the loading spinner until the collection data is available.
     if (loading) return <Loading />;
 
-    // Params gives you a string so convert with Number.
+    // URL parameters are strings, so convert collectionId to a number for comparison.
     const plant = collection.find((plant) => plant.collectionId === Number(collectionId));
+
+    // No matching plants state. -------------------------------------------------------------------------------
     if (!plant) {
         return (
-            <main className="plant-not-foound-in-collection-message">
+            <main className="plant-not-found-in-collection-message">
                 <h1>Plant not found!</h1>
                 <p>The plant you are looking for is not in your collection.</p>
                 <Button
@@ -32,6 +35,7 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
         );
     }
 
+    // Matching plant state.  ------------------------------------------------------------------------------------
     return (
         <PlantDetailsContent plant={plant} removePlantFromCollection={removePlantFromCollection} />
     );
@@ -115,7 +119,7 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
                     onChange={handleChange}
                 />
                 {isEditing ? (
-                    <Button innerText="Save" onClick={() => handleSave()} />
+                    <Button innerText="Save" onClick={handleSave} />
                 ) : (
                     <Button innerText="Edit" onClick={() => setIsEditing(true)} />
                 )}
@@ -125,12 +129,14 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
             <SectionDivider />
             <ProgressGallery plant={plant} />
             <SectionDivider />
-            <div className="remove-btn-container"></div>
-            <Button
-                innerText="Remove Plant"
-                onClick={() => setShowConfirm(true)}
-                className="remove-btn"
-            />
+            <div className="remove-btn-container">
+                <Button
+                    innerText="Remove Plant"
+                    onClick={() => setShowConfirm(true)}
+                    className="remove-btn"
+                />
+            </div>
+            {/* Removing a plant is destructive, so the user must confirm the action in a modal.  */}
             <Modal
                 isOpen={showConfirm}
                 onClose={() => setShowConfirm(false)}
