@@ -9,19 +9,23 @@ export default function Modal({
     confirmText,
     cancelText,
     message,
-    className1 = "",
-    className2 = "",
+    iconClassName = "",
+    confirmButtonClassName = "",
 }) {
     if (!isOpen) return null;
 
     return (
         <div className="modal-container">
             <div>
-                <FontAwesomeIcon icon={icon} className={className1} />
+                <FontAwesomeIcon icon={icon} className={iconClassName} />
             </div>
             <div>{message}</div>
             <div className="modal-btns">
-                <Button innerText={confirmText} onClick={onConfirm} className={className2} />
+                <Button
+                    innerText={confirmText}
+                    onClick={onConfirm}
+                    className={confirmButtonClassName}
+                />
                 <Button innerText={cancelText} onClick={onClose} />
             </div>
         </div>
