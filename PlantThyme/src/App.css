@@ -1,8 +1,3 @@
-/* NOTE: This is for when editing, uncomment to draw a red line on every element. */
-/* * {
-    outline: 1px solid red;
-} */
-
 html {
     box-sizing: border-box;
 }
@@ -42,7 +37,7 @@ body {
     --regular-font: "Nunito Sans", sans-serif;
 }
 
-/* Scrollbar Chrome, Edge, Safari. Sorry FireFox another day I'll add code for you ------------------------------------ */
+/* Scrollbar for Chrome, Edge, Safari, not FireFlox ------------------------------------ */
 ::-webkit-scrollbar {
     width: 15px;
 }

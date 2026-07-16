@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
 import { altFromFileName } from "../../utils/altFromFileName";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 import { userName, logoImagePath } from "../../data/constants";
 import PageTitle from "../ui/PageTitle";
 import Button from "../ui/Button";
@@ -8,7 +8,7 @@ import Button from "../ui/Button";
 export default function Home() {
     const navigate = useNavigate();
 
-    usePageTitle("Home");
+    usePageTitleForBrowserTab("Home");
 
     return (
         <main id="home">

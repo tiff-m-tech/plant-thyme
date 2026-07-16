@@ -5,12 +5,10 @@ import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
 import SearchBar from "../ui/SearchBar";
 import Loading from "../ui/Loading";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 
 export default function CurrentCollection({ collection, loading }) {
     const currentCollectionImagePath = "/images/brand/current-collection.webp";
-    // NOTE: Use line below to test when you have no plants in the collection.
-    // TODO: delete this! const plantCount = 0;
     const plantCount = collection.length;
     const navigate = useNavigate();
     const [searchValue, setSearchValue] = useState("");
@@ -25,8 +23,9 @@ export default function CurrentCollection({ collection, loading }) {
         setSearchValue(event.target.value);
     }
 
-    usePageTitle("Current Collection");
+    usePageTitleForBrowserTab("Current Collection");
 
+    // Show the loading spinner while collection data is loading. ---------------------------------------------------------
     if (loading) {
         return (
             <main id="currentCollection">
@@ -56,11 +55,11 @@ export default function CurrentCollection({ collection, loading }) {
             <PageTitle title="My Leafy Collection" />
             {plantCount === 0 ? (
                 <div>
+                    {/* Show a message when the collection is empty. ------------------------------------------------------- */}
                     <p className="empty-collection-text">
                         You have not added any plants to your collection yet. Let's fill this list
                         up with leafy friends! 🪴🥰
                     </p>
-
                     <Button
                         innerText="Add Plant"
                         onClick={() => navigate("/currentCollection/add")}
@@ -68,14 +67,13 @@ export default function CurrentCollection({ collection, loading }) {
                 </div>
             ) : (
                 <>
+                    {/* Show a message when no plants match the search. ------------------------------------------------------*/}
                     <div className="collection-page-controls-container">
                         <h2 className="plant-count">Plant Count: {plantCount}</h2>
-
                         <Button
                             innerText="Add Plant"
                             onClick={() => navigate("/currentCollection/add")}
                         />
-
                         <SearchBar
                             value={searchValue}
                             onChange={handleChange}
@@ -83,11 +81,11 @@ export default function CurrentCollection({ collection, loading }) {
                             showButton={false}
                         />
                     </div>
-
                     {displayedPlants.length === 0 ? (
                         <p>No plants match your search.</p>
                     ) : (
                         <div className="collection-cards-container">
+                            {/* Show matching plants in alphabetical order + copy array so displayedPlants is not modified. -------------------*/}
                             {[...displayedPlants]
                                 .sort((a, b) => a.name.localeCompare(b.name))
                                 .map((plant) => (

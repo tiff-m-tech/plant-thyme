@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 import SearchCard from "../cards/SearchCard";
 import PageTitle from "../ui/PageTitle";
 import SearchBar from "../ui/SearchBar";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 
 export default function AddPlant({ addPlantToCollection }) {
     const [searchValue, setSearchValue] = useState("");
@@ -26,11 +26,11 @@ export default function AddPlant({ addPlantToCollection }) {
         setHasSearched(true);
     }
 
-    usePageTitle("Plant Search");
+    usePageTitleForBrowserTab("Add a Plant to Collection");
 
     return (
         <main id="addPlant">
-            {/* To go back to last page pass -1 as argument for navigate function, this tells browser to move back one step in its history stack */}
+            {/* Passing -1 to navigate returns to the previous page in browser history. */}
             <Button innerText="Back" onClick={() => navigate(-1)} className="back-btn" />
             <PageTitle title="Plant Search" />
             <SearchBar

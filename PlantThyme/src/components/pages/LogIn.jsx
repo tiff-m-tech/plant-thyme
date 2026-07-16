@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 import { altFromFileName } from "../../utils/altFromFileName";
 import { logoImagePath } from "../../data/constants";
 import PageTitle from "../ui/PageTitle";
 import Button from "../ui/Button";
 import { useNavigate } from "react-router";
 
-// NOTE: Hardcoded login for now — replace with real auth in Unit 2.
 const HARDCODED_USERNAME = "tiffany";
 const HARDCODED_PASSWORD = "123";
 
@@ -29,7 +28,7 @@ export default function LogIn({ setIsLoggedIn }) {
         }
     }
 
-    usePageTitle("Log In");
+    usePageTitleForBrowserTab("Log In");
 
     return (
         <main id="logIn">

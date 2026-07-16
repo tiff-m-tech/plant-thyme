@@ -8,22 +8,23 @@ import CareInstructions from "../features/CareInstructions";
 import ProgressGallery from "../features/ProgressGallery";
 import Loading from "../ui/Loading";
 import SectionDivider from "../ui/SectionDivider";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 import Modal from "../ui/Modal";
-
-// NOTE: This page will need to be updated in Unit 2 with backend for saving info.
 
 export default function PlantDetails({ collection, loading, removePlantFromCollection }) {
     const navigate = useNavigate();
     const { collectionId } = useParams();
-    // Must stay before state or page will be blank when refreshed due to setTimeOut()
+
+    // Show the loading spinner until the collection data is available.
     if (loading) return <Loading />;
 
-    // Params gives you a string so convert with Number.
+    // URL parameters are strings, so convert collectionId to a number for comparison.
     const plant = collection.find((plant) => plant.collectionId === Number(collectionId));
+
+    // No matching plants state. -------------------------------------------------------------------------------
     if (!plant) {
         return (
-            <main className="not-found-page">
+            <main className="plant-not-found-in-collection-message">
                 <h1>Plant not found!</h1>
                 <p>The plant you are looking for is not in your collection.</p>
                 <Button
@@ -34,6 +35,7 @@ export default function PlantDetails({ collection, loading, removePlantFromColle
         );
     }
 
+    // Matching plant state.  ------------------------------------------------------------------------------------
     return (
         <PlantDetailsContent plant={plant} removePlantFromCollection={removePlantFromCollection} />
     );
@@ -43,7 +45,7 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
     const navigate = useNavigate();
     const [showConfirm, setShowConfirm] = useState(false);
 
-    usePageTitle("Plant Details");
+    usePageTitleForBrowserTab("Plant Details");
 
     const [detailsData, setDetailsData] = useState({
         purchaseDate: plant.purchaseDate,
@@ -105,7 +107,7 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
                     disabled={!isEditing}
                     onChange={handleChange}
                 />
-                <label htmlFor="notes">Other Notes</label>
+                <label htmlFor="notes">Notes:</label>
                 <textarea
                     id="notes"
                     name="notes"
@@ -117,7 +119,7 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
                     onChange={handleChange}
                 />
                 {isEditing ? (
-                    <Button innerText="Save" onClick={() => handleSave()} />
+                    <Button innerText="Save" onClick={handleSave} />
                 ) : (
                     <Button innerText="Edit" onClick={() => setIsEditing(true)} />
                 )}
@@ -127,21 +129,25 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
             <SectionDivider />
             <ProgressGallery plant={plant} />
             <SectionDivider />
-            <div className="remove-btn-container"></div>
-            <Button
-                innerText="Remove Plant"
-                onClick={() => setShowConfirm(true)}
-                className="remove-btn"
-            />
+            <div className="remove-btn-container">
+                <Button
+                    innerText="Remove Plant"
+                    onClick={() => setShowConfirm(true)}
+                    className="remove-btn"
+                />
+            </div>
+            {/* Removing a plant is destructive, so the user must confirm the action in a modal.  */}
             <Modal
+                role="dialog" // For screen readers.
+                aria-modal="true" // This tells assistive technology that the dialog is modal.
                 isOpen={showConfirm}
                 onClose={() => setShowConfirm(false)}
                 onConfirm={handleRemove}
                 message={`Are you sure you want to remove the ${plant.name} from your collection?`}
                 confirmText="Remove Plant"
                 cancelText="Cancel"
-                className1="modal-yellow-warning-icon"
-                className2="remove-btn"
+                iconClassName="modal-yellow-warning-icon"
+                confirmButtonClassName="remove-btn"
                 icon={faTriangleExclamation}
             />
         </main>

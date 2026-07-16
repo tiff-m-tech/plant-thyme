@@ -1,16 +1,13 @@
 import { Link } from "react-router";
-import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faHouse, faLeaf, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
     const [isOpen, setIsOpen] = useState(false);
-    const navigate = useNavigate();
 
     function handleLogout() {
         setIsLoggedIn(false);
-        navigate("/");
     }
 
     return (
@@ -23,10 +20,8 @@ export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
                 >
                     ☰
                 </button>
-
-                {/* Invisible backdrop — clicking it closes the menu, covers area outside of menu */}
+                {/* Invisible backdrop covers the non-navbar area; clicking it closes the menu. */}
                 {isOpen && <div className="nav-backdrop" onClick={() => setIsOpen(false)}></div>}
-
                 <div className={isOpen ? "nav-links open" : "nav-links"}>
                     <Link to="/home" onClick={() => setIsOpen(false)}>
                         <FontAwesomeIcon icon={faHouse} /> Home

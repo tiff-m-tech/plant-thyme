@@ -1,6 +1,6 @@
 export function altFromFileName(imgName) {
-    const nameArray = imgName.split("/").pop();
-    const removeImgType = nameArray.replace(/\.[^.]+$/, "");
+    const fileName = imgName.split("/").pop();
+    const removeImgType = fileName.replace(/\.[^.]+$/, "");
     const spaced = removeImgType.replace(/-/g, " ");
     const altImgValue = spaced
         .split(" ")
@@ -9,8 +9,8 @@ export function altFromFileName(imgName) {
 
     return altImgValue;
 }
-// split("/") chops everything up into an array at the /
-// .pop() takes the last item of the array - "large-logo.png"
-// .replace(pattern, "") finds a pattern and replaces it with nothing, removes the .png - "large-logo"
-// .replace() swaps every hyphen for a space - "large logo"
-// then capitalize each word - "Large Logo"
+// split("/") separates the image path at each slash.
+// pop() gets the filename from the end of the path, such as "large-logo.png".
+// The first replace() removes the file extension, resulting in "large-logo".
+// The second replace() changes every hyphen to a space, resulting in "large logo".
+// map() capitalizes each word, resulting in "Large Logo".

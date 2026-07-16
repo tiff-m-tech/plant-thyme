@@ -6,7 +6,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
 import Contact from "./components/pages/Contact";
 import CurrentCollection from "./components/pages/CurrentCollection";
-import AddPlant from "./components/pages/PlantSearch";
+import AddPlant from "./components/pages/AddPlant";
 import PlantDetails from "./components/pages/PlantDetails";
 import LogIn from "./components/pages/LogIn";
 import NotFound from "./components/pages/NotFound";
@@ -15,16 +15,14 @@ import ScrollToTop from "./components/layout/ScrollToTop";
 function App() {
     const [collection, setCollection] = useState([]);
     const [loading, setLoading] = useState(true);
-    // TODO: Set original state back to false when done testing.
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        // NOTE: Fake Fetch: Simulates loading data from an API with a delay. Replace in Unit 2!
-        // TODO: Change setTimeout back to 1000 when done testing.
+        // NOTE: Fake Fetch + setTimeout: Simulates loading data from an API with a delay.
         function fetchCollection() {
             return new Promise((resolve) => {
                 // To simulate loading.
-                setTimeout(() => resolve(currentCollection), 0);
+                setTimeout(() => resolve(currentCollection), 1000);
             });
         }
 
@@ -40,7 +38,7 @@ function App() {
         }
 
         loadCollection();
-    }, []);
+    }, []); // empty array = run useEffect once when the app mounts
 
     function addPlantToCollection(plant) {
         const newCollectionId =
@@ -64,7 +62,6 @@ function App() {
         setCollection((prev) => [...prev, newEntry]);
     }
 
-    // Originally used built in JavaScript delete, but it removes the value at an index and leaves an empty hole behind. Meant for objects not arrays.
     function removePlantFromCollection(idToRemove) {
         setCollection((prevCollection) =>
             prevCollection.filter((plant) => plant.collectionId !== idToRemove),
