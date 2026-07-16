@@ -6,7 +6,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
 import Contact from "./components/pages/Contact";
 import CurrentCollection from "./components/pages/CurrentCollection";
-import AddPlant from "./components/pages/PlantSearch";
+import AddPlant from "./components/pages/AddPlant";
 import PlantDetails from "./components/pages/PlantDetails";
 import LogIn from "./components/pages/LogIn";
 import NotFound from "./components/pages/NotFound";
@@ -18,7 +18,7 @@ function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        // NOTE: Fake Fetch: Simulates loading data from an API with a delay. Replace in Unit 2!
+        // NOTE: Fake Fetch + setTimeout: Simulates loading data from an API with a delay.
         function fetchCollection() {
             return new Promise((resolve) => {
                 // To simulate loading.
@@ -38,7 +38,7 @@ function App() {
         }
 
         loadCollection();
-    }, []);
+    }, []); // empty array = run useEffect once when the app mounts
 
     function addPlantToCollection(plant) {
         const newCollectionId =
