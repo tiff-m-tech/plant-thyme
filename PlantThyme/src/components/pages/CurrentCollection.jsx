@@ -32,17 +32,6 @@ export default function CurrentCollection({ collection, loading }) {
                 <img src={currentCollectionImagePath} alt="" className="large-page-image" />
                 <PageTitle title="My Leafy Collection" />
                 <div className="collection-page-controls-container">
-                    <h2 className="plant-count">Plant Count: {plantCount}</h2>
-                    <Button
-                        innerText="Add Plant"
-                        onClick={() => navigate("/currentCollection/add")}
-                    />
-                    <SearchBar
-                        value={searchValue}
-                        onChange={handleChange}
-                        placeholder="Search your leafy friends..."
-                        showButton={false}
-                    />
                     <Loading />
                 </div>
             </main>
