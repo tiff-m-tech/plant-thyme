@@ -83,7 +83,7 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
                 <label htmlFor="purchaseDate">Purchased Date:</label>
                 <input
                     id="purchaseDate"
-                    type="text"
+                    type="date"
                     name="purchaseDate"
                     value={detailsData.purchaseDate}
                     disabled={!isEditing}
