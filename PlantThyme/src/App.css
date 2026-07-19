@@ -37,7 +37,7 @@ body {
     --regular-font: "Nunito Sans", sans-serif;
 }
 
-/* Scrollbar for Chrome, Edge, Safari, not FireFlox ------------------------------------ */
+/* Scrollbar for Chrome, Edge, Safari, not FireFox ------------------------------------ */
 ::-webkit-scrollbar {
     width: 15px;
 }

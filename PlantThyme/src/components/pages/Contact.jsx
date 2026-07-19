@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { altFromFileName } from "../../utils/altFromFileName";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faHouse, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import Button from "../ui/Button";
@@ -34,7 +33,7 @@ export default function Contact() {
         <main id="contact">
             <img src={contactImagePath} alt="" className="large-page-image" />
             <PageTitle title={pageTitle} />
-            <h2>Dont be a stranger, leaf me a message!</h2>
+            <h2>Don't be a stranger, leaf me a message!</h2>
             <div className="contact-page-summary">
                 Have a question, suggestion, or a leafy idea to share? Send it my way. I'd love to
                 hear from you!

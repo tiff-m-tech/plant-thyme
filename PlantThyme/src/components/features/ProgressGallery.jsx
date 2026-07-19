@@ -7,6 +7,14 @@ export default function ProgressGallery({ plant }) {
     const [selectedImage, setSelectedImage] = useState("");
     const today = new Date().toLocaleDateString("en-US");
 
+    function formatDate(date) {
+        return new Date(date + "T00:00:00").toLocaleDateString("en-US", {
+            month: "numeric",
+            day: "numeric",
+            year: "numeric",
+        });
+    }
+
     return (
         <section id="progressGallery">
             <PageTitle title="Progress Pictures" />
@@ -31,7 +39,7 @@ export default function ProgressGallery({ plant }) {
                     <ProgressPictureCard
                         key={progressPic.id}
                         fileName={progressPic.picture}
-                        date={progressPic.date}
+                        date={formatDate(progressPic.date)}
                         src={`/images/progressPictures/${progressPic.picture}`}
                     />
                 ))}
