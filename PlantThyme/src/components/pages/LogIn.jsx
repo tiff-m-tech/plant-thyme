@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 import { altFromFileName } from "../../utils/altFromFileName";
 import { logoImagePath } from "../../data/constants";
