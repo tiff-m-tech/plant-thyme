@@ -40,7 +40,7 @@ export default function ProgressGallery({ plant }) {
                         key={progressPic.id}
                         fileName={progressPic.picture}
                         date={formatDate(progressPic.date)}
-                        src={`/images/progressPictures/${progressPic.picture}`}
+                        src={`${import.meta.env.BASE_URL}images/progressPictures/${progressPic.picture}`}
                     />
                 ))}
                 {selectedImage && <ProgressPictureCard src={selectedImage} date={today} />}

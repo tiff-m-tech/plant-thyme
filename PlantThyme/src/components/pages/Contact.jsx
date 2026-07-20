@@ -8,7 +8,7 @@ import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab
 
 export default function Contact() {
     const pageTitle = "Contact";
-    const contactImagePath = "/images/brand/contact.webp";
+    const contactImagePath = `${import.meta.env.BASE_URL}images/brand/contact.webp`;
     const initialFormData = { name: "", email: "", message: "" };
     const [formData, setFormData] = useState(initialFormData);
     const [submitted, setSubmitted] = useState(false);
