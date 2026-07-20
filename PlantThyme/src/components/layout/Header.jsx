@@ -6,7 +6,11 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
         <header>
             <div className="header-left">
                 <Link to="/home" className="header-brand-link">
-                    <img src="/images/brand/mini-logo.png" alt="" className="mini-logo" />
+                    <img
+                        src={`${import.meta.env.BASE_URL}images/brand/mini-logo.png`}
+                        alt=""
+                        className="mini-logo"
+                    />
                     <span className="header-brand-name">Plant Thyme</span>
                 </Link>
             </div>

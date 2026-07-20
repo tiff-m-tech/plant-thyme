@@ -73,7 +73,7 @@ function PlantDetailsContent({ plant, removePlantFromCollection }) {
         <main id="plantDetails">
             <Button innerText="Back" onClick={() => navigate(-1)} className="back-btn" />
             <img
-                src={`/images/plants/${plant.image}`}
+                src={`${import.meta.env.BASE_URL}images/plants/${plant.image}`}
                 alt={altFromFileName(plant.image)}
                 className="details-page-image"
             />

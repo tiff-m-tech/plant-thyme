@@ -1,2 +1,2 @@
 export const userName = "Tiffany";
-export const logoImagePath = "/images/brand/large-logo.webp";
+export const logoImagePath = `${import.meta.env.BASE_URL}images/brand/large-logo.webp`;

@@ -8,7 +8,7 @@ import Loading from "../ui/Loading";
 import { usePageTitleForBrowserTab } from "../../hooks/usePageTitleForBrowserTab";
 
 export default function CurrentCollection({ collection, loading }) {
-    const currentCollectionImagePath = "/images/brand/current-collection.webp";
+    const currentCollectionImagePath = `${import.meta.env.BASE_URL}images/brand/current-collection.webp`;
     const plantCount = collection.length;
     const navigate = useNavigate();
     const [searchValue, setSearchValue] = useState("");

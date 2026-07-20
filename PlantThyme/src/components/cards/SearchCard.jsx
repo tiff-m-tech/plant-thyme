@@ -8,7 +8,7 @@ export default function SearchCard({ imgPath, name, plant, addPlantToCollection 
     return (
         <div className="search-card">
             <img
-                src={`/images/plants/${imgPath}`}
+                src={`${import.meta.env.BASE_URL}images/plants/${imgPath}`}
                 alt={altFromFileName(imgPath)}
                 className="search-card-picture"
             />

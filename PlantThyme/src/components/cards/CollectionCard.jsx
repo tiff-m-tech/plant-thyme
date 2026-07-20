@@ -10,7 +10,7 @@ export default function CollectionCard({ collectionId, imgPath, name, light, wat
     return (
         <div className="collection-card">
             <img
-                src={`/images/plants/${imgPath}`}
+                src={`${import.meta.env.BASE_URL}images/plants/${imgPath}`}
                 alt={altFromFileName(imgPath)}
                 className="collection-card-picture"
             />

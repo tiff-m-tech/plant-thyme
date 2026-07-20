@@ -10,7 +10,11 @@ export default function NotFound() {
     return (
         <main id="notFound">
             <PageTitle title="404 - Lost in the Weeds" />
-            <img src="/images/brand/lost-plant.webp" alt="" className="large-page-image" />
+            <img
+                src={`${import.meta.env.BASE_URL}images/brand/lost-plant.webp`}
+                alt=""
+                className="large-page-image"
+            />
             <h2>This page wandered off to find more sunlight. 🌿</h2>
             <p>You might have landed here because:</p>
             <ul className="not-found-list">

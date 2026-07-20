@@ -1,6 +1,6 @@
 export default function PageTitle({ title, className = "" }) {
-    const leftDecoImagePath = "/images/brand/left-deco-leaf.png";
-    const rightDecoImagePath = "/images/brand/right-deco-leaf.png";
+    const leftDecoImagePath = `${import.meta.env.BASE_URL}images/brand/left-deco-leaf.png`;
+    const rightDecoImagePath = `${import.meta.env.BASE_URL}images/brand/right-deco-leaf.png`;
 
     return (
         <div className={`page-title-row ${className}`}>
